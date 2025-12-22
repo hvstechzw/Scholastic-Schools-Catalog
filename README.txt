@@ -1,6 +1,6 @@
 # Scholastic Services School Forum Website
 
-Generated on: 2025-12-22 17:31:56
+Generated on: 2025-12-22 21:27:39
 Total Schools: 2
 Database: school_manager.db
 Developer: High Voltage Software Technologies
@@ -12,31 +12,22 @@ Established: 2025
 - schools-full.json - Complete school data for detail pages
 - [school-name].html - Individual school detail pages (clean URLs)
 - .nojekyll - Disables Jekyll processing on GitHub Pages
-- logo.png - Main logo
-- manufacturer.png - Developer logo
+- logo_light.png - Main logo for light theme
+- manufacturer_light.png - Developer logo for light theme
 
 ## Key Features:
-- Grayscale color theme only
-- Light mode only (no dark mode)
 - Mobile-first responsive design
 - Google Maps integration for school locations
 - Online ratings and reviews system
 - Search and filter functionality
 - Clean URL structure (school-name.html)
-- School badges with logos and details
 - GitHub Pages compatible
 - All data fetched from JSON files
-
-## School Badges Include:
-- School logo prominently displayed
-- School name and location
-- Key details (students, teachers, established year, curriculum)
-- Facility tags
-- View Details button
+- Grayscale color theme with colored logos maintained
 
 ## How to Use:
 1. Upload ALL files to GitHub Pages
-2. Make sure your logo files (logo.png, manufacturer.png) are in the same folder
+2. Make sure your logo files (logo_light.png, manufacturer_light.png) are in the same folder
 3. Open index.html in any web browser
 4. Browse schools using search and filters
 5. Click on any school to view detailed information
@@ -47,12 +38,6 @@ Established: 2025
 3. Go to Settings > Pages
 4. Set source to "main" branch and "/ (root)" folder
 5. Your site will be available at: https://[username].github.io/[repository]/
-
-## Theme:
-- Grayscale color palette only
-- Light theme always
-- Clean, professional design
-- All logos in grayscale
 
 ## Statistics:
 - Total Schools: 2
