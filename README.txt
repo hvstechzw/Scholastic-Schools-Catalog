@@ -1,6 +1,6 @@
 # SchoolFinder Website
 
-Generated on: 2025-12-22 12:09:51
+Generated on: 2025-12-22 13:48:09
 Total Schools: 2
 Database: school_manager.db
 
@@ -32,8 +32,8 @@ Database: school_manager.db
 5. Your site will be available at: https://[username].github.io/[repository]/
 
 ## Statistics:
-- Total Students: 0
-- Total Teachers: 0
+- Total Students: 497
+- Total Teachers: 23
 - Schools with Logos: 2
-- Schools with Coordinates: 0
+- Schools with Coordinates: 2
 - Schools with Reviews: 0
