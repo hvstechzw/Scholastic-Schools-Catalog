@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scholastic Schools Catalog</title>
-    <meta name="description" content="Find the perfect school in Zimbabwe with detailed information, reviews, and comparisons.">
+    <title>Loading School Details - SchoolFinder Zimbabwe</title>
+    <meta name="description" content="Loading school details...">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -691,316 +691,323 @@
             margin: 2rem 0;
         }
         
-        
-        .filter-section {
-            background-color: var(--off-white);
-            padding: 2rem;
-            border-radius: var(--border-radius);
-            margin-bottom: 2rem;
-        }
-        
-        .filter-groups {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 1.5rem;
-        }
-        
-        .filter-group h4 {
-            margin-bottom: 1rem;
-            color: var(--dark-gray);
-        }
-        
-        .filter-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-        
-        .filter-btn {
-            padding: 8px 16px;
-            background-color: var(--white);
-            border: 1px solid var(--light-gray);
-            border-radius: 20px;
-            color: var(--medium-gray);
-            cursor: pointer;
-            transition: var(--transition);
-            font-size: 0.875rem;
-        }
-        
-        .filter-btn:hover,
-        .filter-btn.active {
-            background-color: var(--dark-gray);
-            color: var(--white);
-            border-color: var(--dark-gray);
-        }
-        
-        .stats-bar {
-            background-color: var(--off-white);
-            padding: 1.5rem;
-            border-radius: var(--border-radius);
-            margin: 2rem 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-        
-        .stat-item {
-            text-align: center;
-        }
-        
-        .stat-number {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--black);
-            display: block;
-        }
-        
-        .stat-label {
-            font-size: 0.875rem;
-            color: var(--medium-gray);
-        }
     </style>
 </head>
 <body>
     <nav class="navbar">
         <div class="container nav-container">
-            <div class="logo">Scholastic Schools Catalog</div>
+            <div class="logo">SchoolFinder Zimbabwe</div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="#schools">Schools</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="index.html#schools">All Schools</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <header class="hero">
+    <div class="school-detail">
         <div class="container">
-            <h1>Find the Perfect School in Zimbabwe</h1>
-            <p>Find the perfect school in Zimbabwe with detailed information, reviews, and comparisons.</p>
-            
-            <div class="container mt-3">
-                <div class="search-container">
-                    <div class="search-box">
-                        <input type="text" class="search-input" placeholder="Search by school name, city, or province...">
-                        <button class="search-btn">Search</button>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-    </header>
-
-    <div class="container">
-        <div class="stats-bar">
-            <div class="stat-item">
-                <span class="stat-number" id="total-schools">2</span>
-                <span class="stat-label">Total Schools</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">
-                    0
-                </span>
-                <span class="stat-label">Total Students</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">
-                    0
-                </span>
-                <span class="stat-label">Total Teachers</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number" id="school-count">2</span>
-                <span class="stat-label">Schools Displayed</span>
-            </div>
+            <div class="loading">Loading school details...</div>
         </div>
     </div>
-
-    
-            <div class="container mt-2">
-                <div class="filter-section">
-                    <h3>Filter Schools</h3>
-                    <div class="filter-groups">
-                        <div class="filter-group">
-                            <h4>Location</h4>
-                            <div class="filter-buttons">
-                                <button class="filter-btn active" data-filter="province" data-value="all">All Provinces</button>
-                                <button class="filter-btn" data-filter="province" data-value="Matabeleland North">Matabeleland North</button>
-                            </div>
-                        </div>
-                        <div class="filter-group">
-                            <h4>School Level</h4>
-                            <div class="filter-buttons">
-                                <button class="filter-btn active" data-filter="level" data-value="all">All Levels</button>
-                                <button class="filter-btn" data-filter="level" data-value="High School">High School</button>
-                            </div>
-                        </div>
-                        <div class="filter-group">
-                            <h4>School Type</h4>
-                            <div class="filter-buttons">
-                                <button class="filter-btn active" data-filter="type" data-value="all">All Types</button>
-                                <button class="filter-btn" data-filter="type" data-value="Day">Day</button><button class="filter-btn" data-filter="type" data-value="Mixed">Mixed</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-    
-            <div class="container mt-3">
-                <h2>School Locations</h2>
-                <div id="map" class="map-container">
-                    <div class="loading">Loading map data...</div>
-                </div>
-            </div>
-            
-
-    <section id="schools" class="container">
-        <h2>All Schools</h2>
-        <div id="schools-container" class="schools-grid">
-            <div class="loading" style="grid-column: 1/-1;">Loading schools...</div>
-        </div>
-    </section>
 
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Scholastic Schools Catalog</h3>
-                    <p>Comprehensive school information platform for Zimbabwe.</p>
+                    <h3>SchoolFinder Zimbabwe</h3>
+                    <p>Find the perfect school for your child.</p>
                 </div>
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <a href="index.html">Home</a>
-                    <a href="#schools">Browse Schools</a>
-                    <a href="#about">About Us</a>
+                    <a href="index.html#schools">Browse Schools</a>
                     <a href="#contact">Contact</a>
-                </div>
-                <div class="footer-section">
-                    <h3>Contact Info</h3>
-                    <p>Email: info@schoolfinder.co.zw</p>
-                    <p>Phone: +263 123 456 789</p>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 Scholastic Schools Catalog. All rights reserved.</p>
-                <p>Generated on 2025-12-22 12:09:51</p>
+                <p>&copy; 2025 SchoolFinder Zimbabwe. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script>
         
-        // SchoolFinder JavaScript - Data fetched from schools.json
+        // School Detail JavaScript - Fetches data for specific school
         document.addEventListener('DOMContentLoaded', function() {
-            // Load school data from external JSON file
-            loadSchoolData();
+            // Extract school ID from URL or page
+            const schoolId = getSchoolIdFromUrl();
             
-            function loadSchoolData() {
-                fetch('schools.json')
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error('Failed to load school data');
-                        }
-                        return response.json();
-                    })
-                    .then(schools => {
-                        // Initialize with loaded data
-                        initSearch(schools);
-                        initFilters(schools);
-                        initTabs();
-                        updateSchoolCount(schools.length);
-                        renderSchools(schools);
-                        initMap(schools);
-                    })
-                    .catch(error => {
-                        console.error('Error loading school data:', error);
-                        showError('Failed to load school data. Please try again later.');
-                    });
+            if (schoolId) {
+                loadSchoolDetails(schoolId);
+            } else {
+                showError('School ID not found in URL');
             }
             
-            function showError(message) {
-                const container = document.getElementById('schools-container');
-                if (container) {
-                    container.innerHTML = `
-                        <div class="error" style="grid-column: 1/-1;">
-                            <h3>Error Loading Data</h3>
-                            <p>${message}</p>
-                            <button onclick="location.reload()" class="btn btn-primary mt-2">
-                                Retry
-                            </button>
-                        </div>
-                    `;
-                }
-            }
+            // Initialize tabs
+            initTabs();
         });
         
-        // Search functionality
-        function initSearch(schools) {
-            const searchInput = document.querySelector('.search-input');
-            const searchBtn = document.querySelector('.search-btn');
+        function getSchoolIdFromUrl() {
+            // Get school ID from URL path (school_123.html -> 123)
+            const path = window.location.pathname;
+            const match = path.match(/school_(\d+)\.html$/);
+            if (match) return match[1];
             
-            if (!searchInput || !searchBtn) return;
-            
-            const performSearch = () => {
-                const searchTerm = searchInput.value.toLowerCase().trim();
-                const filteredSchools = schools.filter(school => {
-                    return (
-                        school.name.toLowerCase().includes(searchTerm) ||
-                        school.city.toLowerCase().includes(searchTerm) ||
-                        school.province.toLowerCase().includes(searchTerm) ||
-                        school.level.toLowerCase().includes(searchTerm)
-                    );
-                });
-                
-                renderSchools(filteredSchools);
-                updateSchoolCount(filteredSchools.length);
-            };
-            
-            searchBtn.addEventListener('click', performSearch);
-            searchInput.addEventListener('keyup', (e) => {
-                if (e.key === 'Enter') performSearch();
-            });
+            // Fallback: get from current page name
+            const pageName = window.location.href.split('/').pop();
+            const pageMatch = pageName.match(/school_(\d+)\.html$/);
+            return pageMatch ? pageMatch[1] : null;
         }
         
-        // Filter functionality
-        function initFilters(schools) {
-            const filterButtons = document.querySelectorAll('.filter-btn');
+        function loadSchoolDetails(schoolId) {
+            // Show loading state
+            const mainContent = document.querySelector('.school-detail .container');
+            if (mainContent) {
+                mainContent.innerHTML = '<div class="loading">Loading school details...</div>';
+            }
             
-            filterButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const filterType = this.dataset.filter;
-                    const filterValue = this.dataset.value;
-                    
-                    const parent = this.parentElement;
-                    parent.querySelectorAll('.filter-btn').forEach(btn => {
-                        btn.classList.remove('active');
-                    });
-                    
-                    this.classList.add('active');
-                    
-                    let filteredSchools = schools;
-                    
-                    if (filterValue !== 'all') {
-                        filteredSchools = schools.filter(school => {
-                            if (filterType === 'level') return school.level === filterValue;
-                            if (filterType === 'type') return school.school_type === filterValue;
-                            if (filterType === 'category') return school.category === filterValue;
-                            if (filterType === 'province') return school.province === filterValue;
-                            return true;
-                        });
+            // Load schools.json data
+            fetch('schools.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to load school data');
                     }
+                    return response.json();
+                })
+                .then(schools => {
+                    // Find the specific school
+                    const school = schools.find(s => s.id == schoolId);
                     
-                    renderSchools(filteredSchools);
-                    updateSchoolCount(filteredSchools.length);
+                    if (school) {
+                        // Fetch full school details from schools-full.json
+                        fetch('schools-full.json')
+                            .then(response => {
+                                if (!response.ok) {
+                                    // If full details not available, use basic data
+                                    renderSchoolDetails(school, school);
+                                    return;
+                                }
+                                return response.json();
+                            })
+                            .then(fullSchools => {
+                                if (fullSchools) {
+                                    const fullSchool = fullSchools.find(s => s.id == schoolId);
+                                    renderSchoolDetails(school, fullSchool || school);
+                                } else {
+                                    renderSchoolDetails(school, school);
+                                }
+                            })
+                            .catch(error => {
+                                console.warn('Using basic school data:', error);
+                                renderSchoolDetails(school, school);
+                            });
+                    } else {
+                        showError('School not found');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error loading school details:', error);
+                    showError('Failed to load school details. Please try again later.');
                 });
-            });
         }
         
-        // Tab functionality
+        function renderSchoolDetails(basicData, fullData) {
+            // Update page title
+            document.title = `${fullData.name} - SchoolFinder Zimbabwe`;
+            
+            // Render the school details page
+            const container = document.querySelector('.school-detail .container');
+            if (!container) return;
+            
+            // Generate stars HTML
+            function generateStars(rating) {
+                if (!rating) return "No rating";
+                const fullStars = Math.floor(rating);
+                const halfStar = rating - fullStars >= 0.5 ? 1 : 0;
+                const emptyStars = 5 - fullStars - halfStar;
+                
+                let stars = "★".repeat(fullStars);
+                if (halfStar) stars += "☆";
+                stars += "☆".repeat(emptyStars);
+                return `${stars} (${rating.toFixed(1)})`;
+            }
+            
+            // Generate logo HTML
+            let logoHtml = "";
+            if (basicData.logo_base64) {
+                logoHtml = `
+                <div class="school-logo-large-container">
+                    <img src="data:${basicData.logo_mime};base64,${basicData.logo_base64}" 
+                         alt="${fullData.name} Logo" 
+                         class="school-logo-large"
+                         onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\"logo-placeholder\" style=\"width: 120px; height: 120px;\"><svg width=\"60\" height=\"60\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><path d=\"M22 9L12 5L2 9L12 13L22 9Z\"/><path d=\"M2 9V17L12 21L22 17V9\"/><path d=\"M12 13V21\"/></svg></div>';">
+                </div>
+                `;
+            } else {
+                logoHtml = `
+                <div class="school-logo-large-container">
+                    <div class="logo-placeholder" style="width: 120px; height: 120px;">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M22 9L12 5L2 9L12 13L22 9Z"/>
+                            <path d="M2 9V17L12 21L22 17V9"/>
+                            <path d="M12 13V21"/>
+                        </svg>
+                    </div>
+                </div>
+                `;
+            }
+            
+            // Generate facilities list
+            const facilities = [];
+            const facilityFields = [
+                ['has_library', 'Library'],
+                ['has_science_lab', 'Science Laboratory'],
+                ['has_computer_lab', 'Computer Laboratory'],
+                ['has_playground', 'Playground'],
+                ['has_sports_field', 'Sports Field'],
+                ['has_swimming_pool', 'Swimming Pool'],
+                ['has_auditorium', 'Auditorium'],
+                ['has_cafeteria', 'Cafeteria'],
+                ['has_health_clinic', 'Health Clinic'],
+                ['has_wifi', 'WiFi Internet'],
+                ['has_smart_classes', 'Smart Classrooms']
+            ];
+            
+            facilityFields.forEach(([field, label]) => {
+                if (fullData[field]) {
+                    facilities.push(label);
+                }
+            });
+            
+            // Generate contact HTML
+            let contactHtml = "";
+            if (fullData.phone_primary) {
+                contactHtml += `<p><strong>Phone:</strong> ${fullData.phone_primary}</p>`;
+            }
+            if (fullData.email_primary) {
+                contactHtml += `<p><strong>Email:</strong> <a href="mailto:${fullData.email_primary}">${fullData.email_primary}</a></p>`;
+            }
+            if (fullData.website) {
+                contactHtml += `<p><strong>Website:</strong> <a href="${fullData.website}" target="_blank">${fullData.website}</a></p>`;
+            }
+            
+            // Render the page
+            container.innerHTML = `
+                <div class="school-header-detail">
+                    ${logoHtml}
+                    <div class="school-info">
+                        <h1>${fullData.name}</h1>
+                        ${fullData.motto ? `<p class="school-motto">${fullData.motto}</p>` : ''}
+                        <div class="school-location">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            ${fullData.address || ''}, ${fullData.city || ''}, ${fullData.province || ''}, ${fullData.country || 'Zimbabwe'}
+                        </div>
+                        <div style="display: flex; gap: 1rem; margin-top: 1rem; align-items: center; flex-wrap: wrap;">
+                            <div class="school-type">${fullData.level || ''} • ${fullData.school_type || ''} • ${fullData.category || ''}</div>
+                            <div class="school-rating">
+                                <span class="stars">${generateStars(fullData.overall_rating || 0)}</span>
+                                <span>(${fullData.total_reviews || 0} reviews)</span>
+                            </div>
+                        </div>
+                        <div class="action-buttons">
+                            <a href="index.html" class="btn btn-primary">Back to All Schools</a>
+                            ${fullData.phone_primary ? `<a href="tel:${fullData.phone_primary}" class="btn btn-secondary">Call School</a>` : ''}
+                            ${fullData.website ? `<a href="${fullData.website}" target="_blank" class="btn btn-secondary">Visit Website</a>` : ''}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tabs">
+                    <div class="tab-nav">
+                        <button class="tab-btn active" data-tab="overview">Overview</button>
+                        <button class="tab-btn" data-tab="academics">Academics</button>
+                        <button class="tab-btn" data-tab="facilities">Facilities</button>
+                        <button class="tab-btn" data-tab="contact">Contact</button>
+                    </div>
+
+                    <div id="overview" class="tab-content active">
+                        ${fullData.description ? `<div style="margin-bottom: 2rem;"><h3>About ${fullData.name}</h3><p>${fullData.description}</p></div>` : ''}
+                        
+                        ${fullData.mission ? `<div style="margin-bottom: 2rem;"><h3>Mission</h3><p>${fullData.mission}</p></div>` : ''}
+                        
+                        ${fullData.vision ? `<div style="margin-bottom: 2rem;"><h3>Vision</h3><p>${fullData.vision}</p></div>` : ''}
+                        
+                        <div class="info-grid">
+                            <div class="info-card">
+                                <h3>Basic Information</h3>
+                                <div class="info-item"><span class="info-label">Established</span><span class="info-value">${fullData.establishment_year || 'N/A'}</span></div>
+                                <div class="info-item"><span class="info-label">Gender Focus</span><span class="info-value">${fullData.gender_focus || 'N/A'}</span></div>
+                                ${fullData.registration_number ? `<div class="info-item"><span class="info-label">Registration</span><span class="info-value">${fullData.registration_number}</span></div>` : ''}
+                            </div>
+                            
+                            <div class="info-card">
+                                <h3>Student Statistics</h3>
+                                <div class="info-item"><span class="info-label">Total Students</span><span class="info-value">${fullData.total_students || 'N/A'}</span></div>
+                                <div class="info-item"><span class="info-label">Total Teachers</span><span class="info-value">${fullData.total_teachers || 'N/A'}</span></div>
+                                <div class="info-item"><span class="info-label">Total Staff</span><span class="info-value">${fullData.total_staff || 'N/A'}</span></div>
+                                <div class="info-item"><span class="info-label">Student Capacity</span><span class="info-value">${fullData.student_capacity || 'N/A'}</span></div>
+                                <div class="info-item"><span class="info-label">Avg Class Size</span><span class="info-value">${fullData.average_class_size || 'N/A'}</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="academics" class="tab-content">
+                        <div class="info-grid">
+                            <div class="info-card">
+                                <h3>Curriculum & Programs</h3>
+                                ${fullData.curriculum ? `<p><strong>Curriculum:</strong> ${fullData.curriculum}</p>` : ''}
+                                ${fullData.exam_board ? `<p><strong>Exam Board:</strong> ${fullData.exam_board}</p>` : ''}
+                            </div>
+                            
+                            <div class="info-card">
+                                <h3>Infrastructure</h3>
+                                <div class="info-item"><span class="info-label">Classrooms</span><span class="info-value">${fullData.total_classrooms || 'N/A'}</span></div>
+                                <div class="info-item"><span class="info-label">Science Labs</span><span class="info-value">${fullData.science_labs || 'N/A'}</span></div>
+                                <div class="info-item"><span class="info-label">Computer Labs</span><span class="info-value">${fullData.computer_labs || 'N/A'}</span></div>
+                                <div class="info-item"><span class="info-label">Library Rooms</span><span class="info-value">${fullData.library_rooms || 'N/A'}</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="facilities" class="tab-content">
+                        <h3>Available Facilities</h3>
+                        ${facilities.length > 0 ? `<p style="margin-bottom: 2rem;">This school has ${facilities.length} key facilities available.</p>` : ''}
+                        
+                        ${facilities.length > 0 ? `
+                        <div class="facilities-grid">
+                            ${facilities.map(facility => `<div class="facility-item"><div class="facility-icon">✓</div><span>${facility}</span></div>`).join('')}
+                        </div>
+                        ` : '<p>No facility information available.</p>'}
+                    </div>
+
+                    <div id="contact" class="tab-content">
+                        <div class="info-grid">
+                            <div class="info-card">
+                                <h3>Contact Information</h3>
+                                ${contactHtml || '<p>No contact information available.</p>'}
+                            </div>
+                            
+                            <div class="info-card">
+                                <h3>Location Details</h3>
+                                <p><strong>Address:</strong> ${fullData.address || ''}</p>
+                                <p><strong>City:</strong> ${fullData.city || ''}</p>
+                                <p><strong>Province:</strong> ${fullData.province || ''}</p>
+                                ${fullData.district ? `<p><strong>District:</strong> ${fullData.district}</p>` : ''}
+                                ${fullData.postal_code ? `<p><strong>Postal Code:</strong> ${fullData.postal_code}</p>` : ''}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // Re-initialize tabs after rendering
+            initTabs();
+        }
+        
         function initTabs() {
             const tabButtons = document.querySelectorAll('.tab-btn');
             const tabContents = document.querySelectorAll('.tab-content');
@@ -1018,121 +1025,17 @@
             });
         }
         
-        // Render schools in grid
-        function renderSchools(schoolsToRender) {
-            const container = document.getElementById('schools-container');
-            if (!container) return;
-            
-            if (schoolsToRender.length === 0) {
-                container.innerHTML = '<div class="text-center" style="grid-column: 1/-1; padding: 4rem; color: var(--medium-gray);">No schools found matching your criteria.</div>';
-                return;
-            }
-            
-            container.innerHTML = schoolsToRender.map(school => {
-                const rating = school.overall_rating || 0;
-                const ratingStars = '★'.repeat(Math.floor(rating)) + '☆'.repeat(5 - Math.floor(rating));
-                const ratingDisplay = rating ? rating.toFixed(1) : 'N/A';
-                
-                const logoHtml = school.logo_base64 ? 
-                    `<img src="data:${school.logo_mime};base64,${school.logo_base64}" alt="${school.name} Logo" class="school-logo-img">` :
-                    `<div class="logo-placeholder">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M22 9L12 5L2 9L12 13L22 9Z"/>
-                            <path d="M2 9V17L12 21L22 17V9"/>
-                            <path d="M12 13V21"/>
-                        </svg>
-                     </div>`;
-                
-                return `
-                <div class="school-card" data-school-id="${school.id}">
-                    <div class="school-logo-container">
-                        ${logoHtml}
+        function showError(message) {
+            const container = document.querySelector('.school-detail .container');
+            if (container) {
+                container.innerHTML = `
+                    <div class="error">
+                        <h3>Error Loading School Details</h3>
+                        <p>${message}</p>
+                        <a href="index.html" class="btn btn-primary mt-2">Back to All Schools</a>
                     </div>
-                    <div class="school-content">
-                        <div class="school-header">
-                            <h3 class="school-name">${school.name}</h3>
-                            <div class="school-rating">
-                                <span class="stars">${ratingStars}</span>
-                                <span>${ratingDisplay}</span>
-                            </div>
-                        </div>
-                        <div class="school-location">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z"/>
-                                <circle cx="12" cy="10" r="3"/>
-                            </svg>
-                            ${school.city}, ${school.province}
-                        </div>
-                        <div class="school-type">${school.level} • ${school.school_type}</div>
-                        
-                        <div class="school-metrics">
-                            <div class="metric">
-                                <div class="metric-value">${school.total_students || 0}</div>
-                                <div class="metric-label">Students</div>
-                            </div>
-                            <div class="metric">
-                                <div class="metric-value">${school.total_teachers || 0}</div>
-                                <div class="metric-label">Teachers</div>
-                            </div>
-                            <div class="metric">
-                                <div class="metric-value">${ratingDisplay}</div>
-                                <div class="metric-label">Rating</div>
-                            </div>
-                        </div>
-                        
-                        <div class="facility-tags">
-                            ${school.has_library ? '<span class="facility-tag">Library</span>' : ''}
-                            ${school.has_science_lab ? '<span class="facility-tag">Science Lab</span>' : ''}
-                            ${school.has_computer_lab ? '<span class="facility-tag">Computer Lab</span>' : ''}
-                            ${school.has_playground ? '<span class="facility-tag">Playground</span>' : ''}
-                            ${school.has_sports_field ? '<span class="facility-tag">Sports</span>' : ''}
-                        </div>
-                        
-                        <a href="school_${school.id}.html" class="view-details">View Details</a>
-                    </div>
-                </div>
                 `;
-            }).join('');
-        }
-        
-        // Update school count display
-        function updateSchoolCount(count) {
-            const countElement = document.getElementById('school-count');
-            if (countElement) {
-                countElement.textContent = `${count} schools found`;
             }
-        }
-        
-        // Initialize map
-        function initMap(schools) {
-            const mapContainer = document.getElementById('map');
-            if (!mapContainer) return;
-            
-            const schoolsWithCoords = schools.filter(s => s.latitude && s.longitude);
-            
-            if (schoolsWithCoords.length === 0) {
-                mapContainer.innerHTML = '<div style="text-align: center; padding: 2rem;"><p>Map view requires school coordinates.</p></div>';
-                return;
-            }
-            
-            mapContainer.innerHTML = `
-                <div style="padding: 1rem;">
-                    <h3 style="margin-bottom: 1rem;">Schools Location Overview</h3>
-                    <div style="background: var(--white); padding: 1rem; border-radius: var(--border-radius);">
-                        <p>${schoolsWithCoords.length} out of ${schools.length} schools have location data.</p>
-                        <div style="margin-top: 1rem;">
-                            ${schoolsWithCoords.map(s => `
-                                <div style="margin-bottom: 0.5rem; padding: 0.5rem; background: var(--off-white); border-radius: 4px;">
-                                    <strong>${s.name}</strong> - ${s.city}, ${s.province}
-                                    <div style="font-size: 0.875rem; color: var(--medium-gray);">
-                                        Coordinates: ${s.latitude ? s.latitude.toFixed(4) : 'N/A'}, ${s.longitude ? s.longitude.toFixed(4) : 'N/A'}
-                                    </div>
-                                </div>
-                            `).join('')}
-                        </div>
-                    </div>
-                </div>
-            `;
         }
         
     </script>

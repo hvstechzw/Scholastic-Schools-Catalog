@@ -1,7 +1,7 @@
 # SchoolFinder Website
 
-Generated on: 2025-12-22 10:22:42
-Total Schools: 1
+Generated on: 2025-12-22 12:09:51
+Total Schools: 2
 Database: school_manager.db
 
 ## Files Generated:
@@ -34,6 +34,6 @@ Database: school_manager.db
 ## Statistics:
 - Total Students: 0
 - Total Teachers: 0
-- Schools with Logos: 1
+- Schools with Logos: 2
 - Schools with Coordinates: 0
 - Schools with Reviews: 0
