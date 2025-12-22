@@ -1,6 +1,6 @@
-# Scholastic Services SchoolFinder Website
+# Scholastic Services School Forum Website
 
-Generated on: 2025-12-22 16:30:20
+Generated on: 2025-12-22 17:31:56
 Total Schools: 2
 Database: school_manager.db
 Developer: High Voltage Software Technologies
@@ -12,28 +12,34 @@ Established: 2025
 - schools-full.json - Complete school data for detail pages
 - [school-name].html - Individual school detail pages (clean URLs)
 - .nojekyll - Disables Jekyll processing on GitHub Pages
-- logo_light.png - Main logo for light theme
-- logo_dark.png - Main logo for dark theme
-- manufacturer_light.png - Developer logo for light theme
-- manufacturer_dark.png - Developer logo for dark theme
+- logo.png - Main logo
+- manufacturer.png - Developer logo
 
 ## Key Features:
+- Grayscale color theme only
+- Light mode only (no dark mode)
 - Mobile-first responsive design
 - Google Maps integration for school locations
 - Online ratings and reviews system
-- Dark/Light theme switcher
 - Search and filter functionality
 - Clean URL structure (school-name.html)
+- School badges with logos and details
 - GitHub Pages compatible
 - All data fetched from JSON files
 
+## School Badges Include:
+- School logo prominently displayed
+- School name and location
+- Key details (students, teachers, established year, curriculum)
+- Facility tags
+- View Details button
+
 ## How to Use:
 1. Upload ALL files to GitHub Pages
-2. Make sure your logo files (logo_light.png, logo_dark.png, manufacturer_light.png, manufacturer_dark.png) are in the same folder
+2. Make sure your logo files (logo.png, manufacturer.png) are in the same folder
 3. Open index.html in any web browser
 4. Browse schools using search and filters
 5. Click on any school to view detailed information
-6. Use the theme switcher button (bottom right) to toggle between light/dark modes
 
 ## GitHub Pages Deployment:
 1. Create a repository on GitHub
@@ -42,12 +48,11 @@ Established: 2025
 4. Set source to "main" branch and "/ (root)" folder
 5. Your site will be available at: https://[username].github.io/[repository]/
 
-## Theme Support:
-The website supports both light and dark themes with:
-- Automatic detection of system preference
-- Manual theme switching
-- Theme persistence using localStorage
-- Separate logos for each theme
+## Theme:
+- Grayscale color palette only
+- Light theme always
+- Clean, professional design
+- All logos in grayscale
 
 ## Statistics:
 - Total Schools: 2
