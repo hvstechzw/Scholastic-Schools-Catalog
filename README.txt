@@ -1,6 +1,6 @@
 # Scholastic Services School Forum Website
 
-Generated on: 2025-12-22 21:27:39
+Generated on: 2025-12-23 10:08:06
 Total Schools: 2
 Database: school_manager.db
 Developer: High Voltage Software Technologies
@@ -23,7 +23,8 @@ Established: 2025
 - Clean URL structure (school-name.html)
 - GitHub Pages compatible
 - All data fetched from JSON files
-- Grayscale color theme with colored logos maintained
+- Grayscale color theme with logos in color
+- Single-frame school cards with integrated logos
 
 ## How to Use:
 1. Upload ALL files to GitHub Pages
@@ -38,6 +39,13 @@ Established: 2025
 3. Go to Settings > Pages
 4. Set source to "main" branch and "/ (root)" folder
 5. Your site will be available at: https://[username].github.io/[repository]/
+
+## Theme:
+The website uses a grayscale color theme with:
+- Clean, minimal design
+- School logos displayed in their original colors
+- Manufacturer logo enlarged for better visibility
+- Single-frame school cards with all information
 
 ## Statistics:
 - Total Schools: 2
