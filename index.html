@@ -105,7 +105,7 @@
         }
         
         .logo {
-            height: 48px;
+            height: 60px;
             width: auto;
         }
         
@@ -396,21 +396,22 @@
             background: var(--off-white);
         }
         
+        /* ENLARGED SCHOOL LOGOS IN LIST VIEW */
         .school-logo-img {
-            width: 60px;
-            height: 60px;
+            width: 80px;
+            height: 80px;
             object-fit: contain;
-            border-radius: 8px;
+            border-radius: 10px;
             background: var(--white);
-            padding: 0.25rem;
+            padding: 0.5rem;
             border: 1px solid var(--light-gray);
         }
         
         .logo-placeholder {
-            width: 60px;
-            height: 60px;
+            width: 80px;
+            height: 80px;
             background: linear-gradient(135deg, var(--light-gray), var(--off-white));
-            border-radius: 8px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -627,8 +628,9 @@
             font-size: 0.75rem;
         }
         
+        /* ENLARGED MANUFACTURER LOGO */
         .manufacturer-logo {
-            height: 40px;
+            height: 60px;
             width: auto;
             opacity: 0.8;
             transition: var(--transition);
@@ -662,10 +664,11 @@
             }
         }
         
+        /* ENLARGED SCHOOL LOGO IN DETAIL VIEW */
         .school-logo-large-container {
-            width: 120px;
-            height: 120px;
-            min-width: 120px;
+            width: 150px;
+            height: 150px;
+            min-width: 150px;
             background-color: var(--off-white);
             border-radius: var(--border-radius);
             display: flex;
@@ -1242,6 +1245,23 @@
                 width: 100%;
                 justify-content: center;
             }
+            
+            /* Adjusted logo sizes for mobile */
+            .school-logo-img {
+                width: 70px;
+                height: 70px;
+            }
+            
+            .logo-placeholder {
+                width: 70px;
+                height: 70px;
+            }
+            
+            .school-logo-large-container {
+                width: 120px;
+                height: 120px;
+                min-width: 120px;
+            }
         }
         
         /* Utility Classes */
@@ -1285,6 +1305,19 @@
             border-radius: var(--border-radius);
             margin: 2rem 0;
             border-left: 3px solid #28a745;
+        }
+        
+        /* Logo error handling */
+        .logo-error {
+            background: linear-gradient(135deg, #ffcccc, #ff9999);
+            border: 1px solid #ff6666;
+        }
+        
+        .logo-error-text {
+            font-size: 0.75rem;
+            color: #cc0000;
+            text-align: center;
+            padding: 0.25rem;
         }
         
     </style>
@@ -1438,7 +1471,7 @@
             <div class="footer-bottom">
                 <div class="copyright">
                     <p>&copy; 2025 Scholastic Services - School Forum Zimbabwe. All rights reserved.</p>
-                    <p>Generated on 2025-12-23 10:08:06</p>
+                    <p>Generated on 2025-12-23 11:21:31</p>
                 </div>
                 <div class="developer-info">
                     <span class="developer-text">Developed by</span>
@@ -1528,7 +1561,7 @@
                 container.innerHTML = `
                     <div class="error" style="grid-column: 1/-1;">
                         <h3>Error Loading Data</h3>
-                        <p>` + message + `</p>
+                        <p>${message}</p>
                         <button onclick="location.reload()" class="btn btn-primary mt-2">
                             Retry
                         </button>
@@ -1647,11 +1680,11 @@
                     .replace(/[^a-z0-9]+/g, '-')
                     .replace(/^-|-$/g, '');
                 
-                // Generate logo HTML - clean logo only
+                // Generate logo HTML with better error handling
                 let logoHtml = "";
                 if (school.logo_base64) {
                     logoHtml = `
-                    <img src="data:${school.logo_mime};base64,${school.logo_base64}" 
+                    <img src="data:${school.logo_mime || 'image/png'};base64,${school.logo_base64}" 
                          alt="${school.name} Logo" 
                          class="school-logo-img"
                          loading="lazy"

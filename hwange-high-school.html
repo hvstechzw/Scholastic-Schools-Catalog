@@ -105,7 +105,7 @@
         }
         
         .logo {
-            height: 48px;
+            height: 60px;
             width: auto;
         }
         
@@ -396,21 +396,22 @@
             background: var(--off-white);
         }
         
+        /* ENLARGED SCHOOL LOGOS IN LIST VIEW */
         .school-logo-img {
-            width: 60px;
-            height: 60px;
+            width: 80px;
+            height: 80px;
             object-fit: contain;
-            border-radius: 8px;
+            border-radius: 10px;
             background: var(--white);
-            padding: 0.25rem;
+            padding: 0.5rem;
             border: 1px solid var(--light-gray);
         }
         
         .logo-placeholder {
-            width: 60px;
-            height: 60px;
+            width: 80px;
+            height: 80px;
             background: linear-gradient(135deg, var(--light-gray), var(--off-white));
-            border-radius: 8px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -627,8 +628,9 @@
             font-size: 0.75rem;
         }
         
+        /* ENLARGED MANUFACTURER LOGO */
         .manufacturer-logo {
-            height: 40px;
+            height: 60px;
             width: auto;
             opacity: 0.8;
             transition: var(--transition);
@@ -662,10 +664,11 @@
             }
         }
         
+        /* ENLARGED SCHOOL LOGO IN DETAIL VIEW */
         .school-logo-large-container {
-            width: 120px;
-            height: 120px;
-            min-width: 120px;
+            width: 150px;
+            height: 150px;
+            min-width: 150px;
             background-color: var(--off-white);
             border-radius: var(--border-radius);
             display: flex;
@@ -1242,6 +1245,23 @@
                 width: 100%;
                 justify-content: center;
             }
+            
+            /* Adjusted logo sizes for mobile */
+            .school-logo-img {
+                width: 70px;
+                height: 70px;
+            }
+            
+            .logo-placeholder {
+                width: 70px;
+                height: 70px;
+            }
+            
+            .school-logo-large-container {
+                width: 120px;
+                height: 120px;
+                min-width: 120px;
+            }
         }
         
         /* Utility Classes */
@@ -1285,6 +1305,19 @@
             border-radius: var(--border-radius);
             margin: 2rem 0;
             border-left: 3px solid #28a745;
+        }
+        
+        /* Logo error handling */
+        .logo-error {
+            background: linear-gradient(135deg, #ffcccc, #ff9999);
+            border: 1px solid #ff6666;
+        }
+        
+        .logo-error-text {
+            font-size: 0.75rem;
+            color: #cc0000;
+            text-align: center;
+            padding: 0.25rem;
         }
         
     </style>
@@ -1551,7 +1584,7 @@
                         reviewsHtml += '</div>';
                     }
                     reviewsHtml += '<div class="review-helpful">';
-                    reviewsHtml += '<button class="helpful-btn" onclick="this.innerHTML = '<svg width=\\'16\\' height=\\'16\\' viewBox=\\'0 0 24 24\\' fill=\\'none\\' stroke=\\'currentColor\\' stroke-width=\\'2\\'><path d=\\"M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3\\"></path></svg> Helpful (' + (' + (review.helpful_count || 0) + ' + 1) + ')'">';
+                    reviewsHtml += '<button class="helpful-btn" onclick="this.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg> Helpful (' + (' + (review.helpful_count || 0) + ' + 1) + ')'">';
                     reviewsHtml += '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">';
                     reviewsHtml += '<path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>';
                     reviewsHtml += '</svg>';
@@ -1573,12 +1606,12 @@
                 mapHtml = '<div class="map-container"><div class="map-placeholder"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z"/><circle cx="12" cy="10" r="3"/></svg><p>Location map not available</p></div></div>';
             }
             
-            // Generate logo HTML - clean logo only
+            // Generate logo HTML with better error handling
             let logoHtml = "";
             if (school.logo_base64) {
-                logoHtml = '<div class="school-logo-large-container"><img src="data:' + school.logo_mime + ';base64,' + school.logo_base64 + '" alt="' + school.name + ' Logo" class="school-logo-large" onerror="this.style.display=\'none\'; this.parentElement.innerHTML=\'<div class=\\"logo-placeholder\\" style=\\"width: 120px; height: 120px;\\"><svg width=\\"60\\" height=\\"60\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\"><path d=\\"M22 9L12 5L2 9L12 13L22 9Z\\"/><path d=\\"M2 9V17L12 21L22 17V9\\"/><path d=\\"M12 13V21\\"/></svg></div>\';"></div>';
+                logoHtml = '<div class="school-logo-large-container"><img src="data:' + (school.logo_mime || 'image/png') + ';base64,' + school.logo_base64 + '" alt="' + school.name + ' Logo" class="school-logo-large" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\"logo-placeholder\" style=\"width: 150px; height: 150px;\"><svg width=\"60\" height=\"60\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><path d=\"M22 9L12 5L2 9L12 13L22 9Z\"/><path d=\"M2 9V17L12 21L22 17V9\"/><path d=\"M12 13V21\"/></svg></div>';"></div>';
             } else {
-                logoHtml = '<div class="school-logo-large-container"><div class="logo-placeholder" style="width: 120px; height: 120px;"><svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 9L12 5L2 9L12 13L22 9Z"/><path d="M2 9V17L12 21L22 17V9"/><path d="M12 13V21"/></svg></div></div>';
+                logoHtml = '<div class="school-logo-large-container"><div class="logo-placeholder" style="width: 150px; height: 150px;"><svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 9L12 5L2 9L12 13L22 9Z"/><path d="M2 9V17L12 21L22 17V9"/><path d="M12 13V21"/></svg></div></div>';
             }
             
             // Render the page
