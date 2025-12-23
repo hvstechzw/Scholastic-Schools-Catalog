@@ -7,10 +7,10 @@
     <meta name="description" content="Find the perfect school in Zimbabwe with detailed information, reviews, and comparisons.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         
-        /* Scholastic Services CSS - Mobile First Design */
+        /* Scholastic Services CSS - Enhanced Mobile First Design */
         :root {
             --black: #000000;
             --dark-gray: #2A2A2A;
@@ -20,8 +20,9 @@
             --white: #FFFFFF;
             --accent-gray: #404040;
             --accent-blue: #2563eb;
+            --accent-green: #10b981;
             --shadow: 0 2px 8px rgba(0,0,0,0.1);
-            --shadow-lg: 0 4px 20px rgba(0,0,0,0.15);
+            --shadow-lg: 0 8px 25px rgba(0,0,0,0.15);
             --border-radius: 12px;
             --transition: all 0.3s ease;
             --container-padding: 1rem;
@@ -41,7 +42,7 @@
         
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.5;
+            line-height: 1.6;
             color: var(--dark-gray);
             background-color: var(--white);
             overflow-x: hidden;
@@ -50,34 +51,37 @@
         /* Typography */
         h1, h2, h3, h4, h5, h6 {
             color: var(--black);
-            font-weight: 600;
+            font-weight: 700;
             line-height: 1.3;
             margin-bottom: 1rem;
         }
         
-        h1 { font-size: 2rem; }
-        h2 { font-size: 1.75rem; }
+        h1 { font-size: 2.25rem; }
+        h2 { font-size: 1.875rem; }
         h3 { font-size: 1.5rem; }
         h4 { font-size: 1.25rem; }
         
         @media (min-width: 768px) {
-            h1 { font-size: 2.5rem; }
-            h2 { font-size: 2rem; }
+            h1 { font-size: 2.75rem; }
+            h2 { font-size: 2.25rem; }
             h3 { font-size: 1.75rem; }
         }
         
         p {
-            margin-bottom: 1rem;
+            margin-bottom: 1.25rem;
+            line-height: 1.7;
         }
         
         a {
             color: var(--accent-blue);
             text-decoration: none;
             transition: var(--transition);
+            font-weight: 500;
         }
         
         a:hover {
-            opacity: 0.8;
+            color: #1d4ed8;
+            text-decoration: underline;
         }
         
         /* Layout */
@@ -113,15 +117,18 @@
         }
         
         .logo-img {
-            height: 45px;
+            height: 55px;
             width: auto;
             object-fit: contain;
         }
         
         .logo-text {
-            font-size: 1.25rem;
-            font-weight: 700;
+            font-size: 1.5rem;
+            font-weight: 800;
             color: var(--black);
+            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-green) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             display: none;
         }
         
@@ -130,7 +137,7 @@
                 display: block;
             }
             .logo-img {
-                height: 50px;
+                height: 60px;
             }
         }
         
@@ -162,9 +169,10 @@
             left: 0;
             right: 0;
             background-color: var(--white);
-            box-shadow: var(--shadow);
+            box-shadow: var(--shadow-lg);
             padding: 1rem;
-            gap: 1rem;
+            gap: 0.5rem;
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
         }
         
         .nav-links.active {
@@ -172,15 +180,18 @@
         }
         
         .nav-links a {
-            padding: 0.75rem 1rem;
+            padding: 1rem 1.25rem;
             border-radius: var(--border-radius);
-            font-weight: 500;
+            font-weight: 600;
             color: var(--dark-gray);
+            transition: all 0.3s ease;
         }
         
         .nav-links a:hover {
             background-color: var(--off-white);
-            color: var(--black);
+            color: var(--accent-blue);
+            transform: translateX(5px);
+            text-decoration: none;
         }
         
         @media (min-width: 768px) {
@@ -205,32 +216,49 @@
             .nav-links a:hover {
                 background: none;
                 color: var(--accent-blue);
+                transform: translateY(-2px);
             }
         }
         
         /* Hero Section */
         .hero {
-            background-color: var(--off-white);
-            padding: 6rem 0 3rem;
+            background: linear-gradient(135deg, var(--off-white) 0%, #f0f7ff 100%);
+            padding: 7rem 0 4rem;
             margin-top: 60px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232563eb' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
         
         .hero-content {
             max-width: 800px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
         
         /* Search Bar */
         .search-container {
             width: 100%;
-            margin: 2rem auto;
+            margin: 2.5rem auto;
         }
         
         .search-box {
             display: flex;
             flex-direction: column;
             gap: 1rem;
+            max-width: 700px;
+            margin: 0 auto;
         }
         
         @media (min-width: 640px) {
@@ -241,45 +269,47 @@
         
         .search-input {
             flex: 1;
-            padding: 1rem 1.25rem;
+            padding: 1.125rem 1.5rem;
             border: 2px solid var(--light-gray);
             border-radius: var(--border-radius);
-            font-size: 1rem;
+            font-size: 1.1rem;
             transition: var(--transition);
-            min-height: 56px;
+            min-height: 58px;
+            background-color: var(--white);
         }
         
         .search-input:focus {
             outline: none;
             border-color: var(--accent-blue);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
         }
         
         .search-btn {
-            padding: 1rem 2rem;
-            background-color: var(--accent-blue);
+            padding: 1.125rem 2.5rem;
+            background: linear-gradient(135deg, var(--accent-blue) 0%, #1d4ed8 100%);
             color: var(--white);
             border: none;
             border-radius: var(--border-radius);
             cursor: pointer;
-            font-weight: 600;
-            font-size: 1rem;
+            font-weight: 700;
+            font-size: 1.1rem;
             transition: var(--transition);
-            min-height: 56px;
+            min-height: 58px;
             white-space: nowrap;
+            letter-spacing: 0.5px;
         }
         
         .search-btn:hover {
-            background-color: #1d4ed8;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
         }
         
         /* School Cards */
         .schools-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 1.5rem;
-            padding: 3rem 0;
+            gap: 1.75rem;
+            padding: 3.5rem 0;
         }
         
         @media (min-width: 640px) {
@@ -300,47 +330,60 @@
             border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--shadow);
-            transition: var(--transition);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             border: 1px solid var(--light-gray);
             display: flex;
             flex-direction: column;
+            height: 100%;
         }
         
         .school-card:hover {
-            transform: translateY(-4px);
+            transform: translateY(-8px);
             box-shadow: var(--shadow-lg);
+            border-color: var(--accent-blue);
         }
         
         .school-image {
-            height: 180px;
-            background-color: var(--light-gray);
+            height: 200px;
+            background: linear-gradient(135deg, #f0f7ff 0%, #e6f0ff 100%);
             position: relative;
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .school-logo-small {
             position: absolute;
-            top: 1rem;
-            right: 1rem;
-            width: 50px;
-            height: 50px;
+            top: 1.25rem;
+            right: 1.25rem;
+            width: 65px;
+            height: 65px;
             background-color: var(--white);
-            border-radius: 8px;
-            padding: 0.5rem;
-            box-shadow: var(--shadow);
+            border-radius: 12px;
+            padding: 0.75rem;
+            box-shadow: var(--shadow-lg);
             display: flex;
             align-items: center;
             justify-content: center;
+            border: 2px solid var(--light-gray);
+            transition: var(--transition);
+        }
+        
+        .school-card:hover .school-logo-small {
+            transform: scale(1.1);
+            border-color: var(--accent-blue);
         }
         
         .school-logo-small img {
             max-width: 100%;
             max-height: 100%;
             object-fit: contain;
+            transition: var(--transition);
         }
         
         .school-content {
-            padding: 1.25rem;
+            padding: 1.75rem;
             flex: 1;
             display: flex;
             flex-direction: column;
@@ -350,13 +393,13 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 0.75rem;
+            margin-bottom: 1rem;
             gap: 0.75rem;
         }
         
         .school-name {
-            font-size: 1.25rem;
-            font-weight: 600;
+            font-size: 1.375rem;
+            font-weight: 700;
             color: var(--black);
             line-height: 1.3;
             flex: 1;
@@ -365,156 +408,214 @@
         .school-rating {
             display: flex;
             align-items: center;
-            gap: 0.25rem;
+            gap: 0.375rem;
             color: var(--medium-gray);
             white-space: nowrap;
+            background-color: var(--off-white);
+            padding: 0.375rem 0.75rem;
+            border-radius: 20px;
         }
         
         .stars {
             color: #fbbf24;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            letter-spacing: -1px;
         }
         
         .school-location {
             color: var(--medium-gray);
-            margin-bottom: 1rem;
+            margin-bottom: 1.25rem;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            font-size: 0.9rem;
+            gap: 0.625rem;
+            font-size: 0.95rem;
         }
         
         .school-type {
             display: inline-block;
-            padding: 0.375rem 0.875rem;
-            background-color: var(--off-white);
-            border-radius: 20px;
-            font-size: 0.85rem;
-            margin-bottom: 1rem;
+            padding: 0.5rem 1.25rem;
+            background: linear-gradient(135deg, var(--off-white) 0%, #e6f0ff 100%);
+            border-radius: 25px;
+            font-size: 0.9rem;
+            margin-bottom: 1.25rem;
             color: var(--dark-gray);
+            font-weight: 600;
+            border: 1px solid var(--light-gray);
         }
         
         .school-metrics {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 0.75rem;
-            margin-bottom: 1rem;
+            gap: 0.875rem;
+            margin-bottom: 1.5rem;
         }
         
         .metric {
             text-align: center;
-            padding: 0.5rem;
+            padding: 0.75rem 0.5rem;
             background-color: var(--off-white);
-            border-radius: 8px;
+            border-radius: 10px;
+            transition: var(--transition);
+        }
+        
+        .metric:hover {
+            background-color: #e6f0ff;
+            transform: translateY(-2px);
         }
         
         .metric-value {
-            font-size: 1.125rem;
-            font-weight: 600;
-            color: var(--black);
+            font-size: 1.375rem;
+            font-weight: 800;
+            color: var(--accent-blue);
             display: block;
+            line-height: 1.2;
         }
         
         .metric-label {
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             color: var(--medium-gray);
             display: block;
             margin-top: 0.25rem;
+            font-weight: 500;
         }
         
         .facility-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
-            margin-bottom: 1.25rem;
+            margin-bottom: 1.5rem;
         }
         
         .facility-tag {
-            padding: 0.375rem 0.75rem;
+            padding: 0.5rem 0.875rem;
             background-color: var(--off-white);
-            border-radius: 4px;
-            font-size: 0.75rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
             color: var(--dark-gray);
+            font-weight: 500;
+            border: 1px solid var(--light-gray);
+            transition: var(--transition);
+        }
+        
+        .facility-tag:hover {
+            background-color: #e6f0ff;
+            border-color: var(--accent-blue);
+            transform: translateY(-2px);
         }
         
         .view-details {
             display: inline-block;
-            padding: 0.875rem 1.5rem;
-            background-color: var(--accent-blue);
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--accent-blue) 0%, #1d4ed8 100%);
             color: var(--white);
             border: none;
             border-radius: var(--border-radius);
-            font-weight: 600;
+            font-weight: 700;
             text-align: center;
-            transition: var(--transition);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             width: 100%;
             cursor: pointer;
             font-size: 1rem;
+            letter-spacing: 0.5px;
+            margin-top: auto;
         }
         
         .view-details:hover {
-            background-color: #1d4ed8;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
+            text-decoration: none;
+            color: var(--white);
         }
         
-        /* School Detail Page */
+        /* School Detail Page - Enhanced Styles */
         .school-detail {
-            padding: 5rem 0 3rem;
+            padding: 6rem 0 4rem;
+            background: linear-gradient(135deg, #f8fafc 0%, #f0f7ff 100%);
+            min-height: 100vh;
         }
         
         .back-button {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 2rem;
-            padding: 0.75rem 1.5rem;
-            background-color: var(--off-white);
+            gap: 0.75rem;
+            margin-bottom: 2.5rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--white) 0%, var(--off-white) 100%);
             border-radius: var(--border-radius);
             color: var(--dark-gray);
-            font-weight: 500;
-            transition: var(--transition);
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 2px solid var(--light-gray);
+            font-size: 1.05rem;
         }
         
         .back-button:hover {
-            background-color: var(--light-gray);
-            color: var(--black);
+            background: linear-gradient(135deg, var(--off-white) 0%, #e6f0ff 100%);
+            color: var(--accent-blue);
+            border-color: var(--accent-blue);
+            transform: translateX(-5px);
+            box-shadow: var(--shadow);
+            text-decoration: none;
         }
         
         .school-header-detail {
             display: flex;
             flex-direction: column;
-            gap: 2rem;
-            margin-bottom: 3rem;
-            background-color: var(--white);
-            padding: 2rem;
+            gap: 2.5rem;
+            margin-bottom: 3.5rem;
+            background: linear-gradient(135deg, var(--white) 0%, #f8fafc 100%);
+            padding: 3rem;
             border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--light-gray);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .school-header-detail::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-green) 100%);
         }
         
         @media (min-width: 768px) {
             .school-header-detail {
                 flex-direction: row;
                 align-items: flex-start;
+                padding: 3.5rem;
             }
         }
         
         .school-logo-large {
-            width: 120px;
-            height: 120px;
-            background-color: var(--white);
-            border-radius: var(--border-radius);
-            padding: 1rem;
-            box-shadow: var(--shadow);
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, var(--white) 0%, var(--off-white) 100%);
+            border-radius: 20px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow-lg);
             display: flex;
             align-items: center;
             justify-content: center;
+            border: 3px solid var(--light-gray);
             flex-shrink: 0;
+            transition: var(--transition);
+        }
+        
+        .school-logo-large:hover {
+            transform: rotate(5deg) scale(1.05);
+            border-color: var(--accent-blue);
+            box-shadow: 0 15px 35px rgba(37, 99, 235, 0.2);
         }
         
         .school-logo-large img {
             max-width: 100%;
             max-height: 100%;
             object-fit: contain;
+            transition: var(--transition);
         }
         
         .school-info {
@@ -524,68 +625,85 @@
         .school-motto {
             font-style: italic;
             color: var(--medium-gray);
-            margin-bottom: 1rem;
-            font-size: 1.125rem;
-            line-height: 1.4;
+            margin-bottom: 1.5rem;
+            font-size: 1.25rem;
+            line-height: 1.5;
+            padding-left: 1.5rem;
+            border-left: 3px solid var(--accent-blue);
+            background-color: var(--off-white);
+            padding: 1.25rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
         }
         
         .action-buttons {
             display: flex;
             flex-wrap: wrap;
             gap: 1rem;
-            margin-top: 1.5rem;
+            margin-top: 2rem;
         }
         
         .btn {
-            padding: 0.875rem 1.75rem;
+            padding: 1rem 2.25rem;
             border-radius: var(--border-radius);
-            font-weight: 600;
+            font-weight: 700;
             cursor: pointer;
-            transition: var(--transition);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             border: none;
-            font-size: 1rem;
+            font-size: 1.05rem;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 0.5rem;
-            min-height: 48px;
+            gap: 0.75rem;
+            min-height: 52px;
         }
         
         .btn-primary {
-            background-color: var(--accent-blue);
+            background: linear-gradient(135deg, var(--accent-blue) 0%, #1d4ed8 100%);
             color: var(--white);
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
         }
         
         .btn-primary:hover {
-            background-color: #1d4ed8;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+            text-decoration: none;
+            color: var(--white);
         }
         
         .btn-secondary {
-            background-color: transparent;
+            background: linear-gradient(135deg, var(--white) 0%, var(--off-white) 100%);
             color: var(--dark-gray);
             border: 2px solid var(--light-gray);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
         
         .btn-secondary:hover {
-            background-color: var(--off-white);
-            border-color: var(--medium-gray);
-            transform: translateY(-2px);
+            background: linear-gradient(135deg, var(--off-white) 0%, #e6f0ff 100%);
+            border-color: var(--accent-blue);
+            color: var(--accent-blue);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.2);
+            text-decoration: none;
         }
         
         /* Tabs */
         .tabs {
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
         }
         
         .tab-nav {
             display: flex;
             overflow-x: auto;
-            gap: 0.5rem;
-            padding-bottom: 0.5rem;
-            margin-bottom: 2rem;
+            gap: 0;
+            background-color: var(--off-white);
+            padding: 0.5rem;
             scrollbar-width: none;
             -ms-overflow-style: none;
+            border-bottom: 2px solid var(--light-gray);
         }
         
         .tab-nav::-webkit-scrollbar {
@@ -593,32 +711,41 @@
         }
         
         .tab-btn {
-            padding: 1rem 1.5rem;
-            background: var(--off-white);
+            padding: 1.25rem 2rem;
+            background: transparent;
             border: none;
-            font-size: 1rem;
-            font-weight: 600;
+            font-size: 1.1rem;
+            font-weight: 700;
             color: var(--medium-gray);
             cursor: pointer;
-            transition: var(--transition);
+            transition: all 0.3s ease;
             white-space: nowrap;
-            border-radius: var(--border-radius);
+            border-radius: 8px;
             flex-shrink: 0;
+            position: relative;
         }
         
         .tab-btn.active {
-            background-color: var(--accent-blue);
+            background: linear-gradient(135deg, var(--accent-blue) 0%, #1d4ed8 100%);
             color: var(--white);
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+        
+        .tab-btn:not(.active):hover {
+            background-color: var(--white);
+            color: var(--accent-blue);
+            transform: translateY(-2px);
         }
         
         .tab-content {
             display: none;
-            animation: fadeIn 0.3s ease;
+            animation: fadeIn 0.4s ease;
+            padding: 2.5rem;
         }
         
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
         .tab-content.active {
@@ -629,7 +756,7 @@
         .info-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 1.5rem;
+            gap: 2rem;
             margin-bottom: 3rem;
         }
         
@@ -640,24 +767,58 @@
         }
         
         .info-card {
-            background-color: var(--off-white);
-            padding: 1.5rem;
+            background: linear-gradient(135deg, var(--white) 0%, #f8fafc 100%);
+            padding: 2.5rem;
             border-radius: var(--border-radius);
             border: 1px solid var(--light-gray);
+            box-shadow: var(--shadow);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .info-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-green) 100%);
+        }
+        
+        .info-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-blue);
         }
         
         .info-card h3 {
-            margin-bottom: 1rem;
+            margin-bottom: 1.75rem;
             color: var(--dark-gray);
-            font-size: 1.25rem;
+            font-size: 1.5rem;
+            position: relative;
+            padding-bottom: 0.75rem;
+        }
+        
+        .info-card h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-green) 100%);
+            border-radius: 2px;
         }
         
         .info-item {
-            margin-bottom: 0.75rem;
+            margin-bottom: 1.25rem;
             display: flex;
             justify-content: space-between;
-            padding-bottom: 0.5rem;
+            padding-bottom: 0.875rem;
             border-bottom: 1px solid var(--light-gray);
+            align-items: center;
         }
         
         .info-item:last-child {
@@ -666,24 +827,27 @@
         }
         
         .info-label {
-            font-weight: 500;
+            font-weight: 600;
             color: var(--medium-gray);
-            font-size: 0.95rem;
+            font-size: 1rem;
+            flex: 1;
         }
         
         .info-value {
             color: var(--black);
             text-align: right;
-            font-weight: 500;
-            font-size: 0.95rem;
+            font-weight: 700;
+            font-size: 1.05rem;
+            flex: 1;
+            padding-left: 1rem;
         }
         
         /* Facilities Grid */
         .facilities-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            margin-bottom: 2rem;
+            gap: 1.25rem;
+            margin-bottom: 2.5rem;
         }
         
         @media (min-width: 640px) {
@@ -701,20 +865,40 @@
         .facility-item {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
-            padding: 1rem;
-            background-color: var(--off-white);
+            gap: 1rem;
+            padding: 1.25rem;
+            background: linear-gradient(135deg, var(--off-white) 0%, #f0f7ff 100%);
             border-radius: var(--border-radius);
             border: 1px solid var(--light-gray);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .facility-item:hover {
+            background: linear-gradient(135deg, var(--accent-blue) 0%, #1d4ed8 100%);
+            color: var(--white);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+            border-color: var(--accent-blue);
+        }
+        
+        .facility-item:hover .facility-icon {
+            background-color: var(--white);
+            color: var(--accent-blue);
         }
         
         .facility-icon {
-            width: 20px;
-            height: 20px;
+            width: 24px;
+            height: 24px;
             flex-shrink: 0;
             display: flex;
             align-items: center;
             justify-content: center;
+            background-color: var(--accent-blue);
+            color: var(--white);
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: var(--transition);
         }
         
         /* Reviews */
@@ -723,74 +907,116 @@
         }
         
         .review-card {
-            background-color: var(--off-white);
-            padding: 1.5rem;
+            background: linear-gradient(135deg, var(--white) 0%, #f8fafc 100%);
+            padding: 2.5rem;
             border-radius: var(--border-radius);
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             border: 1px solid var(--light-gray);
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .review-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background: linear-gradient(135deg, var(--accent-green) 0%, var(--accent-blue) 100%);
+        }
+        
+        .review-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-blue);
         }
         
         .review-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             flex-wrap: wrap;
-            gap: 0.75rem;
+            gap: 1rem;
         }
         
         .reviewer-info {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
+            gap: 1rem;
+            flex-wrap: wrap;
         }
         
         .reviewer-type {
-            padding: 0.25rem 0.75rem;
-            background-color: var(--light-gray);
-            border-radius: 4px;
-            font-size: 0.75rem;
+            padding: 0.375rem 1rem;
+            background: linear-gradient(135deg, var(--off-white) 0%, #e6f0ff 100%);
+            border-radius: 20px;
+            font-size: 0.85rem;
             color: var(--medium-gray);
+            font-weight: 600;
+            border: 1px solid var(--light-gray);
         }
         
         .review-stars {
             color: #fbbf24;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
+            letter-spacing: -1px;
         }
         
         /* Rating Form */
         .rating-form {
-            background-color: var(--off-white);
-            padding: 2rem;
+            background: linear-gradient(135deg, var(--white) 0%, #f8fafc 100%);
+            padding: 3rem;
             border-radius: var(--border-radius);
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
             border: 1px solid var(--light-gray);
+            box-shadow: var(--shadow);
         }
         
         .rating-form h3 {
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--dark-gray);
+            font-size: 1.75rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .rating-form h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-green) 100%);
+            border-radius: 2px;
         }
         
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
         
         .form-group label {
             display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
             color: var(--dark-gray);
+            font-size: 1.05rem;
         }
         
         .form-group input,
         .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 0.875rem 1rem;
+            padding: 1.125rem 1.5rem;
             border: 2px solid var(--light-gray);
             border-radius: var(--border-radius);
-            font-size: 1rem;
-            transition: var(--transition);
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            background-color: var(--white);
         }
         
         .form-group input:focus,
@@ -798,18 +1024,21 @@
         .form-group textarea:focus {
             outline: none;
             border-color: var(--accent-blue);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+            background-color: var(--off-white);
         }
         
         .form-group textarea {
-            min-height: 120px;
+            min-height: 150px;
             resize: vertical;
+            line-height: 1.6;
         }
         
         .star-rating {
             display: flex;
-            gap: 0.5rem;
-            margin: 0.5rem 0;
+            gap: 0.75rem;
+            margin: 1rem 0 2rem;
+            justify-content: center;
         }
         
         .star-rating input {
@@ -817,44 +1046,66 @@
         }
         
         .star-rating label {
-            font-size: 2rem;
+            font-size: 3rem;
             color: var(--light-gray);
             cursor: pointer;
-            transition: var(--transition);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         
         .star-rating input:checked ~ label,
         .star-rating label:hover,
         .star-rating label:hover ~ label {
             color: #fbbf24;
+            transform: scale(1.2);
+            text-shadow: 0 4px 8px rgba(251, 191, 36, 0.3);
         }
         
         .rating-submit-btn {
-            background-color: var(--accent-blue);
+            background: linear-gradient(135deg, var(--accent-green) 0%, #059669 100%);
             color: var(--white);
-            padding: 1rem 2rem;
+            padding: 1.25rem 3rem;
             border: none;
             border-radius: var(--border-radius);
-            font-weight: 600;
+            font-weight: 700;
             cursor: pointer;
-            transition: var(--transition);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             width: 100%;
-            font-size: 1rem;
+            font-size: 1.15rem;
+            letter-spacing: 0.5px;
+            margin-top: 1rem;
         }
         
         .rating-submit-btn:hover {
-            background-color: #1d4ed8;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
         }
         
-        /* Map */
+        /* Map - No API Version */
         .map-container {
-            height: 400px;
+            height: 450px;
             background-color: var(--light-gray);
             border-radius: var(--border-radius);
             margin-bottom: 3rem;
             overflow: hidden;
             position: relative;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--light-gray);
+        }
+        
+        .map-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            filter: grayscale(0.2) contrast(1.1);
+        }
+        
+        .static-map {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background-color: var(--off-white);
         }
         
         .map-placeholder {
@@ -865,27 +1116,48 @@
             align-items: center;
             justify-content: center;
             color: var(--medium-gray);
-            padding: 2rem;
+            padding: 3rem;
             text-align: center;
+            background: linear-gradient(135deg, var(--off-white) 0%, #f0f7ff 100%);
+        }
+        
+        .map-placeholder svg {
+            margin-bottom: 1.5rem;
+            opacity: 0.7;
         }
         
         /* Footer */
         .footer {
-            background-color: var(--dark-gray);
+            background: linear-gradient(135deg, var(--dark-gray) 0%, #1a1a1a 100%);
             color: var(--white);
-            padding: 3rem 0;
-            margin-top: 4rem;
+            padding: 4rem 0;
+            margin-top: 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-green) 100%);
         }
         
         .footer-content {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 2rem;
+            gap: 3rem;
+            position: relative;
+            z-index: 1;
         }
         
         @media (min-width: 768px) {
             .footer-content {
                 grid-template-columns: repeat(3, 1fr);
+                gap: 4rem;
             }
         }
         
@@ -895,50 +1167,78 @@
         
         .footer-section h3 {
             color: var(--white);
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-green) 100%);
+            border-radius: 2px;
+        }
+        
+        .footer-section p {
+            color: #d1d5db;
             margin-bottom: 1.5rem;
-            font-size: 1.25rem;
+            line-height: 1.7;
         }
         
         .footer-section a {
-            color: var(--light-gray);
+            color: #d1d5db;
             display: block;
-            margin-bottom: 0.75rem;
-            transition: var(--transition);
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+            font-weight: 500;
         }
         
         .footer-section a:hover {
             color: var(--white);
-            transform: translateX(5px);
+            transform: translateX(8px);
+            text-decoration: none;
         }
         
         .manufacturer-logos {
             display: flex;
             flex-wrap: wrap;
-            gap: 1.5rem;
+            gap: 2rem;
             align-items: center;
-            justify-content: center;
-            margin: 2rem 0;
+            justify-content: flex-start;
+            margin: 2rem 0 3rem;
         }
         
         .manufacturer-logo {
-            height: 40px;
+            height: 60px;
             width: auto;
-            opacity: 0.8;
-            transition: var(--transition);
+            opacity: 0.85;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            filter: brightness(0) invert(1);
         }
         
         .manufacturer-logo:hover {
             opacity: 1;
-            transform: scale(1.05);
+            transform: scale(1.1);
+            filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
         }
         
         .copyright {
             text-align: center;
-            padding-top: 2rem;
-            margin-top: 2rem;
-            border-top: 1px solid var(--medium-gray);
-            color: var(--light-gray);
-            font-size: 0.9rem;
+            padding-top: 3rem;
+            margin-top: 3rem;
+            border-top: 1px solid #4b5563;
+            color: #9ca3af;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .copyright p {
+            margin-bottom: 0.5rem;
         }
         
         /* Loading */
@@ -953,17 +1253,19 @@
         /* Toast Notification */
         .toast {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: var(--accent-blue);
+            bottom: 25px;
+            right: 25px;
+            background: linear-gradient(135deg, var(--accent-green) 0%, #059669 100%);
             color: var(--white);
-            padding: 1rem 1.5rem;
+            padding: 1.25rem 2rem;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow-lg);
             z-index: 1001;
             transform: translateY(100px);
             opacity: 0;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            max-width: 400px;
+            font-weight: 600;
         }
         
         .toast.show {
@@ -989,80 +1291,33 @@
         
         /* Touch friendly enhancements */
         @media (hover: none) {
-            .school-card:hover {
+            .school-card:hover,
+            .btn:hover,
+            .search-btn:hover,
+            .view-details:hover,
+            .info-card:hover,
+            .facility-item:hover,
+            .review-card:hover {
                 transform: none;
             }
             
-            .btn:hover,
-            .search-btn:hover,
-            .view-details:hover {
-                transform: none;
+            .school-card:hover {
+                box-shadow: var(--shadow);
             }
         }
         
         
         /* Additional styles for index page */
-        .filter-section {
-            background-color: var(--off-white);
-            padding: 1.5rem;
-            border-radius: var(--border-radius);
-            margin-bottom: 2rem;
-            border: 1px solid var(--light-gray);
-        }
-        
-        .filter-groups {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            margin-top: 1.5rem;
-        }
-        
-        @media (min-width: 768px) {
-            .filter-groups {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            }
-        }
-        
-        .filter-group h4 {
-            margin-bottom: 1rem;
-            color: var(--dark-gray);
-            font-size: 1.1rem;
-        }
-        
-        .filter-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-        
-        .filter-btn {
-            padding: 0.625rem 1.25rem;
-            background-color: var(--white);
-            border: 1px solid var(--light-gray);
-            border-radius: 20px;
-            color: var(--medium-gray);
-            cursor: pointer;
-            transition: var(--transition);
-            font-size: 0.875rem;
-            font-weight: 500;
-        }
-        
-        .filter-btn:hover,
-        .filter-btn.active {
-            background-color: var(--accent-blue);
-            color: var(--white);
-            border-color: var(--accent-blue);
-        }
-        
         .stats-bar {
-            background-color: var(--off-white);
-            padding: 1.5rem;
+            background: linear-gradient(135deg, var(--white) 0%, #f8fafc 100%);
+            padding: 2.5rem;
             border-radius: var(--border-radius);
-            margin: 2rem 0;
+            margin: 2.5rem 0;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
+            gap: 2rem;
             border: 1px solid var(--light-gray);
+            box-shadow: var(--shadow);
         }
         
         @media (min-width: 640px) {
@@ -1073,20 +1328,35 @@
         
         .stat-item {
             text-align: center;
+            padding: 1.5rem;
+            background: var(--off-white);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+        
+        .stat-item:hover {
+            background: #e6f0ff;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.1);
         }
         
         .stat-number {
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--black);
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent-blue);
             display: block;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-green) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         
         .stat-label {
-            font-size: 0.875rem;
+            font-size: 1rem;
             color: var(--medium-gray);
             display: block;
-            margin-top: 0.25rem;
+            font-weight: 600;
         }
     </style>
 </head>
@@ -1117,13 +1387,13 @@
         <div class="container">
             <div class="hero-content">
                 <h1>Find the Perfect School in Zimbabwe</h1>
-                <p>Find the perfect school in Zimbabwe with detailed information, reviews, and comparisons.</p>
+                <p style="font-size: 1.3rem; line-height: 1.7;">Find the perfect school in Zimbabwe with detailed information, reviews, and comparisons.</p>
                 
             <div class="container mt-3">
                 <div class="search-container">
                     <div class="search-box">
-                        <input type="text" class="search-input" placeholder="Search by school name, city, or province...">
-                        <button class="search-btn">Search</button>
+                        <input type="text" class="search-input" placeholder="Search by school name, city, province, or type...">
+                        <button class="search-btn">Search Schools</button>
                     </div>
                 </div>
             </div>
@@ -1188,16 +1458,77 @@
                 </div>
             </div>
             
+            <style>
+                .filter-section {
+                    background: linear-gradient(135deg, var(--white) 0%, #f8fafc 100%);
+                    padding: 2.5rem;
+                    border-radius: var(--border-radius);
+                    margin-bottom: 2.5rem;
+                    border: 1px solid var(--light-gray);
+                    box-shadow: var(--shadow);
+                }
+                
+                .filter-groups {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    gap: 2.5rem;
+                    margin-top: 1.75rem;
+                }
+                
+                @media (min-width: 768px) {
+                    .filter-groups {
+                        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                    }
+                }
+                
+                .filter-group h4 {
+                    margin-bottom: 1.25rem;
+                    color: var(--dark-gray);
+                    font-size: 1.2rem;
+                    font-weight: 600;
+                }
+                
+                .filter-buttons {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 0.75rem;
+                }
+                
+                .filter-btn {
+                    padding: 0.875rem 1.75rem;
+                    background: linear-gradient(135deg, var(--off-white) 0%, #f0f7ff 100%);
+                    border: 2px solid var(--light-gray);
+                    border-radius: 25px;
+                    color: var(--medium-gray);
+                    cursor: pointer;
+                    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                    font-size: 1rem;
+                    font-weight: 600;
+                }
+                
+                .filter-btn:hover,
+                .filter-btn.active {
+                    background: linear-gradient(135deg, var(--accent-blue) 0%, #1d4ed8 100%);
+                    color: var(--white);
+                    border-color: var(--accent-blue);
+                    transform: translateY(-2px);
+                    box-shadow: 0 6px 15px rgba(37, 99, 235, 0.3);
+                }
+            </style>
+            
     
             <div class="container mt-3">
                 <h2>School Locations</h2>
                 <div id="map" class="map-container">
                     <div class="map-placeholder">
-                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z"/>
                             <circle cx="12" cy="10" r="3"/>
                         </svg>
-                        <p style="margin-top: 1rem;">Loading map data...</p>
+                        <p style="margin-top: 1.5rem; font-size: 1.2rem; font-weight: 600;">Loading School Locations...</p>
+                        <p style="margin-top: 0.75rem; color: var(--medium-gray); max-width: 500px; margin-left: auto; margin-right: auto;">
+                            Interactive maps and location links will appear here for schools with coordinate data.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -1205,18 +1536,25 @@
 
     <!-- Schools Grid -->
     <section id="schools" class="container">
-        <h2>All Schools</h2>
+        <h2 style="font-size: 2.25rem; margin-bottom: 2.5rem; text-align: center;">Explore Our Schools</h2>
         <div id="schools-container" class="schools-grid">
             <!-- Schools will be rendered here by JavaScript -->
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="container mt-3">
-        <div class="info-card">
-            <h2>About Scholastic Services</h2>
-            <p>Scholastic Services is Zimbabwe's premier platform for comprehensive school information. We provide detailed insights, reviews, and comparisons to help parents and students make informed decisions about education.</p>
-            <p>Our mission is to connect families with the perfect educational institutions through transparent information and community-driven reviews.</p>
+    <section id="about" class="container mt-3" style="padding-top: 4rem; padding-bottom: 4rem;">
+        <div class="info-card" style="max-width: 900px; margin: 0 auto;">
+            <h2 style="font-size: 2.25rem; margin-bottom: 1.5rem;">About Scholastic Services</h2>
+            <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
+                Scholastic Services is Zimbabwe's premier platform for comprehensive school information, dedicated to helping parents and students make informed decisions about education.
+            </p>
+            <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
+                Our mission is to connect families with the perfect educational institutions through transparent information, detailed reviews, and community-driven insights.
+            </p>
+            <p style="font-size: 1.1rem; line-height: 1.8;">
+                We believe every child deserves access to quality education, and we're committed to making the school selection process easier and more transparent for everyone.
+            </p>
         </div>
     </section>
 
@@ -1226,7 +1564,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Scholastic Services Zimbabwe</h3>
-                    <p>Comprehensive school information platform for Zimbabwe.</p>
+                    <p>Zimbabwe's premier platform for comprehensive school information and reviews.</p>
                     <div class="manufacturer-logos">
                         <img src="data:image/png;base64,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" alt="High Voltage Software Technologies" class="manufacturer-logo">
                     </div>
@@ -1248,7 +1586,7 @@
             <div class="copyright">
                 <p>&copy; 2025 Scholastic Services Zimbabwe. All rights reserved.</p>
                 <p>Developed by <strong>High Voltage Software Technologies</strong> | Est. 2025</p>
-                <p>Generated on 2025-12-23 12:43:54</p>
+                <p>Generated on 2025-12-24 01:42:26</p>
             </div>
         </div>
     </footer>
@@ -1272,8 +1610,8 @@
             // Render all schools initially
             renderSchools(schools);
             
-            // Initialize map
-            initMap();
+            // Initialize map (no API version)
+            initNoApiMap();
         });
         
         // Mobile menu functionality
@@ -1323,7 +1661,8 @@
                         school.name.toLowerCase().includes(searchTerm) ||
                         school.city.toLowerCase().includes(searchTerm) ||
                         school.province.toLowerCase().includes(searchTerm) ||
-                        school.level.toLowerCase().includes(searchTerm)
+                        school.level.toLowerCase().includes(searchTerm) ||
+                        school.school_type.toLowerCase().includes(searchTerm)
                     );
                 });
                 
@@ -1417,75 +1756,180 @@
             form.addEventListener('submit', function(e) {
                 e.preventDefault();
                 
+                // Get school ID from URL or form
+                const urlParams = new URLSearchParams(window.location.search);
+                const schoolSlug = window.location.pathname.split('/').pop().replace('.html', '');
+                
                 const formData = {
-                    school_id: new URLSearchParams(window.location.search).get('id'),
-                    name: this.querySelector('[name="name"]').value,
-                    email: this.querySelector('[name="email"]').value,
-                    rating: this.querySelector('[name="rating"]:checked')?.value,
-                    title: this.querySelector('[name="title"]').value,
-                    review: this.querySelector('[name="review"]').value,
-                    pros: this.querySelector('[name="pros"]').value,
-                    cons: this.querySelector('[name="cons"]').value
+                    school_slug: schoolSlug,
+                    school_id: urlParams.get('id') || this.querySelector('[name="school_id"]')?.value,
+                    name: this.querySelector('[name="name"]').value.trim(),
+                    email: this.querySelector('[name="email"]').value.trim(),
+                    rating: this.querySelector('[name="rating"]:checked')?.value || 0,
+                    title: this.querySelector('[name="title"]').value.trim(),
+                    review: this.querySelector('[name="review"]').value.trim(),
+                    pros: this.querySelector('[name="pros"]').value.trim(),
+                    cons: this.querySelector('[name="cons"]').value.trim(),
+                    date: new Date().toISOString().split('T')[0],
+                    timestamp: new Date().getTime()
                 };
                 
-                // In a real application, you would send this data to a server
-                // For GitHub Pages, we'll store in localStorage
-                const reviews = JSON.parse(localStorage.getItem('school_reviews') || '{}');
-                if (!reviews[formData.school_id]) {
-                    reviews[formData.school_id] = [];
+                // Validate required fields
+                if (!formData.name || !formData.rating || !formData.title || !formData.review) {
+                    showToast('Please fill in all required fields');
+                    return;
                 }
-                reviews[formData.school_id].push({
-                    ...formData,
-                    date: new Date().toISOString().split('T')[0]
-                });
-                localStorage.setItem('school_reviews', JSON.stringify(reviews));
+                
+                // Store in localStorage
+                const reviews = JSON.parse(localStorage.getItem('scholastic_reviews') || '{}');
+                if (!reviews[formData.school_slug]) {
+                    reviews[formData.school_slug] = [];
+                }
+                
+                // Add new review
+                reviews[formData.school_slug].push(formData);
+                localStorage.setItem('scholastic_reviews', JSON.stringify(reviews));
                 
                 // Show success message
-                showToast('Thank you for your review!');
+                showToast('Thank you for your review! It has been saved locally.');
                 
                 // Reset form
                 this.reset();
                 
                 // Reload reviews
-                loadLocalReviews();
+                loadLocalReviews(formData.school_slug);
             });
             
             // Load reviews from localStorage
-            function loadLocalReviews() {
-                const schoolId = new URLSearchParams(window.location.search).get('id');
-                if (!schoolId) return;
-                
-                const reviews = JSON.parse(localStorage.getItem('school_reviews') || '{}');
-                const schoolReviews = reviews[schoolId] || [];
-                
+            function loadLocalReviews(schoolSlug) {
                 const reviewsContainer = document.querySelector('.reviews-container');
-                if (!reviewsContainer || schoolReviews.length === 0) return;
+                if (!reviewsContainer) return;
                 
-                // Add local reviews to the reviews section
-                schoolReviews.forEach(review => {
-                    const reviewElement = document.createElement('div');
-                    reviewElement.className = 'review-card';
-                    reviewElement.innerHTML = `
-                        <div class="review-header">
-                            <div class="reviewer-info">
-                                <strong>${review.name}</strong>
+                const reviews = JSON.parse(localStorage.getItem('scholastic_reviews') || '{}');
+                const schoolReviews = reviews[schoolSlug] || [];
+                
+                if (schoolReviews.length > 0) {
+                    // Add local reviews section if not exists
+                    let localSection = document.querySelector('.local-reviews-section');
+                    if (!localSection) {
+                        localSection = document.createElement('div');
+                        localSection.className = 'local-reviews-section';
+                        localSection.innerHTML = '<h3>Local Reviews</h3>';
+                        reviewsContainer.appendChild(localSection);
+                    }
+                    
+                    // Clear existing local reviews
+                    const existingLocalReviews = document.querySelectorAll('.local-review-card');
+                    existingLocalReviews.forEach(review => review.remove());
+                    
+                    // Add local reviews
+                    schoolReviews.forEach(review => {
+                        const reviewElement = document.createElement('div');
+                        reviewElement.className = 'review-card local-review-card';
+                        reviewElement.innerHTML = `
+                            <div class="review-header">
+                                <div class="reviewer-info">
+                                    <strong>${review.name}</strong>
+                                    <span class="reviewer-type">Local Reviewer</span>
+                                </div>
+                                <div class="review-stars">${'★'.repeat(parseInt(review.rating)) + '☆'.repeat(5 - parseInt(review.rating))}</div>
                             </div>
-                            <div class="review-stars">${'★'.repeat(parseInt(review.rating)) + '☆'.repeat(5 - parseInt(review.rating))}</div>
-                        </div>
-                        <h4>${review.title}</h4>
-                        <p>${review.review}</p>
-                        ${review.pros ? `<div><strong>Pros:</strong> ${review.pros}</div>` : ''}
-                        ${review.cons ? `<div><strong>Cons:</strong> ${review.cons}</div>` : ''}
-                        <div style="margin-top: 1rem; color: var(--medium-gray); font-size: 0.875rem;">
-                            Reviewed on ${review.date} (Local Review)
-                        </div>
-                    `;
-                    reviewsContainer.appendChild(reviewElement);
-                });
+                            <h4>${review.title}</h4>
+                            <p>${review.review}</p>
+                            ${review.pros ? `<div style="margin-top: 1rem;"><strong>Pros:</strong> ${review.pros}</div>` : ''}
+                            ${review.cons ? `<div style="margin-top: 0.5rem;"><strong>Cons:</strong> ${review.cons}</div>` : ''}
+                            <div style="margin-top: 1rem; color: var(--medium-gray); font-size: 0.875rem;">
+                                Reviewed on ${review.date} (Saved Locally)
+                            </div>
+                        `;
+                        reviewsContainer.appendChild(reviewElement);
+                    });
+                }
             }
             
-            // Call on page load
-            loadLocalReviews();
+            // Load reviews on page load
+            const schoolSlug = window.location.pathname.split('/').pop().replace('.html', '');
+            if (schoolSlug) loadLocalReviews(schoolSlug);
+        }
+        
+        // Initialize no-API map
+        function initNoApiMap() {
+            const mapContainer = document.getElementById('map');
+            if (!mapContainer) return;
+            
+            // Check if we're on a school detail page
+            const schoolCoordsElement = document.getElementById('single-school-coords');
+            
+            if (schoolCoordsElement) {
+                // School detail page: create iframe with embedded Google Maps
+                const lat = schoolCoordsElement.dataset.lat;
+                const lng = schoolCoordsElement.dataset.lng;
+                const schoolName = encodeURIComponent(schoolCoordsElement.dataset.schoolName);
+                
+                if (lat && lng) {
+                    mapContainer.innerHTML = `
+                        <iframe 
+                            class="map-iframe"
+                            src="https://maps.google.com/maps?q=${lat},${lng}&z=15&output=embed"
+                            title="Location of ${schoolName}"
+                            allowfullscreen
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                        <div style="position: absolute; bottom: 10px; right: 10px; background: white; padding: 5px 10px; border-radius: 4px; font-size: 12px; color: var(--medium-gray);">
+                            <a href="https://maps.google.com/?q=${lat},${lng}" target="_blank" style="color: var(--accent-blue);">Open in Google Maps</a>
+                        </div>
+                    `;
+                }
+            } else {
+                // Main page: show list of schools with coordinates
+                const schoolsWithCoords = schools.filter(s => s.latitude && s.longitude);
+                
+                if (schoolsWithCoords.length > 0) {
+                    // Create a simple interactive list with links
+                    let mapContent = '<div style="padding: 2rem;">';
+                    mapContent += '<h3 style="margin-bottom: 1.5rem; color: var(--black);">School Locations</h3>';
+                    mapContent += '<div style="display: grid; grid-template-columns: 1fr; gap: 1rem;">';
+                    
+                    schoolsWithCoords.forEach(school => {
+                        mapContent += `
+                            <div style="background: white; padding: 1.25rem; border-radius: var(--border-radius); border: 1px solid var(--light-gray);">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                    <strong style="color: var(--black);">${school.name}</strong>
+                                    <span style="font-size: 0.875rem; color: var(--medium-gray);">${school.city}, ${school.province}</span>
+                                </div>
+                                <div style="display: flex; gap: 1rem; margin-top: 0.75rem;">
+                                    <a href="https://maps.google.com/?q=${school.latitude},${school.longitude}" 
+                                       target="_blank"
+                                       style="padding: 0.5rem 1rem; background: var(--accent-blue); color: white; border-radius: 6px; text-decoration: none; font-size: 0.875rem;">
+                                        View on Map
+                                    </a>
+                                    <a href="${getSchoolSlug(school)}.html"
+                                       style="padding: 0.5rem 1rem; background: var(--off-white); color: var(--dark-gray); border-radius: 6px; text-decoration: none; font-size: 0.875rem; border: 1px solid var(--light-gray);">
+                                        School Details
+                                    </a>
+                                </div>
+                            </div>
+                        `;
+                    });
+                    
+                    mapContent += '</div></div>';
+                    mapContainer.innerHTML = mapContent;
+                } else {
+                    mapContainer.innerHTML = `
+                        <div class="map-placeholder">
+                            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            <p style="margin-top: 1rem; font-size: 1.1rem;">School location data will appear here</p>
+                            <p style="margin-top: 0.5rem; color: var(--medium-gray); font-size: 0.95rem;">
+                                Schools with coordinates in the database will show interactive map links
+                            </p>
+                        </div>
+                    `;
+                }
+            }
         }
         
         // Render schools in grid
@@ -1494,15 +1938,40 @@
             if (!container) return;
             
             if (schoolsToRender.length === 0) {
-                container.innerHTML = '<div class="text-center" style="grid-column: 1/-1; padding: 4rem; color: var(--medium-gray);">No schools found matching your criteria.</div>';
+                container.innerHTML = `
+                    <div class="text-center" style="grid-column: 1/-1; padding: 5rem; color: var(--medium-gray); background: var(--off-white); border-radius: var(--border-radius);">
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="opacity: 0.5; margin-bottom: 1.5rem;">
+                            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                        </svg>
+                        <h3 style="margin-bottom: 1rem; color: var(--dark-gray);">No schools found</h3>
+                        <p>Try adjusting your search or filter criteria</p>
+                    </div>
+                `;
                 return;
             }
             
             container.innerHTML = schoolsToRender.map(school => {
-                const ratingStars = '★'.repeat(Math.floor(school.overall_rating || 0)) + '☆'.repeat(5 - Math.floor(school.overall_rating || 0));
-                const logoHtml = school.logo_filename ? 
-                    `<img src="assets/logos/${school.logo_filename}" alt="${school.name} Logo" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNUExQTFBIiBzdHJva2Utd2lkdGg9IjEuNSI+PHBhdGggZD0iTTIyIDlMMTIgNUwgMiA5TDEyIDEzTDIyIDlaIi8+PHBhdGggZD0iTTIgOVYxN0wxMiAyMUwyMiAxN1Y5Ii8+PHBhdGggZD0iTTEyIDEzVjIxIi8+PC9zdmc+'" />` :
-                    `<svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 9L12 5L2 9L12 13L22 9Z"/><path d="M2 9V17L12 21L22 17V9"/><path d="M12 13V21"/></svg>`;
+                const rating = school.overall_rating || 0;
+                const fullStars = Math.floor(rating);
+                const hasHalfStar = rating - fullStars >= 0.5;
+                const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+                
+                let stars = '★'.repeat(fullStars);
+                if (hasHalfStar) stars += '½';
+                stars += '☆'.repeat(emptyStars);
+                
+                const logoFilename = school.logo_filename || '';
+                const hasLogo = logoFilename && (logoFilename.toLowerCase().endsWith('.png') || 
+                                                logoFilename.toLowerCase().endsWith('.jpg') || 
+                                                logoFilename.toLowerCase().endsWith('.jpeg'));
+                
+                const logoHtml = hasLogo ? 
+                    `<img src="assets/logos/${logoFilename}" alt="${school.name} Logo" onerror="this.style.display='none'; this.parentElement.innerHTML='<svg width=\"40\" height=\"40\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><path d=\"M22 9L12 5L2 9L12 13L22 9Z\"/><path d=\"M2 9V17L12 21L22 17V9\"/><path d=\"M12 13V21\"/></svg>';" />` :
+                    `<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M22 9L12 5L2 9L12 13L22 9Z"/>
+                        <path d="M2 9V17L12 21L22 17V9"/>
+                        <path d="M12 13V21"/>
+                    </svg>`;
                 
                 return `
                 <div class="school-card" data-school-id="${school.id}">
@@ -1515,8 +1984,8 @@
                         <div class="school-header">
                             <h3 class="school-name">${school.name}</h3>
                             <div class="school-rating">
-                                <span class="stars">${ratingStars}</span>
-                                <span>${school.overall_rating?.toFixed(1) || 'N/A'}</span>
+                                <span class="stars">${stars}</span>
+                                <span>${rating.toFixed(1)}</span>
                             </div>
                         </div>
                         <div class="school-location">
@@ -1524,9 +1993,9 @@
                                 <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z"/>
                                 <circle cx="12" cy="10" r="3"/>
                             </svg>
-                            ${school.city}, ${school.province}
+                            ${school.city || ''}${school.city && school.province ? ', ' : ''}${school.province || ''}
                         </div>
-                        <div class="school-type">${school.level} • ${school.school_type}</div>
+                        <div class="school-type">${school.level || ''}${school.level && school.school_type ? ' • ' : ''}${school.school_type || ''}</div>
                         
                         <div class="school-metrics">
                             <div class="metric">
@@ -1538,7 +2007,7 @@
                                 <div class="metric-label">Teachers</div>
                             </div>
                             <div class="metric">
-                                <div class="metric-value">${school.overall_rating?.toFixed(1) || 'N/A'}</div>
+                                <div class="metric-value">${school.overall_rating ? school.overall_rating.toFixed(1) : 'N/A'}</div>
                                 <div class="metric-label">Rating</div>
                             </div>
                         </div>
@@ -1580,65 +2049,37 @@
             }
         }
         
-        // Initialize map with Google Maps
-        function initMap() {
-            const mapContainer = document.getElementById('map');
-            if (!mapContainer) return;
-            
-            const schoolsWithCoords = schools.filter(s => s.latitude && s.longitude);
-            
-            if (schoolsWithCoords.length === 0) {
-                mapContainer.innerHTML = '<div class="map-placeholder"><p>Map view requires school coordinates.</p></div>';
-                return;
-            }
-            
-            // Google Maps Embed API
-            const centerLat = schoolsWithCoords.reduce((sum, s) => sum + parseFloat(s.latitude), 0) / schoolsWithCoords.length;
-            const centerLng = schoolsWithCoords.reduce((sum, s) => sum + parseFloat(s.longitude), 0) / schoolsWithCoords.length;
-            
-            mapContainer.innerHTML = `
-                <div class="map-placeholder">
-                    <p>Interactive map loading...</p>
-                    <div style="margin-top: 1rem;">
-                        <strong>Available School Locations:</strong>
-                        <div style="margin-top: 1rem; text-align: left;">
-                            ${schoolsWithCoords.map(s => `
-                                <div style="margin-bottom: 0.5rem; padding: 0.5rem; background: var(--white); border-radius: 4px;">
-                                    <strong>${s.name}</strong><br>
-                                    <small style="color: var(--medium-gray);">${s.city}, ${s.province}</small>
-                                </div>
-                            `).join('')}
-                        </div>
-                        <p style="margin-top: 1rem; font-size: 0.9rem;">
-                            Note: For full Google Maps functionality, an API key would be required.
-                        </p>
-                    </div>
-                </div>
-            `;
-        }
-        
         // Show toast notification
         function showToast(message) {
+            // Remove existing toast
+            const existingToast = document.querySelector('.toast');
+            if (existingToast) existingToast.remove();
+            
             const toast = document.createElement('div');
             toast.className = 'toast';
             toast.textContent = message;
             document.body.appendChild(toast);
             
+            // Show toast
             setTimeout(() => {
                 toast.classList.add('show');
-            }, 100);
+            }, 10);
             
+            // Hide toast after 4 seconds
             setTimeout(() => {
                 toast.classList.remove('show');
                 setTimeout(() => {
-                    document.body.removeChild(toast);
+                    if (toast.parentNode) {
+                        toast.parentNode.removeChild(toast);
+                    }
                 }, 300);
-            }, 3000);
+            }, 4000);
         }
         
         // Utility functions
         function formatNumber(num) {
-            if (!num) return 'N/A';
+            if (!num && num !== 0) return 'N/A';
+            if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M';
             if (num >= 1000) return (num / 1000).toFixed(1) + 'k';
             return num.toString();
         }

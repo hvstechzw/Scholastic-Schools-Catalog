@@ -1,6 +1,6 @@
 # Scholastic Services Website
 
-Generated on: 2025-12-23 12:43:54
+Generated on: 2025-12-24 01:42:26
 Total Schools: 2
 Database: school_manager.db
 
@@ -8,6 +8,7 @@ Database: school_manager.db
 - index.html - Main homepage with all schools
 - [school-name].html - Individual school detail pages (using actual school names)
 - assets/ - Contains logos and images
+- assets/logos/ - School logos from database
 - schools.json - School data for JavaScript
 - .nojekyll - Enables GitHub Pages to serve everything
 
@@ -22,16 +23,26 @@ Database: school_manager.db
 ## Features Included:
 - Search: 1
 - Filters: 1
-- Map View: 1
+- Map View: 1 (No API required - uses embedded maps)
 - Rating System: 1
 - Mobile-First Design: Yes
-- Google Maps Integration: Yes (with links)
-- School Logos: Yes (from database)
+- Google Maps Integration: Yes (embedded iframes, no API key needed)
+- School Logos: Yes (processed from database BLOBs)
 - Local Storage Reviews: Yes
+- Enhanced School Page Styling: Yes
+- Manufacturer Logo Size: Increased to 60px
 
-## School Logos:
-Logos are stored in: assets/logos/
-Make sure all logo files referenced in the database are available in this folder.
+## Logo Processing:
+Logos processed from database: 2/2
+- BLOB logos saved to: assets/logos/
+- Logo filenames preserved from database when possible
+- Fallback to SVG icons when logos unavailable
+
+## Map Solution:
+Google Maps integration works WITHOUT API key:
+- School detail pages: Embedded Google Maps iframe
+- Main page: Interactive list with map links
+- All map links open in new tab with Google Maps
 
 ## Statistics:
 - Total Students: 497
