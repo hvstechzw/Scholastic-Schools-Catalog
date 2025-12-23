@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{school['name']} - Scholastic Services Zimbabwe</title>
+    <meta name="description" content="{school.get('description', '')[:160]}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        {self.generate_css()}
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo-container">
+                <img src="data:image/png;base64,{logo_base64}" alt="Scholastic Services Logo" class="logo-img">
+                <div class="logo-text">Scholastic Services</div>
+            </div>
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#schools">All Schools</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- School Detail -->
+    <div class="school-detail">
+        <div class="container">
+            <a href="index.html" class="back-button">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5"/>
+                    <path d="M12 19l-7-7 7-7"/>
+                </svg>
+                Back to All Schools
+            </a>
+
+            <!-- School Header -->
+            <div class="school-header-detail">
+                <div class="school-logo-large">
+                    {f"<img src='assets/logos/{school['logo_filename']}' alt='{school['name']} Logo' onerror='this.src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNUExQTFBIiBzdHJva2Utd2lkdGg9IjEuNSI+PHBhdGggZD0iTTIyIDlMMTIgNUwgMiA5TDEyIDEzTDIyIDlaIi8+PHBhdGggZD0iTTIgOVYxN0wxMiAyMUwyMiAxN1Y5Ii8+PHBhdGggZD0iTTEyIDEzVjIxIi8+PC9zdmc+"'>" if school.get('logo_filename') else "<svg width='60' height='60' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5'><path d='M22 9L12 5L2 9L12 13L22 9Z'/><path d='M2 9V17L12 21L22 17V9'/><path d='M12 13V21'/></svg>"}
+                </div>
+                <div class="school-info">
+                    <h1>{school['name']}</h1>
+                    {f"<p class='school-motto'>{school['motto']}</p>" if school.get('motto') else ""}
+                    <div class="school-location">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        {school.get('address', '')}, {school.get('city', '')}, {school.get('province', '')}, {school.get('country', 'Zimbabwe')}
+                    </div>
+                    <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem; align-items: center;">
+                        <div class="school-type">{school.get('level', '')} • {school.get('school_type', '')} • {school.get('category', '')}</div>
+                        <div class="school-rating">
+                            <span class="stars">{generate_stars(school.get('overall_rating', 0))}</span>
+                            <span>({school.get('total_reviews', 0)} reviews)</span>
+                        </div>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="btn btn-primary" onclick="window.location.href='index.html'">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M19 12H5"/>
+                                <path d="M12 19l-7-7 7-7"/>
+                            </svg>
+                            Back to All Schools
+                        </button>
+                        {f"<a href='tel:{school.get('phone_primary', '')}' class='btn btn-secondary'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z'/></svg> Call School</a>" if school.get('phone_primary') else ""}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabs -->
+            <div class="tabs">
+                <div class="tab-nav">
+                    <button class="tab-btn active" data-tab="overview">Overview</button>
+                    <button class="tab-btn" data-tab="academics">Academics</button>
+                    <button class="tab-btn" data-tab="facilities">Facilities</button>
+                    <button class="tab-btn" data-tab="reviews">Reviews</button>
+                    <button class="tab-btn" data-tab="contact">Contact</button>
+                </div>
+
+                <!-- Overview Tab -->
+                <div id="overview" class="tab-content active">
+                    {f"<div style='margin-bottom: 2rem;'><h3>About {school['name']}</h3><p>{school.get('description', 'No description available.')}</p></div>" if school.get('description') else ""}
+                    
+                    {f"<div style='margin-bottom: 2rem;'><h3>Mission</h3><p>{school.get('mission', '')}</p></div>" if school.get('mission') else ""}
+                    
+                    {f"<div style='margin-bottom: 2rem;'><h3>Vision</h3><p>{school.get('vision', '')}</p></div>" if school.get('vision') else ""}
+                    
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <h3>Basic Information</h3>
+                            {f"<div class='info-item'><span class='info-label'>Established</span><span class='info-value'>{school.get('establishment_year', 'N/A')}</span></div>" if school.get('establishment_year') else ""}
+                            {f"<div class='info-item'><span class='info-label'>Gender Focus</span><span class='info-value'>{school.get('gender_focus', 'N/A')}</span></div>" if school.get('gender_focus') else ""}
+                            {f"<div class='info-item'><span class='info-label'>Years Operating</span><span class='info-value'>{school.get('years_operating', 'N/A')}</span></div>" if school.get('years_operating') else ""}
+                        </div>
+                        
+                        <div class="info-card">
+                            <h3>Student Statistics</h3>
+                            {f"<div class='info-item'><span class='info-label'>Total Students</span><span class='info-value'>{school.get('total_students', 'N/A')}</span></div>" if school.get('total_students') else ""}
+                            {f"<div class='info-item'><span class='info-label'>Total Teachers</span><span class='info-value'>{school.get('total_teachers', 'N/A')}</span></div>" if school.get('total_teachers') else ""}
+                            {f"<div class='info-item'><span class='info-label'>Total Staff</span><span class='info-value'>{school.get('total_staff', 'N/A')}</span></div>" if school.get('total_staff') else ""}
+                            {f"<div class='info-item'><span class='info-label'>Student Capacity</span><span class='info-value'>{school.get('student_capacity', 'N/A')}</span></div>" if school.get('student_capacity') else ""}
+                            {f"<div class='info-item'><span class='info-label'>Avg Class Size</span><span class='info-value'>{school.get('average_class_size', 'N/A')}</span></div>" if school.get('average_class_size') else ""}
+                            {f"<div class='info-item'><span class='info-label'>Student:Teacher Ratio</span><span class='info-value'>{school.get('student_teacher_ratio', 'N/A')}</span></div>" if school.get('student_teacher_ratio') else ""}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Academics Tab -->
+                <div id="academics" class="tab-content">
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <h3>Curriculum & Programs</h3>
+                            {f"<p><strong>Curriculum:</strong> {school.get('curriculum', 'Not specified')}</p>" if school.get('curriculum') else ""}
+                            {f"<p><strong>Exam Board:</strong> {school.get('exam_board', 'Not specified')}</p>" if school.get('exam_board') else ""}
+                        </div>
+                        
+                        <div class="info-card">
+                            <h3>Infrastructure</h3>
+                            {f"<div class='info-item'><span class='info-label'>Classrooms</span><span class='info-value'>{school.get('total_classrooms', 'N/A')}</span></div>" if school.get('total_classrooms') else ""}
+                            {f"<div class='info-item'><span class='info-label'>Science Labs</span><span class='info-value'>{school.get('science_labs', 'N/A')}</span></div>" if school.get('science_labs') else ""}
+                            {f"<div class='info-item'><span class='info-label'>Computer Labs</span><span class='info-value'>{school.get('computer_labs', 'N/A')}</span></div>" if school.get('computer_labs') else ""}
+                            {f"<div class='info-item'><span class='info-label'>Library Rooms</span><span class='info-value'>{school.get('library_rooms', 'N/A')}</span></div>" if school.get('library_rooms') else ""}
+                            {f"<div class='info-item'><span class='info-label'>Playground Area</span><span class='info-value'>{school.get('playground_area', 'N/A')} sq m</span></div>" if school.get('playground_area') else ""}
+                        </div>
+                    </div>
+                    
+                    {f"<div class='info-card mt-2'><h3>Sports Facilities</h3><p>{school.get('sports_facilities', 'No specific sports facilities listed.')}</p></div>" if school.get('sports_facilities') else ""}
+                    
+                    {f"<div class='info-card mt-2'><h3>Capacity</h3>{f'<div class="info-item"><span class="info-label">Boarding Capacity</span><span class="info-value">{school.get("boarding_capacity", "N/A")}</span></div>' if school.get('boarding_capacity') else ''}</div>"}
+                </div>
+
+                <!-- Facilities Tab -->
+                <div id="facilities" class="tab-content">
+                    <h3>Available Facilities</h3>
+                    {f"<p style='margin-bottom: 2rem;'>This school has {len(facilities)} key facilities available.</p>" if facilities else ""}
+                    
+                    {f"<div class='facilities-grid'>" + "".join(f'<div class="facility-item"><div class="facility-icon">✓</div><span>{facility}</span></div>' for facility in facilities) + "</div>" if facilities else "<p>No facility information available.</p>"}
+                    
+                    {f"<div class='info-card mt-2'><h3>Financial Information</h3>{f'<p><strong>Fee Range:</strong> {school.get("fee_range", "Not specified")}</p>' if school.get('fee_range') else ''}{f'<p><strong>Payment Plans:</strong> {school.get("payment_plan", "Not specified")}</p>' if school.get('payment_plan') else ''}{'<p><strong>Scholarships:</strong> Available</p>' if school.get('scholarships_available') else ''}</div>"}
+                </div>
+
+                <!-- Reviews Tab -->
+                <div id="reviews" class="tab-content">
+                    <h3>School Reviews & Ratings</h3>
+                    
+                    <div class="info-grid mb-3">
+                        <div class="info-card">
+                            <h3>Overall Rating</h3>
+                            <div style="text-align: center; padding: 1rem;">
+                                <div style="font-size: 3rem; font-weight: 700; color: var(--black);">{school.get('overall_rating', 0):.1f if school.get('overall_rating') else 'N/A'}</div>
+                                <div class="stars" style="font-size: 1.5rem; margin: 1rem 0;">{generate_stars(school.get('overall_rating', 0))}</div>
+                                <div style="color: var(--medium-gray);">{school.get('total_reviews', 0)} reviews</div>
+                            </div>
+                        </div>
+                        
+                        <div class="info-card">
+                            <h3>Detailed Ratings</h3>
+                            {f"<div class='info-item'><span class='info-label'>Academic</span><span class='info-value'>{generate_stars(school.get('academic_rating', 0))}</span></div>" if school.get('academic_rating') else ""}
+                            {f"<div class='info-item'><span class='info-label'>Facilities</span><span class='info-value'>{generate_stars(school.get('facility_rating', 0))}</span></div>" if school.get('facility_rating') else ""}
+                            {f"<div class='info-item'><span class='info-label'>Discipline</span><span class='info-value'>{generate_stars(school.get('discipline_rating', 0))}</span></div>" if school.get('discipline_rating') else ""}
+                        </div>
+                    </div>
+                    
+                    <h3>User Reviews</h3>
+                    <div class="reviews-container">
+                        {reviews_html}
+                    </div>
+                    
+                    {rating_form_html}
+                </div>
+
+                <!-- Contact Tab -->
+                <div id="contact" class="tab-content">
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <h3>Contact Information</h3>
+                            {contact_html}
+                        </div>
+                        
+                        <div class="info-card">
+                            <h3>Location Details</h3>
+                            <p><strong>Address:</strong> {school.get('address', '')}</p>
+                            <p><strong>City:</strong> {school.get('city', '')}</p>
+                            <p><strong>Province:</strong> {school.get('province', '')}</p>
+                            {f"<p><strong>District:</strong> {school.get('district', '')}</p>" if school.get('district') else ""}
+                            {f"<p><strong>Postal Code:</strong> {school.get('postal_code', '')}</p>" if school.get('postal_code') else ""}
+                            <p><strong>Country:</strong> {school.get('country', 'Zimbabwe')}</p>
+                        </div>
+                    </div>
+                    
+                    {f"<div class='action-buttons mt-2'>{social_html}</div>" if social_html else ""}
+                    
+                    {map_html}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Scholastic Services Zimbabwe</h3>
+                    <p>Find the perfect school for your child.</p>
+                    <div class="manufacturer-logos">
+                        <img src="data:image/png;base64,{manufacturer_logo_base64}" alt="High Voltage Software Technologies" class="manufacturer-logo">
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="index.html#schools">Browse Schools</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>Email: info@scholasticservices.co.zw</p>
+                    <p>Phone: +263 123 456 789</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; {datetime.datetime.now().year} Scholastic Services Zimbabwe. All rights reserved.</p>
+                <p>Developed by <strong>High Voltage Software Technologies</strong> | Est. 2025</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        {self.generate_js([school])}
+        
+        // Tab functionality for school detail page
+        document.addEventListener('DOMContentLoaded', function() {{
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabButtons.forEach(button => {{
+                button.addEventListener('click', function() {{
+                    const tabId = this.dataset.tab;
+                    
+                    // Remove active class from all buttons and contents
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Add active class to clicked button and corresponding content
+                    this.classList.add('active');
+                    document.getElementById(tabId).classList.add('active');
+                }});
+            }});
+        }});
+    </script>
+</body>
+</html>
