@@ -1,0 +1,8 @@
+# Robots.txt for Scholastic Schools Catalog
+User-agent: *
+Allow: /
+Disallow: /assets/
+Sitemap: sitemap.xml
+
+# Generated on: 2025-12-23
+# By: High Voltage Software Technologies

@@ -1,37 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loading School Details - Scholastic Services School Forum</title>
-    <meta name="description" content="Loading school details...">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hwange High School - Scholastic Schools Catalog</title>
+        <meta name="description" content="...">
+        <meta name="keywords" content="Hwange High School, Hwange, Matabeleland North, school, education, Zimbabwe">
+        <meta name="author" content="Scholastic Schools Catalog">
         
-        /* Scholastic Services School Forum CSS - Mobile First Design */
+        <!-- Open Graph Tags -->
+        <meta property="og:title" content="Hwange High School">
+        <meta property="og:description" content="...">
+        <meta property="og:type" content="profile">
+        <meta property="og:locale" content="en_US">
+        
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="Hwange High School">
+        <meta name="twitter:description" content="...">
+        
+        <!-- Canonical URL -->
+        <link rel="canonical" href="hwange-high-school.html">
+        
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+        
+        <!-- Styles -->
+        <style>
+            
+        /* Scholastic Schools Catalog - Professional CSS - Grayscale Theme */
         :root {
+            --primary-color: #333333;
+            --secondary-color: #666666;
+            --accent-color: #888888;
+            --success-color: #555555;
+            --warning-color: #777777;
+            --dark-color: #222222;
+            --light-color: #f5f5f5;
+            --gray-light: #f0f0f0;
+            --gray-medium: #999999;
+            --gray-dark: #777777;
+            --white: #ffffff;
             --black: #000000;
-            --dark-gray: #2A2A2A;
-            --medium-gray: #5A5A5A;
-            --light-gray: #E8E8E8;
-            --off-white: #F8F8F8;
-            --white: #FFFFFF;
-            --accent-gray: #404040;
-            --accent-blue: #1a73e8;
-            --shadow: 0 2px 8px rgba(0,0,0,0.1);
-            --shadow-hover: 0 8px 25px rgba(0,0,0,0.15);
-            --border-radius: 12px;
+            
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
+            --shadow-xl: 0 20px 40px rgba(0,0,0,0.15);
+            
+            --border-radius: 8px;
+            --border-radius-lg: 12px;
+            --border-radius-xl: 20px;
+            
             --transition: all 0.3s ease;
-            --container-padding: 1rem;
+            --transition-slow: all 0.5s ease;
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
         }
         
         html {
@@ -39,431 +69,475 @@
         }
         
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.5;
-            color: var(--dark-gray);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: var(--black);
             background-color: var(--white);
-            font-size: 16px;
             overflow-x: hidden;
         }
         
+        /* Typography */
         h1, h2, h3, h4, h5, h6 {
-            color: var(--black);
-            font-weight: 600;
-            line-height: 1.3;
+            color: var(--dark-color);
+            font-weight: 700;
+            line-height: 1.2;
             margin-bottom: 1rem;
         }
         
-        h1 { font-size: 2rem; }
-        h2 { font-size: 1.75rem; }
-        h3 { font-size: 1.5rem; }
-        h4 { font-size: 1.25rem; }
+        h1 { 
+            font-size: 3.5rem; 
+            letter-spacing: -0.5px;
+        }
+        
+        h2 { 
+            font-size: 2.5rem; 
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+        
+        h3 { font-size: 1.75rem; }
+        h4 { font-size: 1.5rem; }
+        h5 { font-size: 1.25rem; }
+        h6 { font-size: 1rem; }
         
         p {
             margin-bottom: 1rem;
+            color: var(--gray-dark);
         }
         
         a {
-            color: var(--accent-blue);
+            color: var(--secondary-color);
             text-decoration: none;
             transition: var(--transition);
         }
         
         a:hover {
-            opacity: 0.8;
+            color: var(--accent-color);
         }
         
+        /* Layout */
         .container {
-            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 var(--container-padding);
+            padding: 0 20px;
         }
         
-        /* Header & Navigation */
+        .container-fluid {
+            width: 100%;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
         .navbar {
             background-color: var(--white);
-            box-shadow: var(--shadow);
+            box-shadow: var(--shadow-md);
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
-            padding: 0.75rem 0;
+            padding: 0.5rem 0;
+            transition: var(--transition);
+        }
+        
+        .navbar.scrolled {
+            padding: 0.25rem 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
         }
         
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0;
-        }
-        
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
+            padding: 0.5rem 0;
         }
         
         .logo {
-            height: 60px;
-            width: auto;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
         }
         
         .logo-text {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--black);
-            display: flex;
-            flex-direction: column;
-            line-height: 1.2;
-        }
-        
-        .logo-subtext {
-            font-size: 0.75rem;
-            color: var(--medium-gray);
-            font-weight: 400;
-        }
-        
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
             font-size: 1.5rem;
-            color: var(--dark-gray);
-            cursor: pointer;
-            padding: 0.5rem;
+            font-weight: 700;
+            color: var(--dark-color);
+        }
+        
+        .logo-text span {
+            color: var(--secondary-color);
         }
         
         .nav-links {
             display: flex;
-            gap: 1.5rem;
+            gap: 2rem;
             list-style: none;
         }
         
         .nav-links a {
-            font-weight: 500;
-            color: var(--dark-gray);
+            font-weight: 600;
             padding: 0.5rem 0;
             position: relative;
         }
         
-        .nav-links a:hover {
-            color: var(--accent-blue);
-        }
-        
-        .nav-links a.active {
-            color: var(--accent-blue);
-        }
-        
-        .nav-links a.active::after {
+        .nav-links a:after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 100%;
+            width: 0;
             height: 2px;
-            background-color: var(--accent-blue);
+            background-color: var(--secondary-color);
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
         }
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--off-white) 0%, #f0f4f8 100%);
-            padding: 6rem 0 3rem;
-            margin-top: 60px;
-            text-align: center;
+            background: linear-gradient(135deg, #444444 0%, #666666 100%);
+            color: white;
+            padding: 12rem 0 6rem;
+            margin-top: 0;
             position: relative;
             overflow: hidden;
         }
         
-        .hero::before {
+        .hero:before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent-blue), var(--dark-gray));
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%239C92AC' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
         }
         
         .hero h1 {
-            font-size: 2.25rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, var(--black), var(--dark-gray));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: white;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
         
         .hero p {
-            font-size: 1.125rem;
-            color: var(--medium-gray);
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.25rem;
             max-width: 600px;
-            margin: 0 auto 2rem;
-            line-height: 1.6;
+            margin: 0 auto 3rem;
         }
         
-        /* Search Container */
+        /* Search Bar */
         .search-container {
-            max-width: 600px;
-            margin: 1.5rem auto;
+            max-width: 800px;
+            margin: 2rem auto;
         }
         
         .search-box {
             display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-        
-        @media (min-width: 640px) {
-            .search-box {
-                flex-direction: row;
-            }
+            gap: 0;
+            border-radius: 50px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            background: white;
         }
         
         .search-input {
             flex: 1;
-            padding: 0.875rem 1.25rem;
-            border: 2px solid var(--light-gray);
-            border-radius: var(--border-radius);
-            font-size: 1rem;
-            transition: var(--transition);
-            background: var(--white);
-        }
-        
-        .search-input:focus {
+            padding: 20px 30px;
+            border: none;
+            font-size: 1.1rem;
             outline: none;
-            border-color: var(--accent-blue);
-            box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1);
         }
         
         .search-btn {
-            padding: 0.875rem 2rem;
-            background-color: var(--accent-blue);
-            color: var(--white);
+            padding: 0 40px;
+            background: linear-gradient(90deg, var(--secondary-color), #888888);
+            color: white;
             border: none;
-            border-radius: var(--border-radius);
-            cursor: pointer;
             font-weight: 600;
+            cursor: pointer;
             transition: var(--transition);
-            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         
         .search-btn:hover {
-            background-color: #0d62d9;
-            transform: translateY(-1px);
+            background: linear-gradient(90deg, #555555, var(--secondary-color));
         }
         
-        /* Stats Bar */
-        .stats-bar {
-            background: var(--white);
-            padding: 1.5rem;
-            border-radius: var(--border-radius);
-            margin: 2rem 0;
+        /* Statistics Dashboard */
+        .stats-dashboard {
+            padding: 4rem 0;
+            background-color: var(--gray-light);
+        }
+        
+        .stats-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            box-shadow: var(--shadow);
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
         }
         
-        @media (min-width: 768px) {
-            .stats-bar {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-        
-        .stat-item {
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-sm);
             text-align: center;
-            padding: 0.5rem;
+            transition: var(--transition);
+            border-top: 4px solid var(--secondary-color);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .stat-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--secondary-color), #888888);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: white;
+            font-size: 1.5rem;
         }
         
         .stat-number {
-            font-size: 1.75rem;
+            font-size: 2.5rem;
             font-weight: 700;
-            color: var(--accent-blue);
+            color: var(--dark-color);
             display: block;
             line-height: 1;
         }
         
         .stat-label {
-            font-size: 0.875rem;
-            color: var(--medium-gray);
-            margin-top: 0.25rem;
+            color: var(--gray-medium);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
         /* Filter Section */
         .filter-section {
-            background-color: var(--white);
-            padding: 1.5rem;
-            border-radius: var(--border-radius);
-            margin-bottom: 2rem;
-            box-shadow: var(--shadow);
+            padding: 3rem 0;
+            background-color: white;
         }
         
         .filter-groups {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            margin-top: 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .filter-group {
+            background: var(--gray-light);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
         }
         
         .filter-group h4 {
-            margin-bottom: 0.75rem;
-            color: var(--dark-gray);
-            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+            font-size: 1.1rem;
         }
         
         .filter-buttons {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
-            max-width: 100%;
-            overflow-x: auto;
-            padding-bottom: 0.25rem;
         }
         
         .filter-btn {
-            padding: 0.5rem 1rem;
-            background-color: var(--off-white);
-            border: 1px solid var(--light-gray);
+            padding: 8px 16px;
+            background-color: white;
+            border: 2px solid var(--gray-medium);
             border-radius: 20px;
-            color: var(--medium-gray);
+            color: var(--gray-dark);
             cursor: pointer;
             transition: var(--transition);
             font-size: 0.875rem;
-            white-space: nowrap;
+            font-weight: 500;
         }
         
         .filter-btn:hover,
         .filter-btn.active {
-            background-color: var(--accent-blue);
-            color: var(--white);
-            border-color: var(--accent-blue);
+            background-color: var(--secondary-color);
+            color: white;
+            border-color: var(--secondary-color);
         }
         
-        /* Schools Grid */
+        /* School Cards */
+        .schools-section {
+            padding: 4rem 0;
+            background-color: var(--gray-light);
+        }
+        
+        .schools-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        .school-count {
+            font-size: 1.1rem;
+            color: var(--gray-dark);
+            background: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+        
         .schools-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-            padding: 2rem 0;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 2rem;
         }
         
-        @media (min-width: 640px) {
-            .schools-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        @media (min-width: 1024px) {
-            .schools-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        
-        /* School Card - Single Frame Design */
         .school-card {
-            background-color: var(--white);
-            border-radius: var(--border-radius);
+            background-color: white;
+            border-radius: var(--border-radius-lg);
             overflow: hidden;
-            box-shadow: var(--shadow);
+            box-shadow: var(--shadow-md);
             transition: var(--transition);
-            border: 1px solid var(--light-gray);
+            height: 100%;
             display: flex;
             flex-direction: column;
-            height: 100%;
-            position: relative;
         }
         
         .school-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
-            border-color: var(--accent-blue);
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
         }
         
-        .school-card-inner {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
+        .school-image {
+            height: 200px;
+            background: linear-gradient(135deg, #666666, #888888);
             position: relative;
+            overflow: hidden;
         }
         
-        .school-logo-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1.25rem;
-            border-bottom: 1px solid var(--light-gray);
-            background: var(--off-white);
-        }
-        
-        /* ENLARGED SCHOOL LOGOS IN LIST VIEW */
-        .school-logo-img {
-            width: 80px;
-            height: 80px;
-            object-fit: contain;
-            border-radius: 10px;
-            background: var(--white);
-            padding: 0.5rem;
-            border: 1px solid var(--light-gray);
-        }
-        
-        .logo-placeholder {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--light-gray), var(--off-white));
-            border-radius: 10px;
+        .school-logo {
+            width: 120px;
+            height: 120px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            bottom: -40px;
+            left: 30px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--medium-gray);
+            box-shadow: var(--shadow-lg);
+            border: 4px solid white;
+            overflow: hidden;
         }
         
-        .school-logo-header-info {
-            flex: 1;
+        .school-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         
-        .school-name {
-            font-size: 1.125rem;
-            font-weight: 600;
-            color: var(--black);
-            line-height: 1.3;
-            margin-bottom: 0.25rem;
-        }
-        
-        .school-location {
-            color: var(--medium-gray);
-            font-size: 0.875rem;
+        .school-logo-placeholder {
+            width: 100%;
+            height: 100%;
             display: flex;
             align-items: center;
-            gap: 0.375rem;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
         }
         
         .school-content {
-            padding: 1.25rem;
+            padding: 60px 30px 30px;
             flex: 1;
             display: flex;
             flex-direction: column;
+        }
+        
+        .school-header {
+            margin-bottom: 1rem;
+        }
+        
+        .school-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+        
+        .school-motto {
+            font-style: italic;
+            color: var(--gray-medium);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .school-location {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--gray-dark);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
         }
         
         .school-type {
             display: inline-block;
-            padding: 0.25rem 0.75rem;
-            background-color: var(--off-white);
+            padding: 6px 15px;
+            background-color: var(--gray-light);
             border-radius: 20px;
-            font-size: 0.75rem;
-            margin-bottom: 1rem;
-            color: var(--medium-gray);
-            align-self: flex-start;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 1.5rem;
         }
         
         .school-metrics {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 0.75rem;
-            margin-bottom: 1rem;
-            background: var(--off-white);
-            padding: 0.75rem;
-            border-radius: 8px;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem 0;
+            border-top: 1px solid var(--gray-light);
+            border-bottom: 1px solid var(--gray-light);
         }
         
         .metric {
@@ -471,800 +545,650 @@
         }
         
         .metric-value {
-            font-size: 1.125rem;
-            font-weight: 600;
-            color: var(--black);
-            display: block;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-color);
             line-height: 1;
         }
         
         .metric-label {
-            font-size: 0.75rem;
-            color: var(--medium-gray);
-            margin-top: 0.25rem;
+            font-size: 0.8rem;
+            color: var(--gray-medium);
+            margin-top: 5px;
         }
         
         .facility-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.375rem;
-            margin-bottom: 1rem;
+            gap: 8px;
+            margin-bottom: 1.5rem;
         }
         
         .facility-tag {
-            padding: 0.25rem 0.5rem;
-            background-color: var(--off-white);
-            border-radius: 4px;
-            font-size: 0.75rem;
-            color: var(--dark-gray);
+            padding: 5px 12px;
+            background-color: var(--gray-light);
+            border-radius: 15px;
+            font-size: 0.8rem;
+            color: var(--gray-dark);
         }
         
         .view-details {
             display: block;
-            padding: 0.75rem;
-            background-color: var(--accent-blue);
-            border-radius: var(--border-radius);
-            color: var(--white);
-            font-weight: 600;
+            padding: 12px;
+            background: linear-gradient(90deg, var(--secondary-color), #888888);
+            color: white;
             text-align: center;
+            border-radius: var(--border-radius);
+            font-weight: 600;
             transition: var(--transition);
             margin-top: auto;
-            border: none;
-            width: 100%;
-            cursor: pointer;
-            font-size: 0.875rem;
         }
         
         .view-details:hover {
-            background-color: #0d62d9;
-            transform: translateY(-1px);
+            background: linear-gradient(90deg, #555555, var(--secondary-color));
+            color: white;
+            transform: translateY(-2px);
         }
         
-        /* Google Maps Container */
+        /* Map Section */
         .map-section {
-            padding: 2rem 0;
+            padding: 4rem 0;
+            background-color: white;
         }
         
         .map-container {
-            height: 400px;
-            background-color: var(--light-gray);
-            border-radius: var(--border-radius);
-            margin-bottom: 2rem;
+            height: 500px;
+            background-color: var(--gray-light);
+            border-radius: var(--border-radius-lg);
+            margin-top: 2rem;
             overflow: hidden;
             position: relative;
-            box-shadow: var(--shadow);
-        }
-        
-        #map {
-            width: 100%;
-            height: 100%;
-            border-radius: var(--border-radius);
         }
         
         .map-placeholder {
-            position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
             height: 100%;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            background: var(--off-white);
-            color: var(--medium-gray);
-            text-align: center;
-            padding: 2rem;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            color: var(--gray-dark);
         }
         
-        /* Footer */
-        .footer {
-            background-color: var(--dark-gray);
-            color: var(--white);
-            padding: 3rem 0 1.5rem;
-            margin-top: 3rem;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-        
-        @media (min-width: 768px) {
-            .footer-content {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        
-        .footer-section h3 {
-            color: var(--white);
-            margin-bottom: 1.25rem;
-            font-size: 1.125rem;
-        }
-        
-        .footer-section p {
-            color: var(--light-gray);
-            margin-bottom: 0.75rem;
-            font-size: 0.875rem;
-        }
-        
-        .footer-section a {
-            color: var(--light-gray);
-            display: block;
-            margin-bottom: 0.5rem;
-            font-size: 0.875rem;
-            transition: var(--transition);
-        }
-        
-        .footer-section a:hover {
-            color: var(--white);
-            padding-left: 0.25rem;
-        }
-        
-        .footer-bottom {
-            border-top: 1px solid var(--medium-gray);
-            padding-top: 1.5rem;
-            text-align: center;
-        }
-        
-        .copyright {
-            color: var(--light-gray);
-            font-size: 0.75rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .developer-info {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.75rem;
-            margin-top: 1rem;
-            flex-wrap: wrap;
-        }
-        
-        .developer-text {
-            color: var(--light-gray);
-            font-size: 0.75rem;
-        }
-        
-        /* ENLARGED MANUFACTURER LOGO */
-        .manufacturer-logo {
-            height: 60px;
-            width: auto;
-            opacity: 0.8;
-            transition: var(--transition);
-        }
-        
-        .manufacturer-logo:hover {
-            opacity: 1;
+        .map-placeholder svg {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
         }
         
         /* School Detail Page */
-        .school-detail {
-            padding: 5rem 0 2rem;
+        .school-detail-hero {
+            padding: 10rem 0 4rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .school-detail-hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
         }
         
         .school-header-detail {
             display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-            background: var(--white);
-            border-radius: var(--border-radius);
-            padding: 2rem;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--light-gray);
-        }
-        
-        @media (min-width: 768px) {
-            .school-header-detail {
-                flex-direction: row;
-                align-items: flex-start;
-            }
-        }
-        
-        /* ENLARGED SCHOOL LOGO IN DETAIL VIEW */
-        .school-logo-large-container {
-            width: 150px;
-            height: 150px;
-            min-width: 150px;
-            background-color: var(--off-white);
-            border-radius: var(--border-radius);
-            display: flex;
+            gap: 3rem;
             align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            border: 1px solid var(--light-gray);
-            align-self: center;
-        }
-        
-        @media (min-width: 768px) {
-            .school-logo-large-container {
-                align-self: flex-start;
-            }
+            position: relative;
+            z-index: 1;
         }
         
         .school-logo-large {
-            max-width: 90%;
-            max-height: 90%;
-            object-fit: contain;
-            padding: 1rem;
+            width: 200px;
+            height: 200px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-xl);
+            border: 6px solid white;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        
+        .school-logo-large img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .school-logo-large-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            color: white;
+            font-size: 3rem;
+            font-weight: bold;
         }
         
         .school-info {
             flex: 1;
         }
         
-        .school-motto {
-            font-style: italic;
-            color: var(--medium-gray);
-            margin-bottom: 1rem;
-            font-size: 1rem;
-            border-left: 3px solid var(--light-gray);
-            padding-left: 1rem;
+        .school-info h1 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .school-tagline {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1.5rem;
+        }
+        
+        .school-meta {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255, 255, 255, 0.9);
         }
         
         .action-buttons {
             display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            margin-top: 1.5rem;
+            gap: 1rem;
+            margin-top: 2rem;
         }
         
         .btn {
-            padding: 0.75rem 1.5rem;
+            padding: 12px 30px;
             border-radius: var(--border-radius);
             font-weight: 600;
             cursor: pointer;
             transition: var(--transition);
             border: none;
-            text-decoration: none;
             display: inline-flex;
             align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            font-size: 0.875rem;
-        }
-        
-        .btn svg {
-            width: 16px;
-            height: 16px;
+            gap: 8px;
+            text-decoration: none;
         }
         
         .btn-primary {
-            background-color: var(--accent-blue);
-            color: var(--white);
+            background: linear-gradient(90deg, var(--secondary-color), #888888);
+            color: white;
         }
         
         .btn-primary:hover {
-            background-color: #0d62d9;
-            transform: translateY(-1px);
+            background: linear-gradient(90deg, #555555, var(--secondary-color));
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
         }
         
         .btn-secondary {
-            background-color: transparent;
-            color: var(--dark-gray);
-            border: 2px solid var(--dark-gray);
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
         
         .btn-secondary:hover {
-            background-color: var(--dark-gray);
-            color: var(--white);
-            transform: translateY(-1px);
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
         }
         
         /* Tabs */
-        .tabs {
-            margin-bottom: 2rem;
+        .tabs-section {
+            padding: 4rem 0;
+            background-color: var(--gray-light);
         }
         
         .tab-nav {
             display: flex;
-            border-bottom: 2px solid var(--light-gray);
-            margin-bottom: 2rem;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: none;
-        }
-        
-        .tab-nav::-webkit-scrollbar {
-            display: none;
+            gap: 0;
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 3rem;
         }
         
         .tab-btn {
-            padding: 1rem 1.5rem;
+            padding: 1.2rem 2.5rem;
             background: none;
             border: none;
             font-size: 1rem;
             font-weight: 600;
-            color: var(--medium-gray);
+            color: var(--gray-dark);
             cursor: pointer;
             transition: var(--transition);
             position: relative;
-            white-space: nowrap;
-            flex-shrink: 0;
+            flex: 1;
+            text-align: center;
+        }
+        
+        .tab-btn:hover {
+            background-color: var(--gray-light);
+            color: var(--dark-color);
         }
         
         .tab-btn.active {
-            color: var(--accent-blue);
+            color: var(--secondary-color);
+            background-color: var(--gray-light);
         }
         
-        .tab-btn.active::after {
+        .tab-btn.active:after {
             content: '';
             position: absolute;
-            bottom: -2px;
+            bottom: 0;
             left: 0;
             width: 100%;
-            height: 2px;
-            background-color: var(--accent-blue);
+            height: 3px;
+            background-color: var(--secondary-color);
         }
         
         .tab-content {
             display: none;
+            animation: fadeIn 0.5s ease;
         }
         
         .tab-content.active {
             display: block;
         }
         
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
         /* Info Grid */
         .info-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-        
-        @media (min-width: 768px) {
-            .info-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
         }
         
         .info-card {
-            background-color: var(--white);
-            padding: 1.5rem;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            border: 1px solid var(--light-gray);
+            background-color: white;
+            padding: 2rem;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-sm);
         }
         
         .info-card h3 {
-            margin-bottom: 1rem;
-            color: var(--dark-gray);
-            border-bottom: 2px solid var(--light-gray);
-            padding-bottom: 0.5rem;
-            font-size: 1.125rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--gray-light);
         }
         
         .info-item {
-            margin-bottom: 0.75rem;
+            margin-bottom: 1rem;
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            flex-wrap: wrap;
-            gap: 0.5rem;
         }
         
         .info-label {
-            font-weight: 500;
-            color: var(--medium-gray);
-            min-width: 120px;
-            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--dark-color);
+            flex: 1;
         }
         
         .info-value {
-            color: var(--black);
+            color: var(--gray-dark);
             text-align: right;
             flex: 1;
-            font-size: 0.875rem;
         }
         
-        /* Facilities Grid */
+        /* Facilities */
         .facilities-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 0.75rem;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
             margin-bottom: 2rem;
         }
         
         .facility-item {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
-            padding: 0.75rem;
-            background-color: var(--off-white);
+            gap: 15px;
+            padding: 15px;
+            background-color: white;
             border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
             transition: var(--transition);
-            border: 1px solid transparent;
         }
         
         .facility-item:hover {
-            background-color: var(--white);
-            border-color: var(--light-gray);
-            transform: translateY(-1px);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
         }
         
         .facility-icon {
-            width: 24px;
-            height: 24px;
-            min-width: 24px;
-            background-color: var(--accent-blue);
-            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--secondary-color), #888888);
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--white);
-            font-size: 0.75rem;
+            color: white;
+            font-size: 1.2rem;
         }
         
-        /* Ratings and Reviews */
-        .ratings-section {
-            margin: 2rem 0;
-        }
-        
-        .overall-rating {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-            flex-wrap: wrap;
-        }
-        
-        .rating-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--black);
-        }
-        
-        .rating-stars-large {
-            font-size: 1.5rem;
-            color: #ffc107;
-            letter-spacing: 2px;
-        }
-        
-        .rating-count {
-            color: var(--medium-gray);
-            font-size: 0.875rem;
-        }
-        
-        .rating-breakdown {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-        
-        @media (min-width: 640px) {
-            .rating-breakdown {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        
-        .rating-category {
-            background: var(--off-white);
-            padding: 1rem;
-            border-radius: var(--border-radius);
-            text-align: center;
-        }
-        
-        .rating-category-label {
-            font-size: 0.875rem;
-            color: var(--medium-gray);
-            margin-bottom: 0.5rem;
-        }
-        
-        .rating-category-stars {
-            color: #ffc107;
-            font-size: 1.25rem;
-            margin-bottom: 0.25rem;
-        }
-        
-        .rating-category-value {
-            font-weight: 600;
-            color: var(--black);
-            font-size: 1.125rem;
-        }
-        
-        .add-review-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.5rem;
-            background-color: var(--accent-blue);
-            color: var(--white);
-            border: none;
-            border-radius: var(--border-radius);
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            margin-bottom: 2rem;
-        }
-        
-        .add-review-btn:hover {
-            background-color: #0d62d9;
-            transform: translateY(-1px);
-        }
-        
+        /* Reviews */
         .reviews-container {
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
         }
         
         .review-card {
-            background-color: var(--white);
-            padding: 1.5rem;
-            border-radius: var(--border-radius);
-            margin-bottom: 1rem;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--light-gray);
+            background-color: white;
+            padding: 2rem;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+        
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
         }
         
         .review-header {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 1rem;
-            flex-wrap: wrap;
-            gap: 1rem;
+            align-items: center;
+            margin-bottom: 1.5rem;
         }
         
         .reviewer-info {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
-            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .reviewer-avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .reviewer-details {
+            flex: 1;
         }
         
         .reviewer-name {
             font-weight: 600;
-            color: var(--black);
+            color: var(--dark-color);
+            margin-bottom: 5px;
         }
         
         .reviewer-type {
-            padding: 0.25rem 0.5rem;
-            background-color: var(--off-white);
-            border-radius: 4px;
-            font-size: 0.75rem;
-            color: var(--medium-gray);
+            padding: 3px 10px;
+            background-color: var(--gray-light);
+            border-radius: 15px;
+            font-size: 0.8rem;
+            color: var(--gray-dark);
+            display: inline-block;
         }
         
-        .review-date {
-            color: var(--medium-gray);
-            font-size: 0.875rem;
-        }
-        
-        .review-stars {
-            color: #ffc107;
-            font-size: 1rem;
-            margin: 0.5rem 0;
-        }
-        
-        .review-title {
-            font-weight: 600;
-            color: var(--black);
-            margin-bottom: 0.5rem;
-        }
-        
-        .review-text {
-            color: var(--dark-gray);
-            margin-bottom: 1rem;
-            line-height: 1.6;
-        }
-        
-        .review-pros-cons {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-        
-        @media (min-width: 640px) {
-            .review-pros-cons {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        .pros-list, .cons-list {
-            padding: 0.75rem;
-            border-radius: var(--border-radius);
-            font-size: 0.875rem;
-        }
-        
-        .pros-list {
-            background-color: rgba(76, 175, 80, 0.1);
-            border-left: 3px solid #4CAF50;
-        }
-        
-        .cons-list {
-            background-color: rgba(244, 67, 54, 0.1);
-            border-left: 3px solid #F44336;
-        }
-        
-        .pros-list h4, .cons-list h4 {
-            font-size: 0.875rem;
-            margin-bottom: 0.5rem;
+        .review-rating {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 5px;
+            color: var(--warning-color);
+            font-size: 1.2rem;
         }
         
-        .pros-list ul, .cons-list ul {
-            list-style: none;
-            padding-left: 0;
+        /* Footer */
+        .footer {
+            background-color: var(--dark-color);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+            margin-top: 4rem;
         }
         
-        .pros-list li, .cons-list li {
-            margin-bottom: 0.25rem;
-            padding-left: 1.25rem;
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-section h3 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
             position: relative;
+            padding-bottom: 10px;
         }
         
-        .pros-list li::before {
-            content: '✓';
+        .footer-section h3:after {
+            content: '';
             position: absolute;
+            bottom: 0;
             left: 0;
-            color: #4CAF50;
-            font-weight: bold;
+            width: 40px;
+            height: 3px;
+            background-color: var(--secondary-color);
         }
         
-        .cons-list li::before {
-            content: '×';
-            position: absolute;
-            left: 0;
-            color: #F44336;
-            font-weight: bold;
+        .footer-section p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1rem;
         }
         
-        .review-helpful {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 1px solid var(--light-gray);
-        }
-        
-        .helpful-btn {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            background-color: var(--off-white);
-            border: 1px solid var(--light-gray);
-            border-radius: 20px;
-            color: var(--medium-gray);
-            cursor: pointer;
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            display: block;
+            margin-bottom: 0.75rem;
             transition: var(--transition);
-            font-size: 0.875rem;
         }
         
-        .helpful-btn:hover {
-            background-color: var(--light-gray);
-            color: var(--dark-gray);
+        .footer-section a:hover {
+            color: var(--secondary-color);
+            padding-left: 5px;
         }
         
-        /* Gallery */
-        .gallery-section {
-            margin: 2rem 0;
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 1.5rem;
         }
         
-        .school-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 0.75rem;
-            margin-top: 1rem;
-        }
-        
-        .gallery-item {
-            aspect-ratio: 4/3;
-            background-color: var(--light-gray);
-            border-radius: var(--border-radius);
-            overflow: hidden;
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--medium-gray);
-            cursor: pointer;
+            color: white;
             transition: var(--transition);
-            position: relative;
         }
         
-        .gallery-item:hover {
-            transform: scale(1.02);
-            box-shadow: var(--shadow-hover);
+        .social-link:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
         }
         
-        .gallery-placeholder {
+        .copyright {
             text-align: center;
-            padding: 1rem;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
         }
         
-        /* Responsive Design */
-        @media (max-width: 767px) {
-            .mobile-menu-btn {
-                display: block;
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .container {
+                max-width: 100%;
+                padding: 0 30px;
             }
-            
-            .nav-links {
-                position: fixed;
-                top: 60px;
-                left: 0;
-                right: 0;
-                background-color: var(--white);
-                flex-direction: column;
-                padding: 1rem;
-                gap: 0;
-                box-shadow: var(--shadow);
-                transform: translateY(-100%);
-                opacity: 0;
-                transition: var(--transition);
-                z-index: 999;
-            }
-            
-            .nav-links.active {
-                transform: translateY(0);
-                opacity: 1;
-            }
-            
-            .nav-links li {
-                width: 100%;
-            }
-            
-            .nav-links a {
-                display: block;
-                padding: 1rem;
-                border-bottom: 1px solid var(--light-gray);
-            }
-            
-            .nav-links a:last-child {
-                border-bottom: none;
-            }
+        }
+        
+        @media (max-width: 992px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
             
             .hero {
-                padding: 5rem 0 2rem;
+                padding: 8rem 0 4rem;
             }
             
-            .hero h1 {
-                font-size: 1.75rem;
+            .school-header-detail {
+                flex-direction: column;
+                text-align: center;
+                gap: 2rem;
             }
             
-            .hero p {
-                font-size: 1rem;
+            .school-logo-large {
+                width: 150px;
+                height: 150px;
             }
             
-            .school-detail {
-                padding: 4rem 0 2rem;
+            .school-meta {
+                justify-content: center;
             }
             
             .action-buttons {
                 justify-content: center;
             }
             
+            .tab-nav {
+                flex-wrap: wrap;
+            }
+            
+            .tab-btn {
+                flex: 1 0 calc(33.333% - 10px);
+                padding: 1rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem 0;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .search-box {
+                flex-direction: column;
+                border-radius: var(--border-radius);
+            }
+            
+            .search-input,
+            .search-btn {
+                width: 100%;
+                border-radius: 0;
+            }
+            
+            .schools-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .school-card {
+                max-width: 100%;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .facilities-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 20px;
+            }
+            
+            .school-metrics {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .tab-btn {
+                flex: 1 0 calc(50% - 10px);
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            
             .btn {
                 width: 100%;
                 justify-content: center;
             }
-            
-            /* Adjusted logo sizes for mobile */
-            .school-logo-img {
-                width: 70px;
-                height: 70px;
-            }
-            
-            .logo-placeholder {
-                width: 70px;
-                height: 70px;
-            }
-            
-            .school-logo-large-container {
-                width: 120px;
-                height: 120px;
-                min-width: 120px;
-            }
         }
         
-        /* Utility Classes */
+        /* Loading */
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 4rem;
+            color: var(--gray-medium);
+        }
+        
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--gray-light);
+            border-top-color: var(--secondary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 1rem;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Utilities */
         .hidden {
             display: none !important;
         }
@@ -1273,613 +1197,483 @@
             text-align: center;
         }
         
-        .mt-1 { margin-top: 1rem; }
-        .mt-2 { margin-top: 2rem; }
-        .mt-3 { margin-top: 3rem; }
-        .mb-1 { margin-bottom: 1rem; }
-        .mb-2 { margin-bottom: 2rem; }
-        .mb-3 { margin-bottom: 3rem; }
-        
-        .loading {
-            text-align: center;
-            padding: 3rem;
-            color: var(--medium-gray);
-            font-size: 1rem;
+        .text-right {
+            text-align: right;
         }
         
-        .error {
-            text-align: center;
-            padding: 2rem;
-            color: #dc3545;
-            background-color: rgba(220, 53, 69, 0.1);
-            border-radius: var(--border-radius);
-            margin: 2rem 0;
-            border-left: 3px solid #dc3545;
+        .mb-0 { margin-bottom: 0 !important; }
+        .mb-1 { margin-bottom: 1rem !important; }
+        .mb-2 { margin-bottom: 2rem !important; }
+        .mb-3 { margin-bottom: 3rem !important; }
+        .mb-4 { margin-bottom: 4rem !important; }
+        
+        .mt-0 { margin-top: 0 !important; }
+        .mt-1 { margin-top: 1rem !important; }
+        .mt-2 { margin-top: 2rem !important; }
+        .mt-3 { margin-top: 3rem !important; }
+        .mt-4 { margin-top: 4rem !important; }
+        
+        .py-1 { padding-top: 1rem !important; padding-bottom: 1rem !important; }
+        .py-2 { padding-top: 2rem !important; padding-bottom: 2rem !important; }
+        .py-3 { padding-top: 3rem !important; padding-bottom: 3rem !important; }
+        .py-4 { padding-top: 4rem !important; padding-bottom: 4rem !important; }
+        
+        .px-1 { padding-left: 1rem !important; padding-right: 1rem !important; }
+        .px-2 { padding-left: 2rem !important; padding-right: 2rem !important; }
+        .px-3 { padding-left: 3rem !important; padding-right: 3rem !important; }
+        .px-4 { padding-left: 4rem !important; padding-right: 4rem !important; }
+        
+        .rounded { border-radius: var(--border-radius) !important; }
+        .rounded-lg { border-radius: var(--border-radius-lg) !important; }
+        .rounded-xl { border-radius: var(--border-radius-xl) !important; }
+        
+        .shadow-sm { box-shadow: var(--shadow-sm) !important; }
+        .shadow-md { box-shadow: var(--shadow-md) !important; }
+        .shadow-lg { box-shadow: var(--shadow-lg) !important; }
+        .shadow-xl { box-shadow: var(--shadow-xl) !important; }
+        
+        .bg-light { background-color: var(--gray-light) !important; }
+        .bg-white { background-color: var(--white) !important; }
+        .bg-dark { background-color: var(--dark-color) !important; }
+        .bg-primary { background-color: var(--primary-color) !important; }
+        .bg-secondary { background-color: var(--secondary-color) !important; }
+        
+        .text-light { color: var(--light-color) !important; }
+        .text-white { color: var(--white) !important; }
+        .text-dark { color: var(--dark-color) !important; }
+        .text-gray { color: var(--gray-dark) !important; }
+        .text-primary { color: var(--primary-color) !important; }
+        .text-secondary { color: var(--secondary-color) !important; }
+        .text-accent { color: var(--accent-color) !important; }
+        .text-success { color: var(--success-color) !important; }
+        .text-warning { color: var(--warning-color) !important; }
+        
+        .d-flex { display: flex !important; }
+        .d-block { display: block !important; }
+        .d-inline { display: inline !important; }
+        .d-inline-block { display: inline-block !important; }
+        .d-grid { display: grid !important; }
+        
+        .flex-column { flex-direction: column !important; }
+        .flex-row { flex-direction: row !important; }
+        .flex-wrap { flex-wrap: wrap !important; }
+        .flex-nowrap { flex-wrap: nowrap !important; }
+        
+        .justify-content-start { justify-content: flex-start !important; }
+        .justify-content-center { justify-content: center !important; }
+        .justify-content-end { justify-content: flex-end !important; }
+        .justify-content-between { justify-content: space-between !important; }
+        .justify-content-around { justify-content: space-around !important; }
+        
+        .align-items-start { align-items: flex-start !important; }
+        .align-items-center { align-items: center !important; }
+        .align-items-end { align-items: flex-end !important; }
+        .align-items-stretch { align-items: stretch !important; }
+        
+        .gap-1 { gap: 1rem !important; }
+        .gap-2 { gap: 2rem !important; }
+        .gap-3 { gap: 3rem !important; }
+        
+        .w-100 { width: 100% !important; }
+        .h-100 { height: 100% !important; }
+        
+        .position-relative { position: relative !important; }
+        .position-absolute { position: absolute !important; }
+        .position-fixed { position: fixed !important; }
+        .position-sticky { position: sticky !important; }
+        
+        /* Print Styles */
+        @media print {
+            .navbar,
+            .footer,
+            .action-buttons,
+            .search-container,
+            .filter-section {
+                display: none !important;
+            }
+            
+            body {
+                color: black;
+                background: white;
+            }
+            
+            .school-detail-hero {
+                background: white !important;
+                color: black !important;
+                padding: 2rem 0 !important;
+            }
+            
+            .school-info h1 {
+                color: black !important;
+            }
+            
+            .tab-nav {
+                display: none !important;
+            }
+            
+            .tab-content {
+                display: block !important;
+            }
+            
+            a {
+                color: black !important;
+                text-decoration: underline !important;
+            }
+            
+            .info-card {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
         }
         
-        .success {
-            text-align: center;
-            padding: 2rem;
-            color: #28a745;
-            background-color: rgba(40, 167, 69, 0.1);
-            border-radius: var(--border-radius);
-            margin: 2rem 0;
-            border-left: 3px solid #28a745;
-        }
-        
-        /* Logo error handling */
-        .logo-error {
-            background: linear-gradient(135deg, #ffcccc, #ff9999);
-            border: 1px solid #ff6666;
-        }
-        
-        .logo-error-text {
-            font-size: 0.75rem;
-            color: #cc0000;
-            text-align: center;
-            padding: 0.25rem;
-        }
-        
-    </style>
-</head>
-<body>
-    <nav class="navbar">
-        <div class="container nav-container">
-            <div class="logo-container">
-                <img src="logo_light.png" alt="Scholastic Services Logo" class="logo">
-                <div class="logo-text">
-                    Scholastic Services
-                    <span class="logo-subtext">School Forum Zimbabwe</span>
+        </style>
+    </head>
+    <body>
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="container nav-container">
+                <div class="logo">
+                    <div class="logo-icon">SSC</div>
+                    <div class="logo-text">Scholastic Schools Catalog<span>.</span></div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#schools">All Schools</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="javascript:window.print()">Print Profile</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- School Detail Hero -->
+        <header class="school-detail-hero">
+            <div class="container">
+                <div class="school-header-detail">
+                    <div class="school-logo-large">
+                        <img src="assets/logos/school_2_logo.png" alt="Hwange High School Logo" loading="lazy">
+                    </div>
+                    <div class="school-info">
+                        <h1>Hwange High School</h1>
+                        <div class="school-tagline">HHS</div>
+                        
+                        
+                        <div class="school-meta">
+                            <div class="meta-item">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                                <span>JFXW+QGQ, Hwange, Hwange, Matabeleland North, Zimbabwe</span>
+                            </div>
+                            
+                            <div class="meta-item">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                                </svg>
+                                <span>High School • Day</span>
+                            </div>
+                            
+                            <div class="meta-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg><span>Est. 2006</span></div>
+                            
+                            <div class="meta-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>19 years operating</span></div>
+                        </div>
+                        
+                        
+                        
+                        <div class="action-buttons">
+                            <a href="index.html" class="btn btn-primary">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                                </svg>
+                                Back to Schools
+                            </a>
+                            <a href="tel:+263785993746" class="btn btn-secondary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"></path></svg> Call School</a>
+                            <a href="mailto:hwangehigh@gmail.com" class="btn btn-secondary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg> Email School</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- School Details Tabs -->
+        <section class="tabs-section">
+            <div class="container">
+                <div class="tab-nav">
+                    <button class="tab-btn active" data-tab="overview">Overview</button>
+                    <button class="tab-btn" data-tab="academics">Academics</button>
+                    <button class="tab-btn" data-tab="facilities">Facilities</button>
+                    <button class="tab-btn" data-tab="reviews">Reviews</button>
+                    <button class="tab-btn" data-tab="contact">Contact</button>
+                </div>
+
+                <!-- Overview Tab -->
+                <div id="overview" class="tab-content active">
+                    
+                    
+                    
+                    
+                    
+                    
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <h3>Basic Information</h3>
+                            <div class="info-item"><span class="info-label">Established</span><span class="info-value">2006</span></div>
+                            <div class="info-item"><span class="info-label">Gender Focus</span><span class="info-value">Mixed</span></div>
+                            <div class="info-item"><span class="info-label">Category</span><span class="info-value">Public</span></div>
+                            <div class="info-item"><span class="info-label">Years Operating</span><span class="info-value">19 years</span></div>
+                        </div>
+                        
+                        <div class="info-card">
+                            <h3>Student Statistics</h3>
+                            <div class="info-item"><span class="info-label">Total Students</span><span class="info-value">0</span></div>
+                            <div class="info-item"><span class="info-label">Total Teachers</span><span class="info-value">0</span></div>
+                            <div class="info-item"><span class="info-label">Total Staff</span><span class="info-value">0</span></div>
+                            <div class="info-item"><span class="info-label">Student Capacity</span><span class="info-value">N/A</span></div>
+                            <div class="info-item"><span class="info-label">Avg Class Size</span><span class="info-value">None</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Academics Tab -->
+                <div id="academics" class="tab-content">
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <h3>Curriculum & Programs</h3>
+                            <div class="info-item"><span class="info-label">Curriculum</span><span class="info-value">Heritage-Based Education</span></div>
+                            <div class="info-item"><span class="info-label">Exam Board</span><span class="info-value">ZIMSEC</span></div>
+                        </div>
+                        
+                        <div class="info-card">
+                            <h3>Infrastructure Capacity</h3>
+                            <div class="info-item"><span class="info-label">Total Classrooms</span><span class="info-value">0</span></div>
+                            <div class="info-item"><span class="info-label">Science Labs</span><span class="info-value">0</span></div>
+                            <div class="info-item"><span class="info-label">Computer Labs</span><span class="info-value">0</span></div>
+                            <div class="info-item"><span class="info-label">Library Rooms</span><span class="info-value">0</span></div>
+                            <div class="info-item"><span class="info-label">Playground Area</span><span class="info-value">None sq m</span></div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <div class="info-card mt-3">
+                        <h3>Capacity Information</h3>
+                        <div class="info-item"><span class="info-label">Boarding Capacity</span><span class="info-value">N/A</span></div>
+                    </div>
+                </div>
+
+                <!-- Facilities Tab -->
+                <div id="facilities" class="tab-content">
+                    
+            <div class="info-card">
+                <h3>Facilities & Amenities</h3>
+                <p style="margin-bottom: 1.5rem;">This school offers 4 key facilities and amenities:</p>
+                <div class="facilities-grid">
+                    <div class="facility-item">
+                    <div class="facility-icon">📚</div>
+                    <div>
+                        <div style="font-weight: 600; color: var(--dark-color);">Library with study areas</div>
+                        <div style="font-size: 0.875rem; color: var(--gray-dark);">Library with study areas</div>
+                    </div>
+                </div>
+<div class="facility-item">
+                    <div class="facility-icon">💻</div>
+                    <div>
+                        <div style="font-weight: 600; color: var(--dark-color);">Computer Laboratory</div>
+                        <div style="font-size: 0.875rem; color: var(--gray-dark);">Computer Laboratory</div>
+                    </div>
+                </div>
+<div class="facility-item">
+                    <div class="facility-icon">⚽</div>
+                    <div>
+                        <div style="font-weight: 600; color: var(--dark-color);">Playground</div>
+                        <div style="font-size: 0.875rem; color: var(--gray-dark);">Playground</div>
+                    </div>
+                </div>
+<div class="facility-item">
+                    <div class="facility-icon">📶</div>
+                    <div>
+                        <div style="font-weight: 600; color: var(--dark-color);">WiFi Internet</div>
+                        <div style="font-size: 0.875rem; color: var(--gray-dark);">WiFi Internet</div>
+                    </div>
+                </div>
                 </div>
             </div>
             
-            <button class="mobile-menu-btn">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="3" y1="12" x2="21" y2="12"></line>
-                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                    <line x1="3" y1="18" x2="21" y2="18"></line>
-                </svg>
-            </button>
+                    
+                </div>
+
+                <!-- Reviews Tab -->
+                <div id="reviews" class="tab-content">
+                    <div class="info-grid mb-3">
+                        <div class="info-card">
+                            <h3>Overall Rating</h3>
+                            <div style="text-align: center; padding: 2rem;">
+                                <div style="font-size: 4rem; font-weight: 700; color: var(--dark-color); line-height: 1;">
+                                    0.0
+                                </div>
+                                <div style="font-size: 2rem; margin: 1.5rem 0; color: #777777;">
+                                    <span class="text-gray">No rating yet</span>
+                                </div>
+                                <div style="color: var(--gray-dark);">
+                                    Based on 0 reviews
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="info-card">
+                            <h3>Detailed Ratings</h3>
+                            <div class="info-item"><span class="info-label">Academic Rating</span><span class="info-value"><span class="text-gray">No rating yet</span></span></div>
+                            <div class="info-item"><span class="info-label">Facility Rating</span><span class="info-value"><span class="text-gray">No rating yet</span></span></div>
+                            <div class="info-item"><span class="info-label">Discipline Rating</span><span class="info-value"><span class="text-gray">No rating yet</span></span></div>
+                        </div>
+                    </div>
+                    
+                    <h3>User Reviews</h3>
+                    <div class="reviews-container">
+                        
+                <div class="info-card">
+                    <div class="text-center py-4">
+                        <div style="font-size: 3rem; color: #ecf0f1; margin-bottom: 1rem;">⭐</div>
+                        <h3>No reviews yet</h3>
+                        <p class="text-gray">Be the first to review this school!</p>
+                    </div>
+                </div>
             
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#schools">All Schools</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <div class="school-detail">
-        <div class="container">
-            <div class="loading">Loading school details...</div>
-        </div>
-    </div>
-
-    <footer class="footer" id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Scholastic Services</h3>
-                    <p>Comprehensive school information platform for Zimbabwe.</p>
+                    </div>
                 </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <a href="index.html">Home</a>
-                    <a href="index.html#schools">Browse Schools</a>
-                    <a href="#contact">Contact</a>
+
+                <!-- Contact Tab -->
+                <div id="contact" class="tab-content">
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <h3>Contact Information</h3>
+                            
+                <div class="info-item">
+                    <span class="info-label">Phone</span>
+                    <span class="info-value">
+                        <a href="tel:+263785993746" style="color: var(--secondary-color);">+263785993746</a>
+                    </span>
                 </div>
-                <div class="footer-section">
-                    <h3>Contact Info</h3>
-                    <p>Email: info@scholasticservices.co.zw</p>
-                    <p>Phone: +263 123 456 789</p>
+            
+
+                <div class="info-item">
+                    <span class="info-label">Email</span>
+                    <span class="info-value">
+                        <a href="mailto:hwangehigh@gmail.com" style="color: var(--secondary-color);">hwangehigh@gmail.com</a>
+                    </span>
+                </div>
+            
+                        </div>
+                        
+                        <div class="info-card">
+                            <h3>Location Details</h3>
+                            <div class="info-item">
+                                <span class="info-label">Address</span>
+                                <span class="info-value">JFXW+QGQ, Hwange</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">City</span>
+                                <span class="info-value">Hwange</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Province</span>
+                                <span class="info-value">Matabeleland North</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">District</span>
+                                <span class="info-value">Hwange District</span>
+                            </div>
+                            
+                            <div class="info-item">
+                                <span class="info-label">Country</span>
+                                <span class="info-value">Zimbabwe</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+            <div class="map-container mt-2">
+                <h3>Location Map</h3>
+                <div style="padding: 2rem; text-align: center;">
+                    <div style="font-size: 3rem; color: #ecf0f1; margin-bottom: 1rem;">🗺️</div>
+                    <p><strong>Coordinates:</strong> -18.349957, 26.496650</p>
+                    <p style="color: var(--gray-dark); margin-top: 1rem;">
+                        For detailed directions, use coordinates with Google Maps or other navigation apps.
+                    </p>
                 </div>
             </div>
-            <div class="footer-bottom">
+            
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer" id="contact">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3>Scholastic Schools Catalog</h3>
+                        <p>Comprehensive School Directory & Information Portal</p>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h3>Quick Links</h3>
+                        <a href="index.html">Home</a>
+                        <a href="index.html#schools">Browse Schools</a>
+                        <a href="#contact">Contact</a>
+                        <a href="javascript:window.print()">Print Profile</a>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h3>School Information</h3>
+                        <p><strong>Name:</strong> Hwange High School</p>
+                        <p><strong>Location:</strong> Hwange, Matabeleland North</p>
+                        <p><strong>Type:</strong> High School • Day</p>
+                        <p><strong>Last Updated:</strong> 2025-12-23</p>
+                    </div>
+                </div>
+                
                 <div class="copyright">
-                    <p>&copy; 2025 Scholastic Services - School Forum Zimbabwe. All rights reserved.</p>
-                </div>
-                <div class="developer-info">
-                    <span class="developer-text">Developed by</span>
-                    <img src="manufacturer_light.png" alt="High Voltage Software Technologies" class="manufacturer-logo">
-                    <span class="developer-text">High Voltage Software Technologies • Est 2025</span>
+                    <p>&copy; 2025 Scholastic Schools Catalog. All rights reserved. | Developed by High Voltage Software Technologies</p>
+                    <p>School profile generated on 2025-12-23 at 11:37:08</p>
                 </div>
             </div>
-        </div>
-    </footer>
+        </footer>
 
-    <script>
-        
-        // School Detail JavaScript - Mobile First
-        document.addEventListener('DOMContentLoaded', function() {
-            // Mobile menu toggle
-            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-            const navLinks = document.querySelector('.nav-links');
-            
-            if (mobileMenuBtn && navLinks) {
-                mobileMenuBtn.addEventListener('click', function() {
-                    navLinks.classList.toggle('active');
-                    this.innerHTML = navLinks.classList.contains('active') ? 
-                        '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>' :
-                        '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>';
+        <!-- JavaScript -->
+        <script>
+            // Tab functionality for school detail page
+            document.addEventListener('DOMContentLoaded', function() {
+                const tabButtons = document.querySelectorAll('.tab-btn');
+                const tabContents = document.querySelectorAll('.tab-content');
+                
+                tabButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const tabId = this.dataset.tab;
+                        
+                        // Remove active class from all buttons and contents
+                        tabButtons.forEach(btn => btn.classList.remove('active'));
+                        tabContents.forEach(content => content.classList.remove('active'));
+                        
+                        // Add active class to clicked button and corresponding content
+                        this.classList.add('active');
+                        document.getElementById(tabId).classList.add('active');
+                        
+                        // Update URL hash for bookmarking
+                        window.location.hash = tabId;
+                    });
                 });
                 
-                // Close menu when clicking outside
-                document.addEventListener('click', function(event) {
-                    if (!mobileMenuBtn.contains(event.target) && !navLinks.contains(event.target)) {
-                        navLinks.classList.remove('active');
-                        mobileMenuBtn.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>';
+                // Check for hash in URL to open specific tab
+                if (window.location.hash) {
+                    const tabId = window.location.hash.substring(1);
+                    const tabButton = document.querySelector(`[data-tab="${tabId}"]`);
+                    if (tabButton) {
+                        tabButton.click();
                     }
-                });
-            }
-            
-            // Close menu when clicking a link
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', function() {
-                    navLinks.classList.remove('active');
-                    if (mobileMenuBtn) {
-                        mobileMenuBtn.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>';
-                    }
-                });
-            });
-            
-            // Extract school ID from URL
-            const urlParams = new URLSearchParams(window.location.search);
-            const schoolId = urlParams.get('id') || getSchoolIdFromUrl();
-            
-            if (schoolId) {
-                loadSchoolDetails(schoolId);
-            } else {
-                showError('School ID not found. Please return to the homepage and select a school.');
-            }
-            
-            // Initialize tabs
-            initTabs();
-        });
-        
-        function getSchoolIdFromUrl() {
-            // Try to get from URL path
-            const path = window.location.pathname;
-            const match = path.match(/\/([^/]+)\.html$/);
-            if (match) {
-                const pageName = match[1];
-                // Check if it's a numeric ID (old format)
-                const idMatch = pageName.match(/school_(\d+)/);
-                if (idMatch) return idMatch[1];
-            }
-            return null;
-        }
-        
-        function loadSchoolDetails(schoolId) {
-            // Show loading state
-            const mainContent = document.querySelector('.school-detail .container');
-            if (mainContent) {
-                mainContent.innerHTML = '<div class="loading">Loading school details...</div>';
-            }
-            
-            // Load schools-full.json data
-            fetch('schools-full.json')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Failed to load school data');
-                    }
-                    return response.json();
-                })
-                .then(schools => {
-                    // Find the specific school
-                    const school = schools.find(s => s.id == schoolId);
-                    
-                    if (school) {
-                        renderSchoolDetails(school);
-                    } else {
-                        showError('School not found. It may have been removed or the ID is incorrect.');
-                    }
-                })
-                .catch(error => {
-                    console.error('Error loading school details:', error);
-                    showError('Failed to load school details. Please check your internet connection and try again.');
-                });
-        }
-        
-        function renderSchoolDetails(school) {
-            // Update page title
-            document.title = school.name + ' - Scholastic Services School Forum';
-            
-            // Generate stars HTML
-            function generateStars(rating) {
-                if (!rating || rating === 0) return '<span style="color: var(--medium-gray); font-size: 0.875rem;">No ratings yet</span>';
-                const fullStars = Math.floor(rating);
-                const halfStar = rating - fullStars >= 0.5;
-                const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
-                
-                let stars = "★".repeat(fullStars);
-                if (halfStar) stars += "★";
-                stars += "☆".repeat(emptyStars);
-                return stars + ' <span style="font-weight: 600; margin-left: 0.25rem;">' + rating.toFixed(1) + '</span>';
-            }
-            
-            // Generate facilities list
-            const facilities = [];
-            const facilityFields = [
-                ['has_library', 'Library'],
-                ['has_science_lab', 'Science Laboratory'],
-                ['has_computer_lab', 'Computer Laboratory'],
-                ['has_playground', 'Playground'],
-                ['has_sports_field', 'Sports Field'],
-                ['has_swimming_pool', 'Swimming Pool'],
-                ['has_auditorium', 'Auditorium'],
-                ['has_cafeteria', 'Cafeteria'],
-                ['has_health_clinic', 'Health Clinic'],
-                ['has_wifi', 'WiFi Internet'],
-                ['has_smart_classes', 'Smart Classrooms']
-            ];
-            
-            facilityFields.forEach(([field, label]) => {
-                if (school[field]) {
-                    facilities.push(label);
                 }
             });
-            
-            // Generate gallery HTML
-            let galleryHtml = '';
-            if (school.gallery_images && school.gallery_images.length > 0) {
-                galleryHtml = '<div class="school-gallery">';
-                school.gallery_images.slice(0, 6).forEach(img => {
-                    if (img.logo_base64) {
-                        galleryHtml += '<div class="gallery-item"><img src="data:' + img.logo_mime + ';base64,' + img.logo_base64 + '" alt="' + school.name + ' Image" style="width: 100%; height: 100%; object-fit: cover;"></div>';
-                    } else {
-                        galleryHtml += '<div class="gallery-item"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg></div>';
-                    }
-                });
-                galleryHtml += '</div>';
-            } else {
-                galleryHtml = '<div class="gallery-placeholder"><p>No gallery images available</p></div>';
-            }
-            
-            // Generate reviews HTML
-            let reviewsHtml = '';
-            if (school.reviews && school.reviews.length > 0) {
-                school.reviews.forEach(review => {
-                    reviewsHtml += '<div class="review-card">';
-                    reviewsHtml += '<div class="review-header">';
-                    reviewsHtml += '<div class="reviewer-info">';
-                    reviewsHtml += '<span class="reviewer-name">' + (review.reviewer_name || 'Anonymous') + '</span>';
-                    reviewsHtml += '<span class="reviewer-type">' + (review.reviewer_type || 'Parent') + '</span>';
-                    if (review.is_verified) {
-                        reviewsHtml += '<span class="reviewer-type" style="background-color: rgba(76, 175, 80, 0.1); color: #4CAF50;">Verified</span>';
-                    }
-                    reviewsHtml += '</div>';
-                    reviewsHtml += '<div class="review-date">' + new Date(review.created_at).toLocaleDateString() + '</div>';
-                    reviewsHtml += '</div>';
-                    reviewsHtml += '<div class="review-stars">';
-                    reviewsHtml += "★".repeat(Math.floor(review.overall_rating || 0)) + "☆".repeat(5 - Math.floor(review.overall_rating || 0));
-                    reviewsHtml += '</div>';
-                    if (review.title) {
-                        reviewsHtml += '<h4 class="review-title">' + review.title + '</h4>';
-                    }
-                    if (review.review_text) {
-                        reviewsHtml += '<div class="review-text">' + review.review_text + '</div>';
-                    }
-                    if (review.pros || review.cons) {
-                        reviewsHtml += '<div class="review-pros-cons">';
-                        if (review.pros) {
-                            reviewsHtml += '<div class="pros-list">';
-                            reviewsHtml += '<h4><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4CAF50" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Pros</h4>';
-                            reviewsHtml += '<ul>';
-                            review.pros.split(',').forEach(pro => {
-                                reviewsHtml += '<li>' + pro.trim() + '</li>';
-                            });
-                            reviewsHtml += '</ul>';
-                            reviewsHtml += '</div>';
-                        }
-                        if (review.cons) {
-                            reviewsHtml += '<div class="cons-list">';
-                            reviewsHtml += '<h4><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F44336" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> Cons</h4>';
-                            reviewsHtml += '<ul>';
-                            review.cons.split(',').forEach(con => {
-                                reviewsHtml += '<li>' + con.trim() + '</li>';
-                            });
-                            reviewsHtml += '</ul>';
-                            reviewsHtml += '</div>';
-                        }
-                        reviewsHtml += '</div>';
-                    }
-                    reviewsHtml += '<div class="review-helpful">';
-                    reviewsHtml += '<button class="helpful-btn" onclick="this.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg> Helpful (' + (' + (review.helpful_count || 0) + ' + 1) + ')'">';
-                    reviewsHtml += '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">';
-                    reviewsHtml += '<path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>';
-                    reviewsHtml += '</svg>';
-                    reviewsHtml += 'Helpful (' + (review.helpful_count || 0) + ')';
-                    reviewsHtml += '</button>';
-                    reviewsHtml += '</div>';
-                    reviewsHtml += '</div>';
-                });
-            } else {
-                reviewsHtml = '<div class="text-center" style="padding: 3rem; color: var(--medium-gray);"><p>No reviews yet. Be the first to review this school!</p></div>';
-            }
-            
-            // Generate Google Maps iframe
-            let mapHtml = '';
-            if (school.latitude && school.longitude) {
-                const address = encodeURIComponent((school.address || '') + ' ' + (school.city || '') + ' ' + (school.province || '') + ' Zimbabwe'.trim());
-                mapHtml = '<div class="map-container"><iframe id="google-map" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=' + address + '" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="' + school.name + ' Location"></iframe></div>';
-            } else {
-                mapHtml = '<div class="map-container"><div class="map-placeholder"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z"/><circle cx="12" cy="10" r="3"/></svg><p>Location map not available</p></div></div>';
-            }
-            
-            // Generate logo HTML with better error handling
-            let logoHtml = "";
-            if (school.logo_base64) {
-                logoHtml = '<div class="school-logo-large-container"><img src="data:' + (school.logo_mime || 'image/png') + ';base64,' + school.logo_base64 + '" alt="' + school.name + ' Logo" class="school-logo-large" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\"logo-placeholder\" style=\"width: 150px; height: 150px;\"><svg width=\"60\" height=\"60\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><path d=\"M22 9L12 5L2 9L12 13L22 9Z\"/><path d=\"M2 9V17L12 21L22 17V9\"/><path d=\"M12 13V21\"/></svg></div>';"></div>';
-            } else {
-                logoHtml = '<div class="school-logo-large-container"><div class="logo-placeholder" style="width: 150px; height: 150px;"><svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 9L12 5L2 9L12 13L22 9Z"/><path d="M2 9V17L12 21L22 17V9"/><path d="M12 13V21"/></svg></div></div>';
-            }
-            
-            // Render the page
-            const container = document.querySelector('.school-detail .container');
-            if (!container) return;
-            
-            let html = '<div class="school-header-detail">';
-            html += logoHtml;
-            html += '<div class="school-info">';
-            html += '<h1>' + school.name + '</h1>';
-            if (school.motto) {
-                html += '<p class="school-motto">"' + school.motto + '"</p>';
-            }
-            html += '<div class="school-location">';
-            html += '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z"/><circle cx="12" cy="10" r="3"/></svg>';
-            html += (school.address ? school.address + ', ' : '') + (school.city || '') + (school.province ? ', ' + school.province : '') + (school.country ? ', ' + school.country : '');
-            html += '</div>';
-            html += '<div style="display: flex; align-items: center; gap: 1rem; margin-top: 1rem; flex-wrap: wrap;">';
-            html += '<div class="school-type">' + (school.level || 'N/A') + ' • ' + (school.school_type || 'N/A') + ' • ' + (school.category || 'N/A') + '</div>';
-            html += '<div class="school-rating">';
-            html += generateStars(school.overall_rating || 0);
-            html += '</div>';
-            html += '</div>';
-            html += '<div class="action-buttons">';
-            html += '<a href="index.html" class="btn btn-primary"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>Back to Schools</a>';
-            if (school.phone_primary) {
-                html += '<a href="tel:' + school.phone_primary + '" class="btn btn-secondary"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call School</a>';
-            }
-            if (school.website) {
-                html += '<a href="' + school.website + '" target="_blank" class="btn btn-secondary"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Visit Website</a>';
-            }
-            html += '</div>';
-            html += '</div>';
-            html += '</div>';
-            
-            html += '<div class="tabs">';
-            html += '<div class="tab-nav">';
-            html += '<button class="tab-btn active" data-tab="overview">Overview</button>';
-            html += '<button class="tab-btn" data-tab="academics">Academics</button>';
-            html += '<button class="tab-btn" data-tab="facilities">Facilities</button>';
-            html += '<button class="tab-btn" data-tab="reviews">Reviews</button>';
-            html += '<button class="tab-btn" data-tab="location">Location</button>';
-            html += '</div>';
-            
-            html += '<div id="overview" class="tab-content active">';
-            if (school.description) {
-                html += '<div style="margin-bottom: 2rem;"><h3>About ' + school.name + '</h3><p style="line-height: 1.6;">' + school.description + '</p></div>';
-            }
-            if (school.mission) {
-                html += '<div style="margin-bottom: 2rem;"><h3>Mission</h3><p style="line-height: 1.6;">' + school.mission + '</p></div>';
-            }
-            if (school.vision) {
-                html += '<div style="margin-bottom: 2rem;"><h3>Vision</h3><p style="line-height: 1.6;">' + school.vision + '</p></div>';
-            }
-            html += '<div class="info-grid">';
-            html += '<div class="info-card">';
-            html += '<h3>Basic Information</h3>';
-            html += '<div class="info-item"><span class="info-label">Established</span><span class="info-value">' + (school.establishment_year || 'N/A') + '</span></div>';
-            html += '<div class="info-item"><span class="info-label">Gender Focus</span><span class="info-value">' + (school.gender_focus || 'Co-educational') + '</span></div>';
-            html += '<div class="info-item"><span class="info-label">Years Operating</span><span class="info-value">' + (school.years_operating || 'N/A') + '</span></div>';
-            html += '<div class="info-item"><span class="info-label">Student Capacity</span><span class="info-value">' + (school.student_capacity || 'N/A') + '</span></div>';
-            html += '</div>';
-            html += '<div class="info-card">';
-            html += '<h3>Student Statistics</h3>';
-            html += '<div class="info-item"><span class="info-label">Total Students</span><span class="info-value">' + (school.total_students || 'N/A') + '</span></div>';
-            html += '<div class="info-item"><span class="info-label">Total Teachers</span><span class="info-value">' + (school.total_teachers || 'N/A') + '</span></div>';
-            html += '<div class="info-item"><span class="info-label">Total Staff</span><span class="info-value">' + (school.total_staff || 'N/A') + '</span></div>';
-            html += '<div class="info-item"><span class="info-label">Avg Class Size</span><span class="info-value">' + (school.average_class_size || 'N/A') + '</span></div>';
-            if (school.student_teacher_ratio) {
-                html += '<div class="info-item"><span class="info-label">Student:Teacher Ratio</span><span class="info-value">' + school.student_teacher_ratio + ':1</span></div>';
-            }
-            html += '</div>';
-            html += '</div>';
-            html += '<div class="gallery-section">';
-            html += '<h3>School Gallery</h3>';
-            html += galleryHtml;
-            html += '</div>';
-            html += '</div>';
-            
-            html += '<div id="academics" class="tab-content">';
-            html += '<div class="info-grid">';
-            html += '<div class="info-card">';
-            html += '<h3>Curriculum & Programs</h3>';
-            if (school.curriculum) {
-                html += '<p><strong>Curriculum:</strong> ' + school.curriculum + '</p>';
-            }
-            if (school.exam_board) {
-                html += '<p><strong>Exam Board:</strong> ' + school.exam_board + '</p>';
-            }
-            if (school.curriculum) {
-                html += '<p style="margin-top: 1rem;">' + school.curriculum + '</p>';
-            }
-            html += '</div>';
-            html += '<div class="info-card">';
-            html += '<h3>Academic Infrastructure</h3>';
-            html += '<div class="info-item"><span class="info-label">Classrooms</span><span class="info-value">' + (school.total_classrooms || 'N/A') + '</span></div>';
-            html += '<div class="info-item"><span class="info-label">Science Labs</span><span class="info-value">' + (school.science_labs || 'N/A') + '</span></div>';
-            html += '<div class="info-item"><span class="info-label">Computer Labs</span><span class="info-value">' + (school.computer_labs || 'N/A') + '</span></div>';
-            html += '<div class="info-item"><span class="info-label">Library Rooms</span><span class="info-value">' + (school.library_rooms || 'N/A') + '</span></div>';
-            html += '</div>';
-            html += '</div>';
-            html += '<div class="info-card mt-2">';
-            html += '<h3>Extracurricular Activities</h3>';
-            if (school.sports_facilities) {
-                html += '<p><strong>Sports:</strong> ' + school.sports_facilities + '<br></p>';
-            }
-            if (school.transport_services) {
-                html += '<p><strong>Transport Services:</strong> ' + school.transport_services + '</p>';
-            }
-            if (school.hostel_facilities) {
-                html += '<p><strong>Boarding Facilities:</strong> ' + school.hostel_facilities + '</p>';
-            }
-            html += '</div>';
-            html += '</div>';
-            
-            html += '<div id="facilities" class="tab-content">';
-            html += '<h3>Available Facilities</h3>';
-            if (facilities.length > 0) {
-                html += '<p style="margin-bottom: 2rem;">This school offers ' + facilities.length + ' key facilities:</p>';
-            }
-            if (facilities.length > 0) {
-                html += '<div class="facilities-grid">';
-                facilities.forEach(facility => {
-                    html += '<div class="facility-item"><div class="facility-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span>' + facility + '</span></div>';
-                });
-                html += '</div>';
-            } else {
-                html += '<p>No facility information available.</p>';
-            }
-            if (school.playground_area) {
-                html += '<div class="info-item mt-2"><span class="info-label">Playground Area</span><span class="info-value">' + school.playground_area + ' sq m</span></div>';
-            }
-            if (school.boarding_capacity) {
-                html += '<div class="info-item"><span class="info-label">Boarding Capacity</span><span class="info-value">' + school.boarding_capacity + ' students</span></div>';
-            }
-            html += '</div>';
-            
-            html += '<div id="reviews" class="tab-content">';
-            html += '<div class="ratings-section">';
-            html += '<div class="overall-rating">';
-            html += '<div class="rating-number">' + (school.overall_rating ? school.overall_rating.toFixed(1) : 'N/A') + '</div>';
-            html += '<div>';
-            html += '<div class="rating-stars-large">' + "★".repeat(Math.floor(school.overall_rating || 0)) + "☆".repeat(5 - Math.floor(school.overall_rating || 0)) + '</div>';
-            html += '<div class="rating-count">Based on ' + (school.total_reviews || 0) + ' reviews</div>';
-            html += '</div>';
-            html += '</div>';
-            html += '<div class="rating-breakdown">';
-            html += '<div class="rating-category">';
-            html += '<div class="rating-category-label">Academic</div>';
-            html += '<div class="rating-category-stars">' + "★".repeat(Math.floor(school.academic_rating || 0)) + "☆".repeat(5 - Math.floor(school.academic_rating || 0)) + '</div>';
-            html += '<div class="rating-category-value">' + (school.academic_rating ? school.academic_rating.toFixed(1) : 'N/A') + '</div>';
-            html += '</div>';
-            html += '<div class="rating-category">';
-            html += '<div class="rating-category-label">Facilities</div>';
-            html += '<div class="rating-category-stars">' + "★".repeat(Math.floor(school.facility_rating || 0)) + "☆".repeat(5 - Math.floor(school.facility_rating || 0)) + '</div>';
-            html += '<div class="rating-category-value">' + (school.facility_rating ? school.facility_rating.toFixed(1) : 'N/A') + '</div>';
-            html += '</div>';
-            html += '<div class="rating-category">';
-            html += '<div class="rating-category-label">Discipline</div>';
-            html += '<div class="rating-category-stars">' + "★".repeat(Math.floor(school.discipline_rating || 0)) + "☆".repeat(5 - Math.floor(school.discipline_rating || 0)) + '</div>';
-            html += '<div class="rating-category-value">' + (school.discipline_rating ? school.discipline_rating.toFixed(1) : 'N/A') + '</div>';
-            html += '</div>';
-            html += '</div>';
-            html += '<button class="add-review-btn" onclick="alert('Review submission would be implemented in a live system. For now, reviews are loaded from the database.')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20v-6M6 20v-6M18 20v-6M4 8l8-4 8 4"/></svg>Add Your Review</button>';
-            html += '</div>';
-            html += '<div class="reviews-container">';
-            html += '<h3>Recent Reviews</h3>';
-            html += reviewsHtml;
-            html += '</div>';
-            html += '</div>';
-            
-            html += '<div id="location" class="tab-content">';
-            html += '<h3>Location & Contact</h3>';
-            html += mapHtml;
-            html += '<div class="info-grid mt-3">';
-            html += '<div class="info-card">';
-            html += '<h3>Contact Information</h3>';
-            if (school.phone_primary) {
-                html += '<div class="info-item"><span class="info-label">Phone</span><span class="info-value"><a href="tel:' + school.phone_primary + '">' + school.phone_primary + '</a></span></div>';
-            }
-            if (school.email_primary) {
-                html += '<div class="info-item"><span class="info-label">Email</span><span class="info-value"><a href="mailto:' + school.email_primary + '">' + school.email_primary + '</a></span></div>';
-            }
-            if (school.website) {
-                html += '<div class="info-item"><span class="info-label">Website</span><span class="info-value"><a href="' + school.website + '" target="_blank">' + school.website + '</a></span></div>';
-            }
-            if (school.principal_name) {
-                html += '<div class="info-item"><span class="info-label">Principal</span><span class="info-value">' + school.principal_name + '</span></div>';
-            }
-            if (school.principal_phone) {
-                html += '<div class="info-item"><span class="info-label">Principal Phone</span><span class="info-value"><a href="tel:' + school.principal_phone + '">' + school.principal_phone + '</a></span></div>';
-            }
-            html += '</div>';
-            html += '<div class="info-card">';
-            html += '<h3>Address Details</h3>';
-            html += '<div class="info-item"><span class="info-label">Address</span><span class="info-value">' + (school.address || 'N/A') + '</span></div>';
-            html += '<div class="info-item"><span class="info-label">City</span><span class="info-value">' + (school.city || 'N/A') + '</span></div>';
-            html += '<div class="info-item"><span class="info-label">Province</span><span class="info-value">' + (school.province || 'N/A') + '</span></div>';
-            if (school.district) {
-                html += '<div class="info-item"><span class="info-label">District</span><span class="info-value">' + school.district + '</span></div>';
-            }
-            if (school.postal_code) {
-                html += '<div class="info-item"><span class="info-label">Postal Code</span><span class="info-value">' + school.postal_code + '</span></div>';
-            }
-            if (school.latitude && school.longitude) {
-                html += '<div class="info-item"><span class="info-label">Coordinates</span><span class="info-value">' + school.latitude.toFixed(6) + ', ' + school.longitude.toFixed(6) + '</span></div>';
-            }
-            html += '</div>';
-            html += '</div>';
-            if (school.facebook_page || school.twitter_handle || school.instagram_handle) {
-                html += '<div class="info-card mt-2">';
-                html += '<h3>Social Media</h3>';
-                html += '<div style="display: flex; gap: 1rem; flex-wrap: wrap;">';
-                if (school.facebook_page) {
-                    html += '<a href="' + school.facebook_page + '" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--accent-blue);"><svg width="20" height="20" viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>Facebook</a>';
-                }
-                if (school.twitter_handle) {
-                    html += '<a href="https://twitter.com/' + school.twitter_handle + '" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--accent-blue);"><svg width="20" height="20" viewBox="0 0 24 24" fill="#1DA1F2"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.213c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>Twitter</a>';
-                }
-                if (school.instagram_handle) {
-                    html += '<a href="https://instagram.com/' + school.instagram_handle + '" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--accent-blue);"><svg width="20" height="20" viewBox="0 0 24 24" fill="#E4405F"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>Instagram</a>';
-                }
-                html += '</div>';
-                html += '</div>';
-            }
-            html += '</div>';
-            html += '</div>';
-            
-            container.innerHTML = html;
-            
-            // Re-initialize tabs after rendering
-            initTabs();
-        }
-        
-        function initTabs() {
-            const tabButtons = document.querySelectorAll('.tab-btn');
-            const tabContents = document.querySelectorAll('.tab-content');
-            
-            tabButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const tabId = this.dataset.tab;
-                    
-                    tabButtons.forEach(btn => btn.classList.remove('active'));
-                    tabContents.forEach(content => content.classList.remove('active'));
-                    
-                    this.classList.add('active');
-                    document.getElementById(tabId).classList.add('active');
-                    
-                    // If location tab is clicked, resize the map iframe
-                    if (tabId === 'location') {
-                        setTimeout(() => {
-                            const mapIframe = document.querySelector('#google-map');
-                            if (mapIframe) {
-                                mapIframe.style.height = '400px';
-                            }
-                        }, 100);
-                    }
-                });
-            });
-        }
-        
-        function showError(message) {
-            const container = document.querySelector('.school-detail .container');
-            if (container) {
-                container.innerHTML = '<div class="error"><h3>Error Loading School Details</h3><p>' + message + '</p><a href="index.html" class="btn btn-primary mt-2">Back to All Schools</a></div>';
-            }
-        }
-        
-    </script>
-</body>
-</html>
+        </script>
+    </body>
+    </html>
