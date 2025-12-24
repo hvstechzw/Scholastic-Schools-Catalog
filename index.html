@@ -3,9 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scholastic Forum - School Directory</title>
+    
+    <!-- Advanced SEO Meta Tags -->
+    <title>Scholastic Forum - Discover Educational Institutions & Schools Directory</title>
+    <meta name="description" content="Comprehensive school directory with detailed profiles of educational institutions. Find schools by location, curriculum, facilities, and ratings. Part of Scholastic Services.">
+    <meta name="keywords" content="schools directory, educational institutions, find schools, school profiles, education database, Scholastic Services">
+    <meta name="author" content="Scholastic Services">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://scholasticforum.org/">
+    <meta property="og:title" content="Scholastic Forum - School Directory & Educational Institutions">
+    <meta property="og:description" content="Discover and compare schools with our comprehensive educational directory. Part of Scholastic Services suite.">
+    <meta property="og:image" content="https://scholasticforum.org/assets/images/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://scholasticforum.org/">
+    <meta property="twitter:title" content="Scholastic Forum - School Directory & Educational Institutions">
+    <meta property="twitter:description" content="Discover and compare schools with our comprehensive educational directory. Part of Scholastic Services suite.">
+    <meta property="twitter:image" content="https://scholasticforum.org/assets/images/og-image.jpg">
+    
+    <!-- Structured Data for Schools Directory -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Scholastic Forum",
+        "description": "Comprehensive directory of educational institutions and schools",
+        "url": "https://scholasticforum.org/",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://scholasticforum.org/?search={search_term_string}",
+            "query-input": "required name=search_term_string"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Scholastic Services",
+            "url": "https://hvstechzw.github.io/Scholastic-Services-Web-Portal/"
+        }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Schools Directory",
+        "description": "List of educational institutions",
+        "url": "https://scholasticforum.org/",
+        "numberOfItems": 2,
+        "itemListElement": [
+            
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@type": "EducationalOrganization",
+                    "name": "Hwange High School",
+                    "description": "",
+                    "url": "https://scholasticforum.org/schools/MAT25221384.html"
+                }
+            },
+            
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@type": "EducationalOrganization",
+                    "name": "Marist Brothers High School",
+                    "description": "The best school in Matabeleland North",
+                    "url": "https://scholasticforum.org/schools/MAT25152953.html"
+                }
+            }
+        ]
+    }
+    </script>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="canonical" href="https://scholasticforum.org/">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
     <style>
         :root {
             --primary: #ffffff;
@@ -78,15 +157,15 @@
         }
         
         .main-logo {
-            width: 50px;
-            height: 50px;
+            width: 100px; /* Made 2x bigger */
+            height: 100px; /* Made 2x bigger */
             background: linear-gradient(135deg, var(--silver) 0%, var(--gray) 100%);
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--white);
-            font-size: 1.5rem;
+            font-size: 2.5rem; /* Increased font size */
             box-shadow: var(--shadow);
             border: 2px solid var(--white);
             overflow: hidden;
@@ -96,7 +175,7 @@
             width: 100%;
             height: 100%;
             object-fit: contain;
-            padding: 5px;
+            padding: 10px;
         }
         
         .logo-text {
@@ -121,23 +200,6 @@
             letter-spacing: 1px;
             text-transform: uppercase;
             margin-top: -2px;
-        }
-        
-        .powered-by {
-            font-size: 0.7rem;
-            color: var(--gray);
-            padding-left: 10px;
-            border-left: 1px solid var(--gray-light);
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-        
-        .powered-by img {
-            height: 16px;
-            width: auto;
-            filter: grayscale(100%);
-            opacity: 0.7;
         }
         
         .nav-links {
@@ -183,6 +245,26 @@
             border-radius: 2px;
         }
         
+        .portal-link {
+            background: linear-gradient(135deg, var(--silver) 0%, var(--gray) 100%);
+            color: var(--dark);
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .portal-link:hover {
+            background: linear-gradient(135deg, var(--gray) 0%, var(--gray-dark) 100%);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(108, 117, 125, 0.3);
+        }
+        
         .mobile-menu-btn {
             display: none;
             background: none;
@@ -200,10 +282,12 @@
             background: var(--gray-light);
         }
         
-        /* Hero Banner */
+        /* Hero Banner - Improved for mobile */
         .hero-banner {
             position: relative;
-            height: 500px;
+            height: auto;
+            min-height: 400px;
+            max-height: 600px;
             margin: 2rem 0;
             border-radius: var(--radius);
             overflow: hidden;
@@ -228,27 +312,30 @@
             z-index: 2;
             text-align: center;
             max-width: 800px;
-            padding: 3rem;
+            padding: 2rem;
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(10px);
             border-radius: var(--radius);
             border: 1px solid rgba(255, 255, 255, 0.2);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+            margin: 1rem;
+            width: calc(100% - 2rem);
         }
         
         .banner-title {
             font-family: 'Poppins', sans-serif;
-            font-size: 3rem;
+            font-size: clamp(2rem, 5vw, 3rem); /* Dynamic font size */
             font-weight: 700;
             margin-bottom: 1rem;
             background: linear-gradient(135deg, var(--gray-dark) 0%, var(--dark) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            line-height: 1.2;
         }
         
         .banner-subtitle {
-            font-size: 1.2rem;
+            font-size: clamp(1rem, 3vw, 1.2rem); /* Dynamic font size */
             color: var(--gray-dark);
             margin-bottom: 2rem;
             line-height: 1.6;
@@ -427,8 +514,8 @@
             position: absolute;
             top: 1rem;
             left: 1rem;
-            width: 70px;
-            height: 70px;
+            width: 80px; /* Enlargened */
+            height: 80px; /* Enlargened */
             background: var(--white);
             border-radius: 12px;
             display: flex;
@@ -444,7 +531,7 @@
             width: 100%;
             height: 100%;
             object-fit: contain;
-            padding: 8px;
+            padding: 10px; /* Increased padding */
         }
         
         .featured-type-badge {
@@ -753,7 +840,7 @@
         }
         
         .manufacturer-logo img {
-            height: 24px;
+            height: 32px; /* Enlargened */
             width: auto;
             filter: brightness(0) invert(1);
             opacity: 0.8;
@@ -839,25 +926,24 @@
             }
             
             .hero-banner {
-                height: 400px;
+                height: auto;
+                min-height: 300px;
                 margin: 1rem 0;
             }
             
             .banner-title {
-                font-size: 2rem;
+                font-size: clamp(1.8rem, 4vw, 2.5rem);
                 line-height: 1.2;
-                padding: 0 1rem;
             }
             
             .banner-subtitle {
-                font-size: 1rem;
-                padding: 0 1rem;
+                font-size: clamp(0.9rem, 2vw, 1.1rem);
             }
             
             .banner-content {
-                padding: 2rem 1rem;
-                margin: 1rem;
-                width: calc(100% - 2rem);
+                padding: 1.5rem;
+                margin: 0.5rem;
+                width: calc(100% - 1rem);
             }
             
             .section-title {
@@ -883,12 +969,9 @@
                 gap: 5px;
             }
             
-            .powered-by {
-                padding-left: 0;
-                border-left: none;
-                padding-top: 5px;
-                border-top: 1px solid var(--gray-light);
-                width: 100%;
+            .main-logo {
+                width: 80px; /* Adjusted for mobile */
+                height: 80px; /* Adjusted for mobile */
             }
         }
         
@@ -918,8 +1001,8 @@
             }
             
             .main-logo {
-                width: 40px;
-                height: 40px;
+                width: 70px; /* Adjusted for mobile */
+                height: 70px; /* Adjusted for mobile */
             }
             
             .footer {
@@ -929,6 +1012,11 @@
             .view-all-btn {
                 padding: 1rem 1.5rem;
                 font-size: 1rem;
+            }
+            
+            .featured-logo-container {
+                width: 70px; /* Adjusted for mobile */
+                height: 70px; /* Adjusted for mobile */
             }
         }
         
@@ -984,24 +1072,21 @@
         }
     </style>
 </head>
-<body>
+<body itemscope itemtype="https://schema.org/WebPage">
     <!-- Header -->
     <header class="header">
         <div class="container">
             <nav class="nav-container">
                 <div class="logo-wrapper">
-                    <a href="index.html" class="logo-section">
-                        <div class="main-logo">
-                            <img id="theme-logo" src="assets/images/logo_light.png" alt="Scholastic Forum">
+                    <a href="index.html" class="logo-section" itemprop="url">
+                        <div class="main-logo" style="background: transparent;"> <!-- Transparent background -->
+                            <img id="theme-logo" src="assets/images/logo_light.png" alt="Scholastic Forum" itemprop="logo">
                         </div>
                         <div class="logo-text">
-                            <div class="main-title">Scholastic Forum</div>
+                            <div class="main-title" itemprop="name">Scholastic Forum</div>
                             <div class="subtitle">Academic Elegance and Efficiency</div>
                         </div>
                     </a>
-                    <div class="powered-by">
-                        Powered by <img id="manufacturer-logo" src="assets/images/manufacturer_light.png" alt="High Voltage Software Technologies">
-                    </div>
                 </div>
                 
                 <div class="nav-links" id="navLinks">
@@ -1020,9 +1105,12 @@
                     <a href="schools/all.html" class="nav-link" style="background: var(--silver); color: var(--dark);">
                         <i class="fas fa-eye"></i> View All
                     </a>
+                    <a href="https://hvstechzw.github.io/Scholastic-Services-Web-Portal/" class="portal-link" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Portal
+                    </a>
                 </div>
                 
-                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
                     <i class="fas fa-bars"></i>
                 </button>
             </nav>
@@ -1030,15 +1118,15 @@
     </header>
 
     <!-- Hero Banner -->
-    <section class="hero-banner">
+    <section class="hero-banner" itemprop="mainContentOfPage">
         <div class="banner-background">
             <div class="banner-content">
-                <h1 class="banner-title">Discover Excellence in Education</h1>
-                <p class="banner-subtitle">
+                <h1 class="banner-title" itemprop="headline">Discover Excellence in Education</h1>
+                <p class="banner-subtitle" itemprop="description">
                     Scholastic Forum brings you comprehensive insights into educational institutions. 
                     Explore detailed profiles, compare facilities, and make informed decisions for your educational journey.
                 </p>
-                <a href="#schools" class="cta-button pulse">
+                <a href="#schools" class="cta-button pulse" itemprop="significantLink">
                     <i class="fas fa-search"></i> Explore Schools
                 </a>
             </div>
@@ -1048,15 +1136,17 @@
     <!-- Main Content -->
     <main class="container">
         <!-- Search & Filters -->
-        <section class="search-section fade-in">
+        <section class="search-section fade-in" id="search">
             <div class="search-box">
                 <i class="fas fa-search search-icon"></i>
-                <input type="text" class="search-input" id="searchInput" placeholder="Search schools by name, location, curriculum, or type...">
+                <input type="text" class="search-input" id="searchInput" 
+                       placeholder="Search schools by name, location, curriculum, or type..."
+                       aria-label="Search schools">
             </div>
             
             <div class="filter-grid">
                 <div class="filter-group">
-                    <label class="filter-label">Education Level</label>
+                    <label class="filter-label" for="levelFilter">Education Level</label>
                     <select class="filter-select" id="levelFilter">
                         <option value="all">All Levels</option>
                         <option value="Pre-School">Pre-School</option>
@@ -1070,7 +1160,7 @@
                 </div>
                 
                 <div class="filter-group">
-                    <label class="filter-label">School Type</label>
+                    <label class="filter-label" for="typeFilter">School Type</label>
                     <select class="filter-select" id="typeFilter">
                         <option value="all">All Types</option>
                         <option value="Day">Day School</option>
@@ -1080,7 +1170,7 @@
                 </div>
                 
                 <div class="filter-group">
-                    <label class="filter-label">Gender Focus</label>
+                    <label class="filter-label" for="genderFilter">Gender Focus</label>
                     <select class="filter-select" id="genderFilter">
                         <option value="all">All Genders</option>
                         <option value="Mixed">Mixed</option>
@@ -1090,7 +1180,7 @@
                 </div>
                 
                 <div class="filter-group">
-                    <label class="filter-label">Curriculum System</label>
+                    <label class="filter-label" for="curriculumFilter">Curriculum System</label>
                     <select class="filter-select" id="curriculumFilter">
                         <option value="all">All Curricula</option>
                         <option value="Competence-Based Learning">Competence-Based</option>
@@ -1105,15 +1195,15 @@
         </section>
 
         <!-- Featured Schools -->
-        <section class="featured-schools" id="schools">
+        <section class="featured-schools" id="schools" itemscope itemtype="https://schema.org/ItemList">
             <div class="section-header">
-                <h2 class="section-title">Featured Educational Institutions</h2>
+                <h2 class="section-title" itemprop="name">Featured Educational Institutions</h2>
                 <div class="schools-count" id="schoolsCount">
                     Showing 2 of 2 institutions
                 </div>
             </div>
             
-            <div class="featured-grid" id="schoolsGrid">
+            <div class="featured-grid" id="schoolsGrid" itemprop="itemListElement">
 
                 <div class="featured-card interactive-card" data-school-id="MAT25221384" 
                      data-level="High School"
@@ -1121,7 +1211,8 @@
                      data-gender="Mixed"
                      data-curriculum="Heritage-Based Education"
                      data-rating="0.0"
-                     data-search="hwange high school hwange matabeleland north heritage-based education">
+                     data-search="hwange high school hwange matabeleland north heritage-based education"
+                     itemprop="itemListElement" itemscope itemtype="https://schema.org/EducationalOrganization">
                     <div class="featured-card-header">
                         
                         <div class="featured-logo-container">
@@ -1130,34 +1221,35 @@
                         <div class="featured-type-badge">Day</div>
                     </div>
                     <div class="featured-card-body">
-                        <h3 class="featured-school-name">Hwange High School</h3>
-                        <div class="featured-location">
+                        <h3 class="featured-school-name" itemprop="name">Hwange High School</h3>
+                        <div class="featured-location" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Hwange, Matabeleland North</span>
+                            <span itemprop="addressLocality">Hwange</span>, 
+                            <span itemprop="addressRegion">Matabeleland North</span>
                         </div>
                         
                         <div class="featured-info-grid">
                             <div class="featured-info-item">
                                 <i class="fas fa-graduation-cap"></i>
-                                <span>High School</span>
+                                <span itemprop="educationalLevel">High School</span>
                             </div>
                             <div class="featured-info-item">
                                 <i class="fas fa-users"></i>
-                                <span>978 Students</span>
+                                <span itemprop="numberOfStudents">978 Students</span>
                             </div>
                             <div class="featured-info-item">
                                 <i class="fas fa-chalkboard-teacher"></i>
-                                <span>47 Staff</span>
+                                <span itemprop="numberOfEmployees">47 Staff</span>
                             </div>
                             <div class="featured-info-item">
                                 <i class="fas fa-calendar-star"></i>
-                                <span>Est. 2006</span>
+                                <span itemprop="foundingDate">Est. 2006</span>
                             </div>
                         </div>
                         
                         
                         
-                        <a href="schools/MAT25221384.html" class="featured-view-btn">
+                        <a href="schools/MAT25221384.html" class="featured-view-btn" itemprop="url">
                             <i class="fas fa-external-link-alt"></i> View Complete Profile
                         </a>
                     </div>
@@ -1169,7 +1261,8 @@
                      data-gender="Mixed"
                      data-curriculum="Heritage-Based Education"
                      data-rating="0.0"
-                     data-search="marist brothers high school hwange matabeleland north heritage-based education">
+                     data-search="marist brothers high school hwange matabeleland north heritage-based education"
+                     itemprop="itemListElement" itemscope itemtype="https://schema.org/EducationalOrganization">
                     <div class="featured-card-header">
                         
                         <div class="featured-logo-container">
@@ -1178,34 +1271,35 @@
                         <div class="featured-type-badge">Mixed</div>
                     </div>
                     <div class="featured-card-body">
-                        <h3 class="featured-school-name">Marist Brothers High School</h3>
-                        <div class="featured-location">
+                        <h3 class="featured-school-name" itemprop="name">Marist Brothers High School</h3>
+                        <div class="featured-location" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Hwange, Matabeleland North</span>
+                            <span itemprop="addressLocality">Hwange</span>, 
+                            <span itemprop="addressRegion">Matabeleland North</span>
                         </div>
                         
                         <div class="featured-info-grid">
                             <div class="featured-info-item">
                                 <i class="fas fa-graduation-cap"></i>
-                                <span>High School</span>
+                                <span itemprop="educationalLevel">High School</span>
                             </div>
                             <div class="featured-info-item">
                                 <i class="fas fa-users"></i>
-                                <span>497 Students</span>
+                                <span itemprop="numberOfStudents">497 Students</span>
                             </div>
                             <div class="featured-info-item">
                                 <i class="fas fa-chalkboard-teacher"></i>
-                                <span>23 Staff</span>
+                                <span itemprop="numberOfEmployees">23 Staff</span>
                             </div>
                             <div class="featured-info-item">
                                 <i class="fas fa-calendar-star"></i>
-                                <span>Est. 1972</span>
+                                <span itemprop="foundingDate">Est. 1972</span>
                             </div>
                         </div>
                         
                         
                         
-                        <a href="schools/MAT25152953.html" class="featured-view-btn">
+                        <a href="schools/MAT25152953.html" class="featured-view-btn" itemprop="url">
                             <i class="fas fa-external-link-alt"></i> View Complete Profile
                         </a>
                     </div>
@@ -1216,10 +1310,10 @@
             <div class="view-all-section fade-in">
                 <h3 style="margin-bottom: 1.5rem; color: var(--dark); font-size: 1.5rem;">Explore Complete School Directory</h3>
                 <p style="color: var(--gray-dark); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-                    Browse through our comprehensive database of {len(schools)} educational institutions with detailed profiles, facilities information, and reviews.
+                    Browse through our comprehensive database of 2 educational institutions with detailed profiles, facilities information, and reviews.
                 </p>
                 <a href="schools/all.html" class="view-all-btn">
-                    <i class="fas fa-list-alt"></i> View All Schools ({len(schools)} Total)
+                    <i class="fas fa-list-alt"></i> View All Schools (2 Total)
                     <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
@@ -1227,7 +1321,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
@@ -1238,14 +1332,14 @@
                         Empowering educational institutions with comprehensive management solutions.
                     </p>
                     <div class="manufacturer-logo">
-                        <img src="assets/images/manufacturer_dark.png" alt="High Voltage Software Technologies">
+                        <img src="assets/images/manufacturer_dark.png" alt="High Voltage Software Technologies" itemprop="logo">
                     </div>
                     <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 
@@ -1254,9 +1348,9 @@
                     <ul class="footer-links">
                         <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
                         <li><a href="schools/all.html"><i class="fas fa-school"></i> Schools Directory</a></li>
-                        <li><a href="#"><i class="fas fa-info-circle"></i> About Scholastic Services</a></li>
-                        <li><a href="#"><i class="fas fa-envelope"></i> Contact Support</a></li>
-                        <li><a href="#"><i class="fas fa-question-circle"></i> Help & FAQ</a></li>
+                        <li><a href="https://hvstechzw.github.io/Scholastic-Services-Web-Portal/" target="_blank"><i class="fas fa-info-circle"></i> About Scholastic Services</a></li>
+                        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact Support</a></li>
+                        <li><a href="#faq"><i class="fas fa-question-circle"></i> Help & FAQ</a></li>
                     </ul>
                 </div>
                 
@@ -1265,63 +1359,70 @@
                     <ul class="footer-links">
                         <li><a href="mailto:support@scholasticforum.org"><i class="fas fa-envelope"></i> support@scholasticforum.org</a></li>
                         <li><a href="tel:+263123456789"><i class="fas fa-phone"></i> +263 123 456 789</a></li>
-                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Harare, Zimbabwe</a></li>
-                        <li><a href="#"><i class="fas fa-building"></i> High Voltage Software Technologies</a></li>
-                        <li><a href="#"><i class="fas fa-globe"></i> www.scholasticservices.org</a></li>
+                        <li><a href="#" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress"><i class="fas fa-map-marker-alt"></i> Harare, Zimbabwe</a></li>
+                        <li><a href="#" itemprop="name"><i class="fas fa-building"></i> High Voltage Software Technologies</a></li>
+                        <li><a href="https://hvstechzw.github.io/Scholastic-Services-Web-Portal/" target="_blank"><i class="fas fa-globe"></i> Scholastic Services Portal</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2024 Scholastic Forum | A Scholastic Services Product | Powered by High Voltage Software Technologies</p>
+                <p>&copy; <span itemprop="copyrightYear">2025</span> Scholastic Forum | A Scholastic Services Product | Powered by High Voltage Software Technologies</p>
                 <p style="margin-top: 0.5rem; font-size: 0.8rem;">Comprehensive School Directory & Management System</p>
             </div>
         </div>
     </footer>
 
     <!-- Scroll to Top -->
-    <a href="#" class="scroll-top" id="scrollTop">
+    <a href="#" class="scroll-top" id="scrollTop" aria-label="Scroll to top">
         <i class="fas fa-chevron-up"></i>
     </a>
 
     <!-- JavaScript -->
     <script>
         // Theme detection for logos
-        function updateLogosForTheme() {{
+        function updateLogosForTheme() {
             const themeLogo = document.getElementById('theme-logo');
-            const manufacturerLogo = document.getElementById('manufacturer-logo');
             const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
             
-            if (isDarkMode) {{
+            if (isDarkMode) {
                 themeLogo.src = 'assets/images/logo_dark.png';
-                manufacturerLogo.src = 'assets/images/manufacturer_dark.png';
-                manufacturerLogo.style.filter = 'brightness(0) invert(1)';
-            }} else {{
+            } else {
                 themeLogo.src = 'assets/images/logo_light.png';
-                manufacturerLogo.src = 'assets/images/manufacturer_light.png';
-                manufacturerLogo.style.filter = 'grayscale(100%) opacity(0.7)';
-            }}
-        }}
+            }
+        }
         
-        // Mobile Menu Toggle
+        // Mobile Menu Toggle - Fixed functionality
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const navLinks = document.getElementById('navLinks');
         
-        mobileMenuBtn.addEventListener('click', function(e) {{
+        mobileMenuBtn.addEventListener('click', function(e) {
+            e.preventDefault();
             e.stopPropagation();
             navLinks.classList.toggle('active');
+            this.setAttribute('aria-expanded', navLinks.classList.contains('active'));
             this.innerHTML = navLinks.classList.contains('active') 
                 ? '<i class="fas fa-times"></i>' 
                 : '<i class="fas fa-bars"></i>';
-        }});
+        });
         
         // Close mobile menu when clicking outside
-        document.addEventListener('click', function(e) {{
-            if (!navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {{
+        document.addEventListener('click', function(e) {
+            if (!navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
                 navLinks.classList.remove('active');
                 mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-            }}
-        }});
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            });
+        });
         
         // Search and Filter Functionality
         const searchInput = document.getElementById('searchInput');
@@ -1332,8 +1433,8 @@
         const schoolCards = document.querySelectorAll('.featured-card');
         const schoolsCount = document.getElementById('schoolsCount');
         
-        function filterSchools() {{
-            const searchTerm = searchInput.value.toLowerCase();
+        function filterSchools() {
+            const searchTerm = searchInput.value.toLowerCase().trim();
             const levelValue = levelFilter.value;
             const typeValue = typeFilter.value;
             const genderValue = genderFilter.value;
@@ -1341,7 +1442,7 @@
             
             let visibleCount = 0;
             
-            schoolCards.forEach(card => {{
+            schoolCards.forEach(card => {
                 const searchData = card.getAttribute('data-search');
                 const level = card.getAttribute('data-level');
                 const type = card.getAttribute('data-type');
@@ -1349,137 +1450,201 @@
                 const curriculum = card.getAttribute('data-curriculum');
                 const rating = parseFloat(card.getAttribute('data-rating'));
                 
-                const matchesSearch = searchData.includes(searchTerm);
+                const matchesSearch = searchTerm === '' || searchData.includes(searchTerm);
                 const matchesLevel = levelValue === 'all' || level === levelValue;
                 const matchesType = typeValue === 'all' || type === typeValue;
                 const matchesGender = genderValue === 'all' || gender === genderValue;
                 const matchesCurriculum = curriculumValue === 'all' || curriculum === curriculumValue;
                 
-                if (matchesSearch && matchesLevel && matchesType && matchesGender && matchesCurriculum) {{
+                if (matchesSearch && matchesLevel && matchesType && matchesGender && matchesCurriculum) {
                     card.style.display = 'block';
                     card.classList.add('fade-in');
                     visibleCount++;
-                }} else {{
+                } else {
                     card.style.display = 'none';
                     card.classList.remove('fade-in');
-                }}
-            }});
+                }
+            });
             
-            schoolsCount.textContent = `Showing ${{visibleCount}} of {len(schools)} institutions`;
+            schoolsCount.textContent = `Showing ${visibleCount} of 2 institutions`;
             
             // Show loading animation if filtering takes time
-            if (visibleCount === 0 && searchTerm) {{
+            if (visibleCount === 0 && searchTerm) {
                 schoolsCount.innerHTML = `<div class="loading"><div class="spinner"></div>No matching schools found</div>`;
-            }}
-        }}
+            }
+        }
         
         // Add event listeners with debouncing
         let searchTimeout;
-        searchInput.addEventListener('input', function() {{
+        searchInput.addEventListener('input', function() {
             clearTimeout(searchTimeout);
             searchTimeout = setTimeout(filterSchools, 300);
-        }});
+        });
         
         levelFilter.addEventListener('change', filterSchools);
         typeFilter.addEventListener('change', filterSchools);
         genderFilter.addEventListener('change', filterSchools);
         curriculumFilter.addEventListener('change', filterSchools);
         
+        // Clear filters
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && searchInput.value) {
+                searchInput.value = '';
+                filterSchools();
+            }
+        });
+        
         // School Card Click
-        schoolCards.forEach(card => {{
-            card.addEventListener('click', function(e) {{
-                if (!e.target.classList.contains('featured-view-btn') && !e.target.closest('.featured-view-btn')) {{
+        schoolCards.forEach(card => {
+            card.addEventListener('click', function(e) {
+                if (!e.target.classList.contains('featured-view-btn') && !e.target.closest('.featured-view-btn')) {
                     const schoolId = this.getAttribute('data-school-id');
-                    window.location.href = `schools/${{schoolId}}.html`;
-                }}
-            }});
+                    window.location.href = `schools/${schoolId}.html`;
+                }
+            });
             
             // Add hover effect delay for smoothness
-            card.addEventListener('mouseenter', function() {{
+            card.addEventListener('mouseenter', function() {
                 this.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
-            }});
-        }});
+            });
+            
+            // Keyboard navigation for cards
+            card.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    const schoolId = this.getAttribute('data-school-id');
+                    window.location.href = `schools/${schoolId}.html`;
+                }
+            });
+            
+            // Make cards focusable
+            card.setAttribute('tabindex', '0');
+        });
         
         // Smooth Scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {{
-            anchor.addEventListener('click', function (e) {{
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
                 if (this.getAttribute('href') === '#') return;
                 
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                if (target) {{
-                    target.scrollIntoView({{
+                if (target) {
+                    target.scrollIntoView({
                         behavior: 'smooth',
                         block: 'start'
-                    }});
-                }}
-            }});
-        }});
+                    });
+                }
+            });
+        });
         
         // Scroll to Top
         const scrollTop = document.getElementById('scrollTop');
-        window.addEventListener('scroll', function() {{
-            if (window.pageYOffset > 300) {{
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
                 scrollTop.classList.add('visible');
-            }} else {{
+            } else {
                 scrollTop.classList.remove('visible');
-            }}
-        }});
+            }
+        });
         
-        scrollTop.addEventListener('click', function(e) {{
+        scrollTop.addEventListener('click', function(e) {
             e.preventDefault();
-            window.scrollTo({{
+            window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
-            }});
-        }});
+            });
+        });
         
         // Initialize tooltips
-        document.querySelectorAll('.featured-info-item').forEach(item => {{
-            item.addEventListener('mouseenter', function() {{
+        document.querySelectorAll('.featured-info-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
                 this.style.transform = 'translateX(5px)';
-            }});
-            item.addEventListener('mouseleave', function() {{
+            });
+            item.addEventListener('mouseleave', function() {
                 this.style.transform = 'translateX(0)';
-            }});
-        }});
+            });
+        });
         
         // Add keyboard navigation
-        document.addEventListener('keydown', function(e) {{
-            if (e.key === 'Escape' && navLinks.classList.contains('active')) {{
+        document.addEventListener('keydown', function(e) {
+            // Escape to close mobile menu
+            if (e.key === 'Escape' && navLinks.classList.contains('active')) {
                 navLinks.classList.remove('active');
                 mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-            }}
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            }
             
-            // Focus search on Ctrl+K
-            if ((e.ctrlKey || e.metaKey) && e.key === 'k') {{
+            // Focus search on Ctrl+K or /
+            if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
                 e.preventDefault();
                 searchInput.focus();
-            }}
-        }});
+            }
+            
+            if (e.key === '/' && document.activeElement !== searchInput) {
+                e.preventDefault();
+                searchInput.focus();
+            }
+        });
         
         // Initialize with fade-in animation
-        document.addEventListener('DOMContentLoaded', function() {{
+        document.addEventListener('DOMContentLoaded', function() {
             const elements = document.querySelectorAll('.fade-in');
-            elements.forEach((el, index) => {{
-                el.style.animationDelay = `${{index * 0.1}}s`;
-            }});
+            elements.forEach((el, index) => {
+                el.style.animationDelay = `${index * 0.1}s`;
+            });
             
             // Update logos based on theme
             updateLogosForTheme();
             window.matchMedia('(prefers-color-scheme: dark)').addListener(updateLogosForTheme);
-        }});
+            
+            // Initialize filters
+            filterSchools();
+        });
         
         // Add real-time search feedback
-        searchInput.addEventListener('input', function() {{
-            if (this.value.length > 0) {{
+        searchInput.addEventListener('input', function() {
+            if (this.value.length > 0) {
                 this.style.background = 'var(--white)';
                 this.style.borderColor = 'var(--accent)';
-            }} else {{
+            } else {
                 this.style.background = 'var(--light)';
                 this.style.borderColor = 'var(--gray-light)';
-            }}
-        }});
+            }
+        });
+        
+        // Add focus styles for accessibility
+        document.addEventListener('focusin', function(e) {
+            if (e.target.matches('a, button, input, select, [tabindex]')) {
+                e.target.style.outline = '2px solid var(--accent)';
+                e.target.style.outlineOffset = '2px';
+            }
+        });
+        
+        document.addEventListener('focusout', function(e) {
+            if (e.target.matches('a, button, input, select, [tabindex]')) {
+                e.target.style.outline = 'none';
+            }
+        });
+        
+        // Performance optimization - lazy loading for images
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        if (img.dataset.src) {
+                            img.src = img.dataset.src;
+                            img.removeAttribute('data-src');
+                        }
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+            
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
     </script>
 </body>
 </html>

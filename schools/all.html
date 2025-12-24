@@ -3,9 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Complete School Directory - Scholastic Forum</title>
+    <title>Complete School Directory - 2+ Educational Institutions | Scholastic Forum</title>
+    <meta name="description" content="Browse comprehensive directory of 2 educational institutions. Find schools by location, curriculum, facilities, and ratings. Complete school profiles.">
+    <meta name="keywords" content="schools directory, educational institutions database, find schools, school search, education directory">
+    <meta name="author" content="Scholastic Services">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://scholasticforum.org/schools/all.html">
+    <meta property="og:title" content="Complete School Directory - 2+ Institutions">
+    <meta property="og:description" content="Browse 2 educational institutions with detailed profiles.">
+    <meta property="og:image" content="https://scholasticforum.org/assets/images/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://scholasticforum.org/schools/all.html">
+    <meta property="twitter:title" content="Complete School Directory - 2+ Institutions">
+    <meta property="twitter:description" content="Browse 2 educational institutions with detailed profiles.">
+    <meta property="twitter:image" content="https://scholasticforum.org/assets/images/og-image.jpg">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Complete School Directory",
+        "description": "Directory of 2 educational institutions",
+        "url": "https://scholasticforum.org/schools/all.html",
+        "mainEntity": {
+            "@type": "ItemList",
+            "numberOfItems": 2,
+            "itemListElement": [
+                
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@type": "EducationalOrganization",
+                    "name": "Hwange High School",
+                    "description": "",
+                    "url": "https://scholasticforum.org/schools/MAT25221384.html"
+                }
+            },
+            
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@type": "EducationalOrganization",
+                    "name": "Marist Brothers High School",
+                    "description": "The best school in Matabeleland North",
+                    "url": "https://scholasticforum.org/schools/MAT25152953.html"
+                }
+            }
+            ]
+        }
+    }
+    </script>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="canonical" href="https://scholasticforum.org/schools/all.html">
     <style>
         :root {
             --primary: #ffffff;
@@ -78,15 +136,15 @@
         }
         
         .main-logo {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--silver) 0%, var(--gray) 100%);
+            width: 100px;
+            height: 100px;
+            background: transparent;
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--white);
-            font-size: 1.5rem;
+            font-size: 2.5rem;
             box-shadow: var(--shadow);
             border: 2px solid var(--white);
         }
@@ -638,6 +696,20 @@
             font-size: 0.9rem;
         }
         
+        .manufacturer-logo {
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .manufacturer-logo img {
+            height: 32px;
+            width: auto;
+            filter: brightness(0) invert(1);
+            opacity: 0.8;
+        }
+        
         /* No Results */
         .no-results {
             text-align: center;
@@ -717,6 +789,11 @@
             .school-card-body {
                 margin-top: 35px;
             }
+            
+            .main-logo {
+                width: 80px;
+                height: 80px;
+            }
         }
         
         @media (max-width: 480px) {
@@ -750,6 +827,11 @@
             .school-card-body {
                 margin-top: 30px;
             }
+            
+            .main-logo {
+                width: 70px;
+                height: 70px;
+            }
         }
         
         /* Animations */
@@ -763,14 +845,14 @@
         }
     </style>
 </head>
-<body>
+<body itemscope itemtype="https://schema.org/WebPage">
     <!-- Header -->
     <header class="header">
         <div class="container">
             <nav class="nav-container">
                 <div class="logo-wrapper">
                     <a href="../index.html" class="logo-section">
-                        <div class="main-logo">
+                        <div class="main-logo" style="background: transparent;">
                             <img id="theme-logo" src="../assets/images/logo_light.png" alt="Scholastic Forum">
                         </div>
                         <div class="logo-text">
@@ -900,7 +982,7 @@
     <section class="container">
         <div class="schools-grid-container">
             <div class="grid-header">
-                <h2 class="grid-title">All Educational Institutions</h2>
+                <h2 class="grid-title">All Educational Institutions (2 Total)</h2>
                 <div class="sort-controls">
                     <span style="color: var(--gray-dark); font-weight: 500;">Sort by:</span>
                     <select class="sort-select" id="sortSelect">
@@ -1045,7 +1127,7 @@
                         <li><a href="../index.html"><i class="fas fa-home"></i> Home Page</a></li>
                         <li><a href="#"><i class="fas fa-search"></i> Advanced Search</a></li>
                         <li><a href="#"><i class="fas fa-filter"></i> Filter Guide</a></li>
-                        <li><a href="#"><i class="fas fa-question-circle"></i> Help & Support</a></li>
+                        <li><a href="https://hvstechzw.github.io/Scholastic-Services-Web-Portal/" target="_blank"><i class="fas fa-question-circle"></i> Scholastic Services Portal</a></li>
                     </ul>
                 </div>
                 
@@ -1061,8 +1143,8 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2024 Scholastic Forum | Complete School Directory | {len(schools)} Institutions Listed</p>
-                <p style="margin-top: 0.5rem; font-size: 0.8rem;">Data Updated: {datetime.now().strftime('%Y-%m-%d %H:%M')}</p>
+                <p>&copy; 2025 Scholastic Forum | Complete School Directory | 2 Institutions Listed</p>
+                <p style="margin-top: 0.5rem; font-size: 0.8rem;">Data Updated: 2025-12-24 15:45</p>
             </div>
         </div>
     </footer>
@@ -1070,16 +1152,16 @@
     <!-- JavaScript -->
     <script>
         // Theme detection for logos
-        function updateLogosForTheme() {{
+        function updateLogosForTheme() {
             const themeLogo = document.getElementById('theme-logo');
             const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
             
-            if (isDarkMode) {{
+            if (isDarkMode) {
                 themeLogo.src = '../assets/images/logo_dark.png';
-            }} else {{
+            } else {
                 themeLogo.src = '../assets/images/logo_light.png';
-            }}
-        }}
+            }
+        }
         
         // School data and pagination
         const allSchoolCards = document.querySelectorAll('#allSchoolsGrid .school-card');
@@ -1096,15 +1178,15 @@
         const sortSelect = document.getElementById('sortSelect');
         const resetFilters = document.getElementById('resetFilters');
         
-        function filterAndSortSchools() {{
-            const searchTerm = allSearchInput.value.toLowerCase();
+        function filterAndSortSchools() {
+            const searchTerm = allSearchInput.value.toLowerCase().trim();
             const locationValue = locationFilter.value.toLowerCase();
             const levelValue = levelFilter.value.toLowerCase();
             const typeValue = typeFilter.value.toLowerCase();
             const minRating = parseFloat(ratingFilter.value);
             const sortBy = sortSelect.value;
             
-            filteredSchools = Array.from(allSchoolCards).filter(card => {{
+            filteredSchools = Array.from(allSchoolCards).filter(card => {
                 const name = card.getAttribute('data-name');
                 const location = card.getAttribute('data-location');
                 const level = card.getAttribute('data-level');
@@ -1119,11 +1201,11 @@
                 const matchesRating = minRating === 0 || rating >= minRating;
                 
                 return matchesSearch && matchesLocation && matchesLevel && matchesType && matchesRating;
-            }});
+            });
             
             // Sort schools
-            filteredSchools.sort((a, b) => {{
-                switch(sortBy) {{
+            filteredSchools.sort((a, b) => {
+                switch(sortBy) {
                     case 'name':
                         return a.getAttribute('data-name').localeCompare(b.getAttribute('data-name'));
                     case 'name-desc':
@@ -1138,39 +1220,39 @@
                         return parseInt(a.getAttribute('data-established')) - parseInt(b.getAttribute('data-established'));
                     default:
                         return 0;
-                }}
-            }});
+                }
+            });
             
             updateDisplay();
             updatePagination();
-        }}
+        }
         
-        function updateDisplay() {{
+        function updateDisplay() {
             const startIndex = (currentPage - 1) * schoolsPerPage;
             const endIndex = startIndex + schoolsPerPage;
             const schoolsToShow = filteredSchools.slice(startIndex, endIndex);
             
             // Hide all schools
-            allSchoolCards.forEach(card => {{
+            allSchoolCards.forEach(card => {
                 card.style.display = 'none';
                 card.classList.remove('fade-in-up');
-            }});
+            });
             
             // Show filtered schools with animation
-            schoolsToShow.forEach((card, index) => {{
+            schoolsToShow.forEach((card, index) => {
                 card.style.display = 'block';
-                card.style.animationDelay = `${{index * 0.05}}s`;
+                card.style.animationDelay = `${index * 0.05}s`;
                 card.classList.add('fade-in-up');
-            }});
+            });
             
             // Update count
             const gridTitle = document.querySelector('.grid-title');
-            gridTitle.textContent = `Educational Institutions (${{filteredSchools.length}} Found)`;
+            gridTitle.textContent = `Educational Institutions (${filteredSchools.length} Found)`;
             
             // Show no results message
             const noResults = document.getElementById('noResults');
-            if (filteredSchools.length === 0) {{
-                if (!noResults) {{
+            if (filteredSchools.length === 0) {
+                if (!noResults) {
                     const noResultsDiv = document.createElement('div');
                     noResultsDiv.id = 'noResults';
                     noResultsDiv.className = 'no-results';
@@ -1187,27 +1269,27 @@
                         </button>
                     `;
                     document.querySelector('.schools-grid-container').appendChild(noResultsDiv);
-                }}
-            }} else if (noResults) {{
+                }
+            } else if (noResults) {
                 noResults.remove();
-            }}
-        }}
+            }
+        }
         
-        function updatePagination() {{
+        function updatePagination() {
             const totalPages = Math.ceil(filteredSchools.length / schoolsPerPage);
             const pagination = document.getElementById('pagination');
             
-            if (totalPages <= 1) {{
+            if (totalPages <= 1) {
                 pagination.innerHTML = '';
                 return;
-            }}
+            }
             
             let paginationHTML = '';
             
             // Previous button
             paginationHTML += `
-                <a href="#" class="page-btn ${{currentPage === 1 ? 'disabled' : ''}}" 
-                   onclick="changePage(${{currentPage - 1}}); return false;">
+                <a href="#" class="page-btn ${currentPage === 1 ? 'disabled' : ''}" 
+                   onclick="changePage(${currentPage - 1}); return false;">
                     <i class="fas fa-chevron-left"></i>
                 </a>
             `;
@@ -1217,38 +1299,38 @@
             let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
             let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
             
-            if (endPage - startPage + 1 < maxVisiblePages) {{
+            if (endPage - startPage + 1 < maxVisiblePages) {
                 startPage = Math.max(1, endPage - maxVisiblePages + 1);
-            }}
+            }
             
-            for (let i = startPage; i <= endPage; i++) {{
+            for (let i = startPage; i <= endPage; i++) {
                 paginationHTML += `
-                    <a href="#" class="page-btn ${{i === currentPage ? 'active' : ''}}" 
-                       onclick="changePage(${{i}}); return false;">
-                        ${{i}}
+                    <a href="#" class="page-btn ${i === currentPage ? 'active' : ''}" 
+                       onclick="changePage(${i}); return false;">
+                        ${i}
                     </a>
                 `;
-            }}
+            }
             
             // Next button
             paginationHTML += `
-                <a href="#" class="page-btn ${{currentPage === totalPages ? 'disabled' : ''}}" 
-                   onclick="changePage(${{currentPage + 1}}); return false;">
+                <a href="#" class="page-btn ${currentPage === totalPages ? 'disabled' : ''}" 
+                   onclick="changePage(${currentPage + 1}); return false;">
                     <i class="fas fa-chevron-right"></i>
                 </a>
             `;
             
             pagination.innerHTML = paginationHTML;
-        }}
+        }
         
-        function changePage(page) {{
+        function changePage(page) {
             currentPage = page;
             updateDisplay();
             updatePagination();
-            window.scrollTo({{ top: document.querySelector('.schools-grid').offsetTop - 100, behavior: 'smooth' }});
-        }}
+            window.scrollTo({ top: document.querySelector('.schools-grid').offsetTop - 100, behavior: 'smooth' });
+        }
         
-        function resetAllFilters() {{
+        function resetAllFilters() {
             allSearchInput.value = '';
             locationFilter.value = 'all';
             levelFilter.value = 'all';
@@ -1257,14 +1339,14 @@
             sortSelect.value = 'name';
             currentPage = 1;
             filterAndSortSchools();
-        }}
+        }
         
         // Event listeners with debouncing
         let filterTimeout;
-        function scheduleFilter() {{
+        function scheduleFilter() {
             clearTimeout(filterTimeout);
             filterTimeout = setTimeout(filterAndSortSchools, 300);
-        }}
+        }
         
         allSearchInput.addEventListener('input', scheduleFilter);
         locationFilter.addEventListener('change', scheduleFilter);
@@ -1275,7 +1357,7 @@
         resetFilters.addEventListener('click', resetAllFilters);
         
         // Initialize
-        document.addEventListener('DOMContentLoaded', function() {{
+        document.addEventListener('DOMContentLoaded', function() {
             filterAndSortSchools();
             
             // Update logos based on theme
@@ -1283,46 +1365,46 @@
             window.matchMedia('(prefers-color-scheme: dark)').addListener(updateLogosForTheme);
             
             // Add click animation to cards
-            allSchoolCards.forEach(card => {{
-                card.addEventListener('click', function(e) {{
-                    if (!e.target.classList.contains('view-btn') && !e.target.closest('.view-btn')) {{
+            allSchoolCards.forEach(card => {
+                card.addEventListener('click', function(e) {
+                    if (!e.target.classList.contains('view-btn') && !e.target.closest('.view-btn')) {
                         this.style.transform = 'scale(0.98)';
-                        setTimeout(() => {{
+                        setTimeout(() => {
                             this.style.transform = '';
-                        }}, 150);
-                    }}
-                }});
-            }});
+                        }, 150);
+                    }
+                });
+            });
             
             // Add keyboard shortcuts
-            document.addEventListener('keydown', function(e) {{
+            document.addEventListener('keydown', function(e) {
                 // Focus search on /
-                if (e.key === '/' && e.target !== allSearchInput) {{
+                if (e.key === '/' && e.target !== allSearchInput) {
                     e.preventDefault();
                     allSearchInput.focus();
-                }}
+                }
                 
                 // Escape to clear search
-                if (e.key === 'Escape' && document.activeElement === allSearchInput) {{
+                if (e.key === 'Escape' && document.activeElement === allSearchInput) {
                     allSearchInput.value = '';
                     filterAndSortSchools();
-                }}
+                }
                 
                 // Ctrl+F to focus search
-                if ((e.ctrlKey || e.metaKey) && e.key === 'f') {{
+                if ((e.ctrlKey || e.metaKey) && e.key === 'f') {
                     e.preventDefault();
                     allSearchInput.focus();
-                }}
-            }});
+                }
+            });
             
             // Prevent form submission on Enter in search
-            allSearchInput.addEventListener('keydown', function(e) {{
-                if (e.key === 'Enter') {{
+            allSearchInput.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter') {
                     e.preventDefault();
                     filterAndSortSchools();
-                }}
-            }});
-        }});
+                }
+            });
+        });
         
         // Expose functions to global scope for onclick handlers
         window.changePage = changePage;
