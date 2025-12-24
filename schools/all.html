@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Schools - Scholastic Forum</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav-container">
+                <a href="../index.html" class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <div>
+                        <div class="logo-text">Scholastic Forum</div>
+                        <div class="logo-subtext">All Schools</div>
+                    </div>
+                </a>
+                <a href="../index.html" class="back-btn">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Home
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="search-section">
+            <div class="search-box">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" class="search-input" id="allSearchInput" placeholder="Search all schools...">
+            </div>
+        </div>
+        
+        <div class="schools-section">
+            <h2 class="section-title">All Schools (1 Total)</h2>
+            <div class="schools-grid" id="allSchoolsGrid">
+
+                <div class="school-card" data-search="marist brothers high school hwange matabeleland north">
+                    <div class="school-card-header" style="background: linear-gradient(135deg, #633c45 0%, #7954b0 100%);">
+                        <div class="school-type-badge">Mixed</div>
+                    </div>
+                    <div class="school-card-body">
+                        <h3 class="school-name">Marist Brothers High School</h3>
+                        <div class="school-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Hwange, Matabeleland North</span>
+                        </div>
+                        
+                        <div class="school-info-grid">
+                            <div class="info-item">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>High School</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-users"></i>
+                                <span>497 Students</span>
+                            </div>
+                        </div>
+                        
+                        <div class="amenities-preview">
+                            <span class="amenity-tag">📚 Library</span> <span class="amenity-tag">🔬 Science Lab</span>
+                        </div>
+                        
+                        
+                        
+                        <a href="MAT25152953.html" class="view-btn">
+                            View Details
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 Scholastic Forum. All rights reserved. | {len(schools)} Schools Listed</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Search functionality for all schools page
+        const allSearchInput = document.getElementById('allSearchInput');
+        const allSchoolCards = document.querySelectorAll('#allSchoolsGrid .school-card');
+        
+        allSearchInput.addEventListener('input', function() {{
+            const searchTerm = this.value.toLowerCase();
+            
+            allSchoolCards.forEach(card => {{
+                const searchData = card.getAttribute('data-search');
+                if (searchData.includes(searchTerm)) {{
+                    card.style.display = 'block';
+                }} else {{
+                    card.style.display = 'none';
+                }}
+            }});
+        }});
+    </script>
+</body>
+</html>
