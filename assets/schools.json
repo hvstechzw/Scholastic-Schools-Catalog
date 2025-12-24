@@ -1,7 +1,29 @@
 [
   {
+    "id": "MAT25221384",
+    "name": "Hwange High School",
+    "short_name": "HHS",
+    "city": "Hwange",
+    "province": "Matabeleland North",
+    "level": "High School",
+    "type": "Day",
+    "gender": "Mixed",
+    "curriculum": "Heritage-Based Education",
+    "students": 978,
+    "teachers": 47,
+    "rating": 0.0,
+    "established": 2006,
+    "amenities": [
+      "\ud83d\udcda Library",
+      "\ud83d\udcbb Computer Lab",
+      "\u26bd Playground",
+      "\ud83d\udce1 WiFi"
+    ]
+  },
+  {
     "id": "MAT25152953",
     "name": "Marist Brothers High School",
+    "short_name": "MBHS",
     "city": "Hwange",
     "province": "Matabeleland North",
     "level": "High School",
@@ -9,6 +31,15 @@
     "gender": "Mixed",
     "curriculum": "Heritage-Based Education",
     "students": 497,
-    "rating": 0.0
+    "teachers": 23,
+    "rating": 0.0,
+    "established": 1972,
+    "amenities": [
+      "\ud83d\udcda Library",
+      "\ud83d\udd2c Science Lab",
+      "\ud83d\udcbb Computer Lab",
+      "\ud83c\udfc5 Sports Field",
+      "\ud83c\udf7d\ufe0f Cafeteria"
+    ]
   }
 ]

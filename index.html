@@ -8,18 +8,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #4f46e5;
-            --primary-dark: #4338ca;
-            --secondary: #10b981;
-            --dark: #1f2937;
-            --light: #f9fafb;
-            --gray: #6b7280;
-            --gray-light: #e5e7eb;
+            --primary: #ffffff;
+            --primary-dark: #f0f0f0;
+            --secondary: #6c757d;
+            --accent: #20c997;
+            --dark: #212529;
+            --light: #f8f9fa;
+            --gray: #adb5bd;
+            --gray-light: #e9ecef;
+            --gray-dark: #495057;
             --white: #ffffff;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --silver: #c0c0c0;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.05), 0 5px 10px rgba(0, 0, 0, 0.05);
             --radius: 12px;
-            --transition: all 0.3s ease;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
         * {
@@ -32,23 +35,26 @@
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
             color: var(--dark);
-            background-color: var(--light);
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            min-height: 100vh;
         }
         
         .container {
             width: 100%;
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 20px;
         }
         
         /* Header & Navigation */
         .header {
-            background: var(--white);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
             box-shadow: var(--shadow);
             position: sticky;
             top: 0;
             z-index: 1000;
+            border-bottom: 1px solid var(--gray-light);
         }
         
         .nav-container {
@@ -58,35 +64,74 @@
             padding: 1rem 0;
         }
         
-        .logo {
+        .logo-section {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
             text-decoration: none;
         }
         
-        .logo-icon {
-            background: var(--primary);
-            color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
+        .logo-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .main-logo {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--silver) 0%, var(--gray) 100%);
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
+            color: var(--white);
             font-size: 1.5rem;
+            box-shadow: var(--shadow);
+            border: 2px solid var(--white);
+            overflow: hidden;
+        }
+        
+        .main-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         
         .logo-text {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 700;
-            font-size: 1.5rem;
-            color: var(--primary);
+            display: flex;
+            flex-direction: column;
         }
         
-        .logo-subtext {
-            font-size: 0.8rem;
+        .main-title {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            background: linear-gradient(135deg, var(--gray-dark) 0%, var(--dark) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            font-size: 0.75rem;
             color: var(--gray);
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-top: -2px;
+        }
+        
+        .powered-by {
+            font-size: 0.7rem;
+            color: var(--gray);
+            padding-left: 10px;
+            border-left: 1px solid var(--gray-light);
+        }
+        
+        .powered-by span {
+            color: var(--accent);
+            font-weight: 600;
         }
         
         .nav-links {
@@ -100,22 +145,36 @@
             color: var(--dark);
             font-weight: 500;
             transition: var(--transition);
-            padding: 0.5rem 0;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius);
             position: relative;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
         
         .nav-link:hover {
-            color: var(--primary);
+            background: var(--gray-light);
+            color: var(--dark);
+            transform: translateY(-1px);
         }
         
-        .nav-link.active::after {
+        .nav-link.active {
+            background: var(--white);
+            color: var(--accent);
+            box-shadow: var(--shadow);
+        }
+        
+        .nav-link.active::before {
             content: '';
             position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: var(--primary);
+            bottom: -1px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 2px;
         }
         
         .mobile-menu-btn {
@@ -125,127 +184,227 @@
             font-size: 1.5rem;
             color: var(--dark);
             cursor: pointer;
+            width: 44px;
+            height: 44px;
+            border-radius: var(--radius);
+            transition: var(--transition);
         }
         
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: white;
-            padding: 4rem 0;
-            margin-bottom: 3rem;
-            border-radius: 0 0 var(--radius) var(--radius);
+        .mobile-menu-btn:hover {
+            background: var(--gray-light);
         }
         
-        .hero-content {
+        /* Hero Banner */
+        .hero-banner {
+            position: relative;
+            height: 500px;
+            margin: 2rem 0;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .banner-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(240,240,240,0.9) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        
+        .banner-content {
+            position: relative;
+            z-index: 2;
             text-align: center;
             max-width: 800px;
-            margin: 0 auto;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
         }
         
-        .hero-title {
+        .banner-title {
             font-family: 'Poppins', sans-serif;
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: 700;
             margin-bottom: 1rem;
-            line-height: 1.2;
+            background: linear-gradient(135deg, var(--gray-dark) 0%, var(--dark) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
-        .hero-subtitle {
-            font-size: 1.1rem;
-            opacity: 0.9;
+        .banner-subtitle {
+            font-size: 1.2rem;
+            color: var(--gray-dark);
             margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            line-height: 1.6;
+        }
+        
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--accent) 0%, #17a589 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: var(--radius);
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(32, 201, 151, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(32, 201, 151, 0.4);
         }
         
         /* Search & Filters */
         .search-section {
             background: var(--white);
-            padding: 2rem;
+            padding: 2.5rem;
             border-radius: var(--radius);
             box-shadow: var(--shadow);
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
+            border: 1px solid var(--gray-light);
+            transition: var(--transition);
+        }
+        
+        .search-section:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
         }
         
         .search-box {
             position: relative;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
         
         .search-input {
             width: 100%;
-            padding: 1rem 1rem 1rem 3rem;
+            padding: 1.25rem 1.25rem 1.25rem 3.5rem;
             border: 2px solid var(--gray-light);
             border-radius: var(--radius);
             font-size: 1rem;
             transition: var(--transition);
+            background: var(--light);
         }
         
         .search-input:focus {
             outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(32, 201, 151, 0.1);
+            background: var(--white);
         }
         
         .search-icon {
             position: absolute;
-            left: 1rem;
+            left: 1.25rem;
             top: 50%;
             transform: translateY(-50%);
             color: var(--gray);
+            font-size: 1.2rem;
         }
         
         .filter-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
         }
         
         .filter-group {
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
         }
         
         .filter-label {
             display: block;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
             color: var(--dark);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         
         .filter-select {
             width: 100%;
-            padding: 0.75rem;
+            padding: 0.875rem;
             border: 2px solid var(--gray-light);
             border-radius: var(--radius);
-            font-size: 0.9rem;
-            background: var(--white);
+            font-size: 0.95rem;
+            background: var(--light);
             cursor: pointer;
+            transition: var(--transition);
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1em;
+        }
+        
+        .filter-select:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(32, 201, 151, 0.1);
+            background: var(--white);
         }
         
         /* Schools Grid */
         .schools-section {
-            margin-bottom: 4rem;
+            margin-bottom: 5rem;
+        }
+        
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
         
         .section-title {
             font-family: 'Poppins', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            font-weight: 700;
             color: var(--dark);
+            position: relative;
+            padding-bottom: 0.75rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(to right, var(--accent), transparent);
+            border-radius: 2px;
         }
         
         .schools-count {
-            color: var(--gray);
-            font-size: 0.9rem;
-            margin-bottom: 1.5rem;
+            color: var(--gray-dark);
+            font-size: 1rem;
+            font-weight: 500;
+            background: var(--gray-light);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
         }
         
         .schools-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
         }
         
         .school-card {
@@ -255,129 +414,243 @@
             box-shadow: var(--shadow);
             transition: var(--transition);
             cursor: pointer;
+            border: 1px solid var(--gray-light);
+            position: relative;
+        }
+        
+        .school-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, var(--accent), var(--silver));
+            z-index: 1;
         }
         
         .school-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
             box-shadow: var(--shadow-lg);
+            border-color: var(--accent);
         }
         
         .school-card-header {
-            height: 120px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            height: 140px;
             position: relative;
-            padding: 1rem;
-            color: white;
+            padding: 1.5rem;
+            color: var(--dark);
+            overflow: hidden;
+        }
+        
+        .school-banner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.1;
         }
         
         .school-type-badge {
             position: absolute;
             top: 1rem;
             right: 1rem;
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            padding: 0.25rem 0.75rem;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(5px);
+            padding: 0.5rem 1rem;
             border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 500;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--dark);
+            border: 1px solid var(--gray-light);
+            z-index: 2;
         }
         
         .school-card-body {
-            padding: 1.5rem;
+            padding: 1.75rem;
         }
         
         .school-name {
             font-family: 'Poppins', sans-serif;
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
             color: var(--dark);
+            line-height: 1.3;
         }
         
         .school-location {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            color: var(--gray);
+            gap: 0.75rem;
+            color: var(--gray-dark);
             font-size: 0.9rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.25rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--gray-light);
         }
         
         .school-info-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 0.75rem;
-            margin-bottom: 1rem;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
         }
         
         .info-item {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.75rem;
             font-size: 0.85rem;
             color: var(--dark);
         }
         
         .info-item i {
-            color: var(--primary);
+            color: var(--accent);
             width: 16px;
+            font-size: 1rem;
         }
         
         .school-rating {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            padding: 0.75rem;
+            background: var(--light);
+            border-radius: var(--radius);
         }
         
         .stars {
-            color: #fbbf24;
+            color: #ffc107;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
         }
         
         .rating-text {
             font-size: 0.9rem;
-            color: var(--gray);
+            color: var(--gray-dark);
+            font-weight: 600;
         }
         
         .view-btn {
             display: block;
             width: 100%;
-            padding: 0.75rem;
-            background: var(--primary);
-            color: white;
-            border: none;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--white) 0%, var(--gray-light) 100%);
+            color: var(--dark);
+            border: 2px solid var(--gray-light);
             border-radius: var(--radius);
-            font-weight: 500;
+            font-weight: 600;
             cursor: pointer;
             transition: var(--transition);
             text-align: center;
             text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .view-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
         }
         
         .view-btn:hover {
-            background: var(--primary-dark);
+            background: linear-gradient(135deg, var(--accent) 0%, #17a589 100%);
+            color: white;
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(32, 201, 151, 0.3);
+        }
+        
+        .view-btn:hover::before {
+            left: 100%;
+        }
+        
+        /* View All Section */
+        .view-all-section {
+            text-align: center;
+            margin: 3rem 0;
+            padding: 3rem;
+            background: linear-gradient(135deg, var(--white) 0%, var(--light) 100%);
+            border-radius: var(--radius);
+            border: 2px dashed var(--gray-light);
+        }
+        
+        .view-all-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.25rem 2.5rem;
+            background: linear-gradient(135deg, var(--white) 0%, var(--gray-light) 100%);
+            color: var(--dark);
+            text-decoration: none;
+            border-radius: var(--radius);
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            border: 2px solid var(--gray-light);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .view-all-btn:hover {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--gray-dark) 100%);
+            color: var(--white);
+            border-color: var(--dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .view-all-btn i {
+            transition: var(--transition);
+        }
+        
+        .view-all-btn:hover i {
+            transform: translateX(5px);
         }
         
         /* Footer */
         .footer {
-            background: var(--dark);
+            background: linear-gradient(135deg, var(--dark) 0%, #343a40 100%);
             color: var(--white);
-            padding: 3rem 0 1.5rem;
-            margin-top: 4rem;
+            padding: 4rem 0 2rem;
+            margin-top: 6rem;
         }
         
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
+            gap: 3rem;
+            margin-bottom: 3rem;
         }
         
         .footer-section h3 {
             font-family: 'Poppins', sans-serif;
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
             color: var(--white);
+            position: relative;
+            padding-bottom: 0.75rem;
+        }
+        
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 2px;
         }
         
         .footer-links {
@@ -385,100 +658,185 @@
         }
         
         .footer-links li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.875rem;
         }
         
         .footer-links a {
-            color: var(--gray-light);
+            color: var(--gray);
             text-decoration: none;
             transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
         }
         
         .footer-links a:hover {
-            color: var(--white);
+            color: var(--accent);
             padding-left: 5px;
+        }
+        
+        .footer-links a i {
+            width: 20px;
+            font-size: 0.9rem;
         }
         
         .social-links {
             display: flex;
             gap: 1rem;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
         }
         
         .social-link {
-            width: 40px;
-            height: 40px;
+            width: 44px;
+            height: 44px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: var(--white);
             text-decoration: none;
             transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .social-link:hover {
-            background: var(--primary);
+            background: var(--accent);
             transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(32, 201, 151, 0.3);
+        }
+        
+        .company-info {
+            color: var(--gray);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        .company-name {
+            color: var(--accent);
+            font-weight: 600;
         }
         
         .footer-bottom {
             text-align: center;
-            padding-top: 1.5rem;
+            padding-top: 2rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: var(--gray);
             font-size: 0.9rem;
         }
         
-        /* No Results */
-        .no-results {
-            text-align: center;
-            padding: 3rem;
-            background: var(--white);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
-        .no-results-icon {
-            font-size: 3rem;
-            color: var(--gray-light);
-            margin-bottom: 1rem;
+        .fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        
+        /* Loading State */
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 3rem;
+            color: var(--gray);
+        }
+        
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--gray-light);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 1rem;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
         }
         
         /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .schools-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+            
+            .banner-title {
+                font-size: 2.5rem;
+            }
+        }
+        
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
+                position: fixed;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                padding: 1rem;
+                flex-direction: column;
+                box-shadow: var(--shadow);
+                border-radius: var(--radius);
+                margin: 0 20px;
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                display: flex;
+                animation: fadeIn 0.3s ease-out;
             }
             
             .mobile-menu-btn {
-                display: block;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
             
-            .hero-title {
+            .hero-banner {
+                height: 400px;
+                margin: 1rem 0;
+            }
+            
+            .banner-title {
                 font-size: 2rem;
             }
             
-            .schools-grid {
-                grid-template-columns: 1fr;
+            .banner-subtitle {
+                font-size: 1rem;
+            }
+            
+            .banner-content {
+                padding: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.75rem;
             }
             
             .filter-grid {
                 grid-template-columns: 1fr;
             }
             
-            .nav-container {
-                padding: 0.75rem 0;
+            .search-section {
+                padding: 1.75rem;
             }
             
-            .hero {
-                padding: 3rem 0;
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
             }
         }
         
         @media (max-width: 480px) {
-            .hero-title {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .banner-title {
                 font-size: 1.75rem;
             }
             
@@ -486,13 +844,77 @@
                 font-size: 1.5rem;
             }
             
-            .container {
-                padding: 0 15px;
+            .schools-grid {
+                grid-template-columns: 1fr;
             }
             
-            .search-section {
-                padding: 1.5rem;
+            .nav-container {
+                padding: 0.75rem 0;
             }
+            
+            .main-title {
+                font-size: 1.4rem;
+            }
+            
+            .main-logo {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .footer {
+                padding: 3rem 0 1.5rem;
+            }
+        }
+        
+        /* Interactive Elements */
+        .interactive-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .interactive-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Scroll to Top */
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(32, 201, 151, 0.3);
+        }
+        
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top:hover {
+            background: #17a589;
+            transform: translateY(-3px);
         }
     </style>
 </head>
@@ -501,39 +923,58 @@
     <header class="header">
         <div class="container">
             <nav class="nav-container">
-                <a href="index.html" class="logo">
-                    <div class="logo-icon">
-                        <i class="fas fa-school"></i>
+                <div class="logo-wrapper">
+                    <a href="index.html" class="logo-section">
+                        <div class="main-logo">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="logo-text">
+                            <div class="main-title">Scholastic Forum</div>
+                            <div class="subtitle">School Directory & Management</div>
+                        </div>
+                    </a>
+                    <div class="powered-by">
+                        A product of <span>High Voltage Software Technologies</span>
                     </div>
-                    <div>
-                        <div class="logo-text">Scholastic Forum</div>
-                        <div class="logo-subtext">School Directory</div>
-                    </div>
-                </a>
-                
-                <div class="nav-links">
-                    <a href="index.html" class="nav-link active">Home</a>
-                    <a href="#schools" class="nav-link">Schools</a>
-                    <a href="#about" class="nav-link">About</a>
-                    <a href="#contact" class="nav-link">Contact</a>
                 </div>
                 
-                <button class="mobile-menu-btn">
+                <div class="nav-links" id="navLinks">
+                    <a href="index.html" class="nav-link active">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                    <a href="#schools" class="nav-link">
+                        <i class="fas fa-school"></i> Schools
+                    </a>
+                    <a href="#about" class="nav-link">
+                        <i class="fas fa-info-circle"></i> About
+                    </a>
+                    <a href="#contact" class="nav-link">
+                        <i class="fas fa-envelope"></i> Contact
+                    </a>
+                    <a href="schools/all.html" class="nav-link" style="background: var(--accent); color: white;">
+                        <i class="fas fa-eye"></i> View All
+                    </a>
+                </div>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
                     <i class="fas fa-bars"></i>
                 </button>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">Discover & Connect with Schools</h1>
-                <p class="hero-subtitle">
-                    Explore comprehensive information about schools in your community. 
-                    Find details about academics, facilities, ratings, and more.
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+        <div class="banner-background">
+            <div class="banner-content">
+                <h1 class="banner-title">Discover Excellence in Education</h1>
+                <p class="banner-subtitle">
+                    Scholastic Forum brings you comprehensive insights into educational institutions. 
+                    Explore detailed profiles, compare facilities, and make informed decisions for your educational journey.
                 </p>
+                <a href="#schools" class="cta-button pulse">
+                    <i class="fas fa-search"></i> Explore Schools
+                </a>
             </div>
         </div>
     </section>
@@ -541,15 +982,15 @@
     <!-- Main Content -->
     <main class="container">
         <!-- Search & Filters -->
-        <section class="search-section">
+        <section class="search-section fade-in">
             <div class="search-box">
                 <i class="fas fa-search search-icon"></i>
-                <input type="text" class="search-input" id="searchInput" placeholder="Search schools by name, location, or type...">
+                <input type="text" class="search-input" id="searchInput" placeholder="Search schools by name, location, curriculum, or type...">
             </div>
             
             <div class="filter-grid">
                 <div class="filter-group">
-                    <label class="filter-label">Level</label>
+                    <label class="filter-label">Education Level</label>
                     <select class="filter-select" id="levelFilter">
                         <option value="all">All Levels</option>
                         <option value="Pre-School">Pre-School</option>
@@ -563,7 +1004,7 @@
                 </div>
                 
                 <div class="filter-group">
-                    <label class="filter-label">Type</label>
+                    <label class="filter-label">School Type</label>
                     <select class="filter-select" id="typeFilter">
                         <option value="all">All Types</option>
                         <option value="Day">Day School</option>
@@ -583,14 +1024,15 @@
                 </div>
                 
                 <div class="filter-group">
-                    <label class="filter-label">Curriculum</label>
+                    <label class="filter-label">Curriculum System</label>
                     <select class="filter-select" id="curriculumFilter">
                         <option value="all">All Curricula</option>
                         <option value="Competence-Based Learning">Competence-Based</option>
                         <option value="Heritage-Based Education">Heritage-Based</option>
-                        <option value="STEM Bias">STEM</option>
-                        <option value="British">British</option>
-                        <option value="American">American</option>
+                        <option value="STEM Bias">STEM Focus</option>
+                        <option value="British">British Curriculum</option>
+                        <option value="American">American Curriculum</option>
+                        <option value="International Baccalaureate">IB Program</option>
                     </select>
                 </div>
             </div>
@@ -598,20 +1040,69 @@
 
         <!-- Schools List -->
         <section class="schools-section" id="schools">
-            <h2 class="section-title">Featured Schools</h2>
-            <div class="schools-count" id="schoolsCount">
-                Showing 1 schools
+            <div class="section-header">
+                <h2 class="section-title">Featured Educational Institutions</h2>
+                <div class="schools-count" id="schoolsCount">
+                    Showing 2 institutions
+                </div>
             </div>
             
             <div class="schools-grid" id="schoolsGrid">
 
-                <div class="school-card" data-school-id="MAT25152953" 
+                <div class="school-card interactive-card" data-school-id="MAT25221384" 
+                     data-level="High School"
+                     data-type="Day"
+                     data-gender="Mixed"
+                     data-curriculum="Heritage-Based Education"
+                     data-rating="0.0"
+                     data-search="hwange high school hwange matabeleland north heritage-based education">
+                    <div class="school-card-header">
+                        
+                        <div class="school-type-badge">Day</div>
+                    </div>
+                    <div class="school-card-body">
+                        <h3 class="school-name">Hwange High School</h3>
+                        <div class="school-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Hwange, Matabeleland North</span>
+                        </div>
+                        
+                        <div class="school-info-grid">
+                            <div class="info-item">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>High School</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-users"></i>
+                                <span>978 Students</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-chalkboard-teacher"></i>
+                                <span>47 Staff</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-calendar-star"></i>
+                                <span>Est. 2006</span>
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        <a href="schools/MAT25221384.html" class="view-btn">
+                            <i class="fas fa-external-link-alt"></i> View Complete Profile
+                        </a>
+                    </div>
+                </div>
+
+                <div class="school-card interactive-card" data-school-id="MAT25152953" 
                      data-level="High School"
                      data-type="Mixed"
                      data-gender="Mixed"
                      data-curriculum="Heritage-Based Education"
-                     data-search="marist brothers high school hwange matabeleland north">
+                     data-rating="0.0"
+                     data-search="marist brothers high school hwange matabeleland north heritage-based education">
                     <div class="school-card-header">
+                        
                         <div class="school-type-badge">Mixed</div>
                     </div>
                     <div class="school-card-body">
@@ -632,10 +1123,10 @@
                             </div>
                             <div class="info-item">
                                 <i class="fas fa-chalkboard-teacher"></i>
-                                <span>23 Teachers</span>
+                                <span>23 Staff</span>
                             </div>
                             <div class="info-item">
-                                <i class="fas fa-calendar-alt"></i>
+                                <i class="fas fa-calendar-star"></i>
                                 <span>Est. 1972</span>
                             </div>
                         </div>
@@ -643,16 +1134,21 @@
                         
                         
                         <a href="schools/MAT25152953.html" class="view-btn">
-                            View Details
+                            <i class="fas fa-external-link-alt"></i> View Complete Profile
                         </a>
                     </div>
                 </div>
 
             </div>
             
-            <div style="text-align: center; margin-top: 3rem;">
-                <a href="schools/all.html" class="view-btn" style="display: inline-block; width: auto; padding: 1rem 2rem;">
-                    View All Schools
+            <div class="view-all-section fade-in">
+                <h3 style="margin-bottom: 1.5rem; color: var(--dark); font-size: 1.5rem;">Explore Complete School Directory</h3>
+                <p style="color: var(--gray-dark); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Browse through our comprehensive database of {len(schools)} educational institutions with detailed profiles, facilities information, and reviews.
+                </p>
+                <a href="schools/all.html" class="view-all-btn">
+                    <i class="fas fa-list-alt"></i> View All Schools ({len(schools)} Total)
+                    <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
         </section>
@@ -664,46 +1160,75 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Scholastic Forum</h3>
-                    <p>Your comprehensive school directory platform. Connecting communities with educational institutions.</p>
+                    <p class="company-info">
+                        Part of the <span class="company-name">Scholastic Services</span> suite by 
+                        <span class="company-name">High Voltage Software Technologies</span>. 
+                        Empowering educational institutions with comprehensive management solutions.
+                    </p>
                     <div class="social-links">
                         <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
                         <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
                         <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 
                 <div class="footer-section">
-                    <h3>Quick Links</h3>
+                    <h3>Quick Access</h3>
                     <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="#schools">Schools Directory</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="schools/all.html"><i class="fas fa-school"></i> Schools Directory</a></li>
+                        <li><a href="#"><i class="fas fa-info-circle"></i> About Scholastic Services</a></li>
+                        <li><a href="#"><i class="fas fa-envelope"></i> Contact Support</a></li>
+                        <li><a href="#"><i class="fas fa-question-circle"></i> Help & FAQ</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
-                    <h3>Contact Info</h3>
+                    <h3>Contact Information</h3>
                     <ul class="footer-links">
-                        <li><i class="fas fa-envelope"></i> info@scholasticforum.org</li>
-                        <li><i class="fas fa-phone"></i> +263 123 456 789</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Harare, Zimbabwe</li>
+                        <li><a href="mailto:support@scholasticforum.org"><i class="fas fa-envelope"></i> support@scholasticforum.org</a></li>
+                        <li><a href="tel:+263123456789"><i class="fas fa-phone"></i> +263 123 456 789</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Harare, Zimbabwe</a></li>
+                        <li><a href="#"><i class="fas fa-building"></i> High Voltage Software Technologies</a></li>
+                        <li><a href="#"><i class="fas fa-globe"></i> www.scholasticservices.org</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2024 Scholastic Forum. All rights reserved. | Generated on {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}</p>
+                <p>&copy; 2024 Scholastic Forum | A Scholastic Services Product | Powered by High Voltage Software Technologies</p>
+                <p style="margin-top: 0.5rem; font-size: 0.8rem;">Comprehensive School Directory & Management System</p>
             </div>
         </div>
     </footer>
 
+    <!-- Scroll to Top -->
+    <a href="#" class="scroll-top" id="scrollTop">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
     <!-- JavaScript -->
     <script>
         // Mobile Menu Toggle
-        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {{
-            document.querySelector('.nav-links').classList.toggle('show');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', function(e) {{
+            e.stopPropagation();
+            navLinks.classList.toggle('active');
+            this.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        }});
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {{
+            if (!navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {{
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            }}
         }});
         
         // Search and Filter Functionality
@@ -730,6 +1255,7 @@
                 const type = card.getAttribute('data-type');
                 const gender = card.getAttribute('data-gender');
                 const curriculum = card.getAttribute('data-curriculum');
+                const rating = parseFloat(card.getAttribute('data-rating'));
                 
                 const matchesSearch = searchData.includes(searchTerm);
                 const matchesLevel = levelValue === 'all' || level === levelValue;
@@ -739,17 +1265,29 @@
                 
                 if (matchesSearch && matchesLevel && matchesType && matchesGender && matchesCurriculum) {{
                     card.style.display = 'block';
+                    card.classList.add('fade-in');
                     visibleCount++;
                 }} else {{
                     card.style.display = 'none';
+                    card.classList.remove('fade-in');
                 }}
             }});
             
-            schoolsCount.textContent = `Showing ${{visibleCount}} schools`;
+            schoolsCount.textContent = `Showing ${{visibleCount}} institutions`;
+            
+            // Show loading animation if filtering takes time
+            if (visibleCount === 0 && searchTerm) {{
+                schoolsCount.innerHTML = `<div class="loading"><div class="spinner"></div>No matching schools found</div>`;
+            }}
         }}
         
-        // Add event listeners
-        searchInput.addEventListener('input', filterSchools);
+        // Add event listeners with debouncing
+        let searchTimeout;
+        searchInput.addEventListener('input', function() {{
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(filterSchools, 300);
+        }});
+        
         levelFilter.addEventListener('change', filterSchools);
         typeFilter.addEventListener('change', filterSchools);
         genderFilter.addEventListener('change', filterSchools);
@@ -763,19 +1301,88 @@
                     window.location.href = `schools/${{schoolId}}.html`;
                 }}
             }});
+            
+            // Add hover effect delay for smoothness
+            card.addEventListener('mouseenter', function() {{
+                this.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+            }});
         }});
         
         // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {{
             anchor.addEventListener('click', function (e) {{
+                if (this.getAttribute('href') === '#') return;
+                
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {{
                     target.scrollIntoView({{
-                        behavior: 'smooth'
+                        behavior: 'smooth',
+                        block: 'start'
                     }});
                 }}
             }});
+        }});
+        
+        // Scroll to Top
+        const scrollTop = document.getElementById('scrollTop');
+        window.addEventListener('scroll', function() {{
+            if (window.pageYOffset > 300) {{
+                scrollTop.classList.add('visible');
+            }} else {{
+                scrollTop.classList.remove('visible');
+            }}
+        }});
+        
+        scrollTop.addEventListener('click', function(e) {{
+            e.preventDefault();
+            window.scrollTo({{
+                top: 0,
+                behavior: 'smooth'
+            }});
+        }});
+        
+        // Initialize tooltips
+        document.querySelectorAll('.info-item').forEach(item => {{
+            item.addEventListener('mouseenter', function() {{
+                this.style.transform = 'translateX(5px)';
+            }});
+            item.addEventListener('mouseleave', function() {{
+                this.style.transform = 'translateX(0)';
+            }});
+        }});
+        
+        // Add keyboard navigation
+        document.addEventListener('keydown', function(e) {{
+            if (e.key === 'Escape' && navLinks.classList.contains('active')) {{
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            }}
+            
+            // Focus search on Ctrl+K
+            if ((e.ctrlKey || e.metaKey) && e.key === 'k') {{
+                e.preventDefault();
+                searchInput.focus();
+            }}
+        }});
+        
+        // Initialize with fade-in animation
+        document.addEventListener('DOMContentLoaded', function() {{
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach((el, index) => {{
+                el.style.animationDelay = `${index * 0.1}s`;
+            }});
+        }});
+        
+        // Add real-time search feedback
+        searchInput.addEventListener('input', function() {{
+            if (this.value.length > 0) {{
+                this.style.background = 'var(--white)';
+                this.style.borderColor = 'var(--accent)';
+            }} else {{
+                this.style.background = 'var(--light)';
+                this.style.borderColor = 'var(--gray-light)';
+            }}
         }});
     </script>
 </body>
