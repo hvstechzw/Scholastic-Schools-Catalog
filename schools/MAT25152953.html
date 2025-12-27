@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,10 +12,10 @@
     
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://scholasticforum.org/schools/MAT25152953.html">
+    <meta property="og:url" content="https://hvstechzw.github.io/Scholastic-Schools-Catalog/schools/MAT25152953.html">
     <meta property="og:title" content="Marist Brothers High School - School Profile">
     <meta property="og:description" content="The best school in Matabeleland North">
-    <meta property="og:image" content="https://scholasticforum.org/assets/images/schools/MAT25152953.jpg">
+    <meta property="og:image" content="https://hvstechzw.github.io/Scholastic-Schools-Catalog/assets/images/schools/MAT25152953.jpg">
     
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -24,7 +24,7 @@
         "@type": "EducationalOrganization",
         "name": "Marist Brothers High School",
         "description": "The best school in Matabeleland North",
-        "url": "https://scholasticforum.org/schools/MAT25152953.html",
+        "url": "https://hvstechzw.github.io/Scholastic-Schools-Catalog/schools/MAT25152953.html",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Chezhou, Dete",
@@ -46,7 +46,7 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="canonical" href="https://scholasticforum.org/schools/MAT25152953.html">
+    <link rel="canonical" href="https://hvstechzw.github.io/Scholastic-Schools-Catalog/schools/MAT25152953.html">
     <style>
         :root {
             --primary: #ffffff;
@@ -121,7 +121,7 @@
         .main-logo {
             width: 100px;
             height: 100px;
-            background: transparent; /* Transparent background */
+            background: transparent;
             border-radius: 12px;
             display: flex;
             align-items: center;
@@ -814,10 +814,10 @@
         }
         
         .manufacturer-logo img {
-            height: 32px; /* Enlargened */
+            height: 48px;
             width: auto;
             filter: brightness(0) invert(1);
-            opacity: 0.8;
+            opacity: 0.9;
         }
         
         /* Responsive */
@@ -913,6 +913,10 @@
                 width: 70px;
                 height: 70px;
             }
+            
+            .manufacturer-logo img {
+                height: 40px;
+            }
         }
         
         /* Animations */
@@ -934,34 +938,19 @@
         .interactive-stat:hover {
             transform: scale(1.05);
         }
-        
-        /* Print Styles */
-        @media print {
-            .header, .footer, .back-btn {
-                display: none;
-            }
-            
-            body {
-                background: white;
-                color: black;
-            }
-            
-            .section {
-                box-shadow: none;
-                border: 1px solid #ddd;
-                break-inside: avoid;
-            }
-        }
     </style>
 </head>
 <body itemscope itemtype="https://schema.org/WebPage">
+    <!-- Force light theme -->
+    <script>document.documentElement.setAttribute('data-theme', 'light');</script>
+    
     <!-- Header -->
     <header class="header">
         <div class="container">
             <nav class="nav-container">
                 <div class="logo-wrapper">
                     <a href="../index.html" class="logo-section">
-                        <div class="main-logo" style="background: transparent;"> <!-- Transparent background -->
+                        <div class="main-logo" style="background: transparent;">
                             <img id="theme-logo" src="../assets/images/logo_light.png" alt="Scholastic Forum">
                         </div>
                         <div class="logo-text">
@@ -1237,23 +1226,15 @@
             
             <div class="footer-bottom">
                 <p>&copy; 2025 Scholastic Forum | Scholastic Services Product | High Voltage Software Technologies</p>
-                <p style="margin-top: 0.5rem; font-size: 0.8rem;">Profile ID: MAT25152953 | Last Updated: 2025-12-24</p>
+                <p style="margin-top: 0.5rem; font-size: 0.8rem;">Profile ID: MAT25152953 | Last Updated: 2025-12-27</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Theme detection for logos
-        function updateLogosForTheme() {
-            const themeLogo = document.getElementById('theme-logo');
-            const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            
-            if (isDarkMode) {
-                themeLogo.src = '../assets/images/logo_dark.png';
-            } else {
-                themeLogo.src = '../assets/images/logo_light.png';
-            }
-        }
+        // Force light theme
+        document.documentElement.setAttribute('data-theme', 'light');
+        document.body.style.colorScheme = 'light';
         
         // Animate rating bars
         document.addEventListener('DOMContentLoaded', function() {
@@ -1264,29 +1245,6 @@
                 setTimeout(() => {
                     bar.style.width = width;
                 }, 300);
-            });
-            
-            // Update logos based on theme
-            updateLogosForTheme();
-            window.matchMedia('(prefers-color-scheme: dark)').addListener(updateLogosForTheme);
-        });
-        
-        // Add print functionality
-        const printBtn = document.createElement('button');
-        printBtn.innerHTML = '<i class="fas fa-print"></i> Print Profile';
-        printBtn.style.cssText = 'position: fixed; bottom: 20px; right: 20px; background: var(--silver); color: var(--dark); border: none; padding: 12px 24px; border-radius: var(--radius); cursor: pointer; box-shadow: var(--shadow); z-index: 1000; transition: var(--transition);';
-        printBtn.addEventListener('mouseenter', function() { this.style.transform = 'translateY(-2px)'; });
-        printBtn.addEventListener('mouseleave', function() { this.style.transform = 'translateY(0)'; });
-        printBtn.addEventListener('click', function() { window.print(); });
-        document.body.appendChild(printBtn);
-        
-        // Interactive stats
-        document.querySelectorAll('.interactive-stat').forEach(stat => {
-            stat.addEventListener('click', function() {
-                this.style.transform = 'scale(0.95)';
-                setTimeout(() => {
-                    this.style.transform = 'scale(1.05)';
-                }, 150);
             });
         });
         
@@ -1302,63 +1260,6 @@
                     });
                 }
             });
-        });
-        
-        // Add copy to clipboard for contact info
-        document.querySelectorAll('.contact-method').forEach(method => {
-            method.addEventListener('click', function(e) {
-                if (this.href && this.href.startsWith('mailto:') || this.href.startsWith('tel:')) {
-                    return;
-                }
-                
-                const text = this.querySelector('p').textContent;
-                navigator.clipboard.writeText(text).then(() => {
-                    const original = this.innerHTML;
-                    this.innerHTML = '<div class="contact-icon"><i class="fas fa-check"></i></div><div class="contact-details"><h4>Copied!</h4><p>' + text + '</p></div>';
-                    setTimeout(() => {
-                        this.innerHTML = original;
-                    }, 2000);
-                });
-                e.preventDefault();
-            });
-        });
-        
-        // Lazy loading for images
-        const images = document.querySelectorAll('img');
-        images.forEach(img => {
-            img.loading = 'lazy';
-        });
-        
-        // Add keyboard shortcuts
-        document.addEventListener('keydown', function(e) {
-            // Ctrl+P for print
-            if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
-                e.preventDefault();
-                window.print();
-            }
-            
-            // Escape to go back
-            if (e.key === 'Escape') {
-                window.history.back();
-            }
-        });
-        
-        // Initialize animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('slide-in');
-                }
-            });
-        }, observerOptions);
-        
-        document.querySelectorAll('.section').forEach(section => {
-            observer.observe(section);
         });
     </script>
 </body>

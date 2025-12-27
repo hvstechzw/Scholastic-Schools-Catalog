@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,17 +10,17 @@
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://scholasticforum.org/schools/all.html">
+    <meta property="og:url" content="https://hvstechzw.github.io/Scholastic-Schools-Catalog/schools/all.html">
     <meta property="og:title" content="Complete School Directory - 2+ Institutions">
     <meta property="og:description" content="Browse 2 educational institutions with detailed profiles.">
-    <meta property="og:image" content="https://scholasticforum.org/assets/images/og-image.jpg">
+    <meta property="og:image" content="https://hvstechzw.github.io/Scholastic-Schools-Catalog/assets/images/og-image.jpg">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://scholasticforum.org/schools/all.html">
+    <meta property="twitter:url" content="https://hvstechzw.github.io/Scholastic-Schools-Catalog/schools/all.html">
     <meta property="twitter:title" content="Complete School Directory - 2+ Institutions">
     <meta property="twitter:description" content="Browse 2 educational institutions with detailed profiles.">
-    <meta property="twitter:image" content="https://scholasticforum.org/assets/images/og-image.jpg">
+    <meta property="twitter:image" content="https://hvstechzw.github.io/Scholastic-Schools-Catalog/assets/images/og-image.jpg">
     
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -29,7 +29,7 @@
         "@type": "CollectionPage",
         "name": "Complete School Directory",
         "description": "Directory of 2 educational institutions",
-        "url": "https://scholasticforum.org/schools/all.html",
+        "url": "https://hvstechzw.github.io/Scholastic-Schools-Catalog/schools/all.html",
         "mainEntity": {
             "@type": "ItemList",
             "numberOfItems": 2,
@@ -42,7 +42,7 @@
                     "@type": "EducationalOrganization",
                     "name": "Hwange High School",
                     "description": "",
-                    "url": "https://scholasticforum.org/schools/MAT25221384.html"
+                    "url": "https://hvstechzw.github.io/Scholastic-Schools-Catalog/schools/MAT25221384.html"
                 }
             },
             
@@ -53,7 +53,7 @@
                     "@type": "EducationalOrganization",
                     "name": "Marist Brothers High School",
                     "description": "The best school in Matabeleland North",
-                    "url": "https://scholasticforum.org/schools/MAT25152953.html"
+                    "url": "https://hvstechzw.github.io/Scholastic-Schools-Catalog/schools/MAT25152953.html"
                 }
             }
             ]
@@ -63,7 +63,7 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="canonical" href="https://scholasticforum.org/schools/all.html">
+    <link rel="canonical" href="https://hvstechzw.github.io/Scholastic-Schools-Catalog/schools/all.html">
     <style>
         :root {
             --primary: #ffffff;
@@ -704,10 +704,10 @@
         }
         
         .manufacturer-logo img {
-            height: 32px;
+            height: 48px;
             width: auto;
             filter: brightness(0) invert(1);
-            opacity: 0.8;
+            opacity: 0.9;
         }
         
         /* No Results */
@@ -832,6 +832,10 @@
                 width: 70px;
                 height: 70px;
             }
+            
+            .manufacturer-logo img {
+                height: 40px;
+            }
         }
         
         /* Animations */
@@ -846,6 +850,9 @@
     </style>
 </head>
 <body itemscope itemtype="https://schema.org/WebPage">
+    <!-- Force light theme -->
+    <script>document.documentElement.setAttribute('data-theme', 'light');</script>
+    
     <!-- Header -->
     <header class="header">
         <div class="container">
@@ -1144,24 +1151,16 @@
             
             <div class="footer-bottom">
                 <p>&copy; 2025 Scholastic Forum | Complete School Directory | 2 Institutions Listed</p>
-                <p style="margin-top: 0.5rem; font-size: 0.8rem;">Data Updated: 2025-12-24 15:45</p>
+                <p style="margin-top: 0.5rem; font-size: 0.8rem;">Data Updated: 2025-12-27 09:39</p>
             </div>
         </div>
     </footer>
 
     <!-- JavaScript -->
     <script>
-        // Theme detection for logos
-        function updateLogosForTheme() {
-            const themeLogo = document.getElementById('theme-logo');
-            const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            
-            if (isDarkMode) {
-                themeLogo.src = '../assets/images/logo_dark.png';
-            } else {
-                themeLogo.src = '../assets/images/logo_light.png';
-            }
-        }
+        // Force light theme
+        document.documentElement.setAttribute('data-theme', 'light');
+        document.body.style.colorScheme = 'light';
         
         // School data and pagination
         const allSchoolCards = document.querySelectorAll('#allSchoolsGrid .school-card');
@@ -1359,10 +1358,6 @@
         // Initialize
         document.addEventListener('DOMContentLoaded', function() {
             filterAndSortSchools();
-            
-            // Update logos based on theme
-            updateLogosForTheme();
-            window.matchMedia('(prefers-color-scheme: dark)').addListener(updateLogosForTheme);
             
             // Add click animation to cards
             allSchoolCards.forEach(card => {
