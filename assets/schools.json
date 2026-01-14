@@ -1,0 +1,24 @@
+[
+  {
+    "id": "marist_brothers_high_eda4a711",
+    "name": "Marist Brothers High School",
+    "short_name": "MBHS",
+    "city": "Hwange",
+    "province": "Matabeleland North",
+    "level": "High School",
+    "type": "Religious",
+    "gender": "",
+    "curriculum": "Heritage Based",
+    "students": 0,
+    "teachers": 0,
+    "rating": 4.3,
+    "established": 1972,
+    "amenities": [
+      "\ud83d\udcda Library",
+      "\ud83d\udd2c Science Lab",
+      "\ud83d\udcbb Computer Lab",
+      "\u26bd Playground",
+      "\ud83c\udfc5 Sports Field"
+    ]
+  }
+]
