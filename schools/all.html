@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Force light theme always -->
+    <meta name="color-scheme" content="light">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="supported-color-schemes" content="light">
+    
     <title>Complete School Directory - 2+ Educational Institutions | Scholastic Forum</title>
     <meta name="description" content="Browse comprehensive directory of 2 educational institutions. Find schools by location, curriculum, facilities, and ratings. Complete school profiles.">
     <meta name="keywords" content="schools directory, educational institutions database, find schools, school search, education directory">
@@ -64,6 +70,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="canonical" href="https://hvstechzw.github.io/Scholastic-Schools-Catalog/schools/all.html">
+    
     <style>
         :root {
             --primary: #ffffff;
@@ -77,10 +84,17 @@
             --gray-dark: #495057;
             --white: #ffffff;
             --silver: #c0c0c0;
+            --gold: #ffc107;
             --shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
             --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.05), 0 5px 10px rgba(0, 0, 0, 0.05);
             --radius: 12px;
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        /* Force light theme */
+        :root, :root[data-theme="light"], :root[data-theme="dark"], 
+        html, html[data-theme="light"], html[data-theme="dark"] {
+            color-scheme: light !important;
         }
         
         * {
@@ -95,6 +109,7 @@
             color: var(--dark);
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             min-height: 100vh;
+            color-scheme: light !important;
         }
         
         .container {
@@ -106,7 +121,7 @@
         
         /* Header */
         .header {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(10px);
             box-shadow: var(--shadow);
             position: sticky;
@@ -136,17 +151,22 @@
         }
         
         .main-logo {
-            width: 100px;
-            height: 100px;
+            width: 80px;
+            height: 80px;
             background: transparent;
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--white);
-            font-size: 2.5rem;
+            font-size: 2rem;
             box-shadow: var(--shadow);
             border: 2px solid var(--white);
+            transition: var(--transition);
+        }
+        
+        .main-logo:hover {
+            transform: rotate(5deg) scale(1.05);
         }
         
         .main-logo img {
@@ -164,7 +184,7 @@
         .main-title {
             font-family: 'Poppins', sans-serif;
             font-weight: 700;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             background: linear-gradient(135deg, var(--gray-dark) 0%, var(--dark) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -172,7 +192,7 @@
         }
         
         .subtitle {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             color: var(--gray);
             font-weight: 500;
             letter-spacing: 1px;
@@ -195,39 +215,53 @@
         }
         
         .back-btn:hover {
-            background: linear-gradient(135deg, var(--silver) 0%, var(--gray) 100%);
+            background: linear-gradient(135deg, var(--gold) 0%, #ffb300 100%);
             color: var(--dark);
-            border-color: var(--silver);
+            border-color: var(--gold);
             transform: translateX(-5px);
-            box-shadow: 0 5px 15px rgba(192, 192, 192, 0.3);
+            box-shadow: 0 5px 15px rgba(255, 193, 7, 0.3);
         }
         
-        /* Page Header */
+        /* Enhanced Page Header */
         .page-header {
             text-align: center;
-            padding: 4rem 0 3rem;
+            padding: clamp(3rem, 6vw, 4rem) 0 clamp(2rem, 4vw, 3rem);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, var(--gold), var(--silver), var(--accent));
         }
         
         .page-title {
             font-family: 'Poppins', sans-serif;
-            font-size: 3rem;
+            font-size: clamp(2rem, 5vw, 3rem);
             font-weight: 800;
             margin-bottom: 1rem;
             background: linear-gradient(135deg, var(--gray-dark) 0%, var(--dark) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            line-height: 1.2;
         }
         
         .page-subtitle {
-            font-size: 1.2rem;
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
             color: var(--gray-dark);
             max-width: 800px;
             margin: 0 auto 2rem;
             line-height: 1.6;
+            padding: 0 clamp(1rem, 3vw, 2rem);
         }
         
-        /* Stats Overview */
+        /* Enhanced Stats Overview */
         .stats-overview {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -242,19 +276,45 @@
             box-shadow: var(--shadow);
             text-align: center;
             border: 1px solid var(--gray-light);
-            transition: var(--transition);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, var(--gold), var(--silver));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
         }
         
         .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--silver);
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            border-color: var(--gold);
+        }
+        
+        .stat-card:hover::before {
+            transform: scaleX(1);
         }
         
         .stat-icon {
             font-size: 2.5rem;
-            color: var(--silver);
+            color: var(--gold);
             margin-bottom: 1rem;
+            transition: var(--transition);
+        }
+        
+        .stat-card:hover .stat-icon {
+            transform: scale(1.2) rotate(10deg);
+            color: var(--accent);
         }
         
         .stat-number {
@@ -262,6 +322,14 @@
             font-weight: 800;
             color: var(--dark);
             margin-bottom: 0.5rem;
+            transition: var(--transition);
+        }
+        
+        .stat-card:hover .stat-number {
+            background: linear-gradient(135deg, var(--gold) 0%, #ffb300 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
         .stat-label {
@@ -270,6 +338,11 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .stat-card:hover .stat-label {
+            color: var(--dark);
         }
         
         /* Enhanced Search */
@@ -280,6 +353,18 @@
             box-shadow: var(--shadow);
             margin-bottom: 3rem;
             border: 1px solid var(--gray-light);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .enhanced-search::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, var(--gold), var(--silver), var(--accent));
         }
         
         .search-header {
@@ -321,8 +406,8 @@
         
         .search-input:focus {
             outline: none;
-            border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(108, 117, 125, 0.1);
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.1);
             background: var(--white);
         }
         
@@ -333,6 +418,12 @@
             transform: translateY(-50%);
             color: var(--gray);
             font-size: 1.2rem;
+            transition: var(--transition);
+        }
+        
+        .search-input:focus + .search-icon {
+            color: var(--gold);
+            transform: translateY(-50%) scale(1.2);
         }
         
         .advanced-filters {
@@ -354,6 +445,13 @@
             font-size: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .filter-label i {
+            color: var(--gold);
         }
         
         .filter-select {
@@ -369,8 +467,8 @@
         
         .filter-select:focus {
             outline: none;
-            border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(108, 117, 125, 0.1);
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.1);
         }
         
         .reset-btn {
@@ -382,15 +480,20 @@
             font-weight: 600;
             cursor: pointer;
             transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
         
         .reset-btn:hover {
-            background: linear-gradient(135deg, var(--gray-dark) 0%, var(--dark) 100%);
-            color: white;
-            border-color: var(--dark);
+            background: linear-gradient(135deg, var(--gold) 0%, #ffb300 100%);
+            color: var(--dark);
+            border-color: var(--gold);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 193, 7, 0.3);
         }
         
-        /* Schools Grid */
+        /* Enhanced Schools Grid */
         .schools-grid-container {
             margin-bottom: 4rem;
         }
@@ -425,6 +528,13 @@
             color: var(--dark);
             font-weight: 500;
             cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .sort-select:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.1);
         }
         
         .schools-grid {
@@ -438,9 +548,10 @@
             border-radius: var(--radius);
             overflow: hidden;
             box-shadow: var(--shadow);
-            transition: var(--transition);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             border: 1px solid var(--gray-light);
             position: relative;
+            cursor: pointer;
         }
         
         .school-card::before {
@@ -450,14 +561,14 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(to right, var(--silver), var(--gray));
+            background: linear-gradient(to right, var(--gold), var(--silver));
             z-index: 1;
         }
         
         .school-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--accent);
+            transform: translateY(-12px) rotateX(5deg);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            border-color: var(--gold);
         }
         
         .school-card-header {
@@ -476,6 +587,12 @@
             height: 100%;
             object-fit: cover;
             opacity: 0.1;
+            transition: var(--transition);
+        }
+        
+        .school-card:hover .school-banner {
+            opacity: 0.15;
+            transform: scale(1.05);
         }
         
         .school-type-badge {
@@ -491,6 +608,13 @@
             color: var(--dark);
             border: 1px solid var(--gray-light);
             z-index: 2;
+            transition: var(--transition);
+        }
+        
+        .school-card:hover .school-type-badge {
+            background: var(--gold);
+            color: var(--dark);
+            transform: translateY(-2px);
         }
         
         .school-logo-container {
@@ -508,6 +632,12 @@
             border: 3px solid var(--white);
             overflow: hidden;
             z-index: 2;
+            transition: var(--transition);
+        }
+        
+        .school-card:hover .school-logo-container {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
         
         .school-logo {
@@ -515,11 +645,17 @@
             height: 100%;
             object-fit: contain;
             padding: 10px;
+            transition: var(--transition);
+        }
+        
+        .school-card:hover .school-logo {
+            transform: scale(1.1);
         }
         
         .school-card-body {
             padding: 2rem 1.5rem 1.5rem;
             margin-top: 40px;
+            background: linear-gradient(to bottom, transparent, var(--light) 100%);
         }
         
         .school-name {
@@ -529,6 +665,11 @@
             margin-bottom: 0.5rem;
             color: var(--dark);
             line-height: 1.3;
+            transition: var(--transition);
+        }
+        
+        .school-card:hover .school-name {
+            color: var(--accent);
         }
         
         .school-location {
@@ -555,12 +696,23 @@
             gap: 0.75rem;
             font-size: 0.85rem;
             color: var(--dark);
+            transition: var(--transition);
+        }
+        
+        .school-card:hover .detail-item {
+            color: var(--gray-dark);
         }
         
         .detail-item i {
-            color: var(--accent);
+            color: var(--gold);
             width: 16px;
             font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .school-card:hover .detail-item i {
+            color: var(--accent);
+            transform: scale(1.2);
         }
         
         .school-rating {
@@ -571,12 +723,24 @@
             padding: 0.75rem;
             background: var(--light);
             border-radius: var(--radius);
+            transition: var(--transition);
+        }
+        
+        .school-card:hover .school-rating {
+            background: rgba(255, 193, 7, 0.1);
+            transform: translateY(-2px);
         }
         
         .stars {
-            color: #ffc107;
+            color: var(--gold);
             font-size: 1.1rem;
             letter-spacing: 2px;
+            transition: var(--transition);
+        }
+        
+        .school-card:hover .stars {
+            transform: scale(1.1);
+            letter-spacing: 3px;
         }
         
         .rating-text {
@@ -595,20 +759,37 @@
             border-radius: var(--radius);
             font-weight: 600;
             cursor: pointer;
-            transition: var(--transition);
+            transition: all 0.3s ease;
             text-align: center;
             text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .view-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: 0.5s;
         }
         
         .view-btn:hover {
-            background: linear-gradient(135deg, var(--silver) 0%, var(--gray) 100%);
+            background: linear-gradient(135deg, var(--gold) 0%, #ffb300 100%);
             color: var(--dark);
-            border-color: var(--silver);
+            border-color: var(--gold);
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(192, 192, 192, 0.3);
+            box-shadow: 0 5px 15px rgba(255, 193, 7, 0.3);
         }
         
-        /* Pagination */
+        .view-btn:hover::before {
+            left: 100%;
+        }
+        
+        /* Enhanced Pagination */
         .pagination {
             display: flex;
             justify-content: center;
@@ -629,27 +810,41 @@
             color: var(--dark);
             text-decoration: none;
             font-weight: 600;
-            transition: var(--transition);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
         .page-btn:hover, .page-btn.active {
-            background: linear-gradient(135deg, var(--silver) 0%, var(--gray) 100%);
+            background: linear-gradient(135deg, var(--gold) 0%, #ffb300 100%);
             color: var(--dark);
-            border-color: var(--silver);
-            transform: translateY(-2px);
+            border-color: var(--gold);
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 5px 15px rgba(255, 193, 7, 0.3);
         }
         
         .page-btn.disabled {
             opacity: 0.5;
             cursor: not-allowed;
+            transform: none !important;
         }
         
-        /* Footer */
+        /* Enhanced Footer */
         .footer {
             background: linear-gradient(135deg, var(--dark) 0%, #343a40 100%);
             color: var(--white);
             padding: 3rem 0 1.5rem;
             margin-top: 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, var(--gold), var(--silver));
         }
         
         .footer-content {
@@ -657,6 +852,8 @@
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
         }
         
         .footer-section h3 {
@@ -664,6 +861,19 @@
             font-size: 1.2rem;
             margin-bottom: 1.5rem;
             color: var(--white);
+            position: relative;
+            padding-bottom: 0.75rem;
+        }
+        
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--gold);
+            border-radius: 2px;
         }
         
         .footer-links {
@@ -672,6 +882,12 @@
         
         .footer-links li {
             margin-bottom: 0.75rem;
+            transform-origin: left;
+            transition: var(--transition);
+        }
+        
+        .footer-links li:hover {
+            transform: translateX(5px);
         }
         
         .footer-links a {
@@ -681,11 +897,23 @@
             display: flex;
             align-items: center;
             gap: 0.75rem;
+            padding: 0.25rem 0;
         }
         
         .footer-links a:hover {
-            color: var(--silver);
+            color: var(--gold);
             padding-left: 5px;
+        }
+        
+        .footer-links a i {
+            width: 20px;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover i {
+            transform: scale(1.2);
+            color: var(--gold);
         }
         
         .footer-bottom {
@@ -694,6 +922,8 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: var(--gray);
             font-size: 0.9rem;
+            position: relative;
+            z-index: 1;
         }
         
         .manufacturer-logo {
@@ -708,9 +938,15 @@
             width: auto;
             filter: brightness(0) invert(1);
             opacity: 0.9;
+            transition: var(--transition);
         }
         
-        /* No Results */
+        .manufacturer-logo:hover img {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+        
+        /* Enhanced No Results */
         .no-results {
             text-align: center;
             padding: 4rem 2rem;
@@ -718,15 +954,27 @@
             border-radius: var(--radius);
             box-shadow: var(--shadow);
             border: 2px dashed var(--gray-light);
+            transition: var(--transition);
+        }
+        
+        .no-results:hover {
+            border-color: var(--gold);
+            background: rgba(255, 193, 7, 0.05);
+            transform: translateY(-5px);
         }
         
         .no-results-icon {
             font-size: 4rem;
-            color: var(--gray);
+            color: var(--gold);
             margin-bottom: 1.5rem;
+            transition: var(--transition);
         }
         
-        /* Loading */
+        .no-results:hover .no-results-icon {
+            transform: scale(1.2) rotate(10deg);
+        }
+        
+        /* Enhanced Loading */
         .loading {
             text-align: center;
             padding: 3rem;
@@ -737,7 +985,7 @@
             width: 50px;
             height: 50px;
             border: 4px solid var(--gray-light);
-            border-top-color: var(--accent);
+            border-top-color: var(--gold);
             border-radius: 50%;
             animation: spin 1s linear infinite;
             margin: 0 auto 1rem;
@@ -747,10 +995,15 @@
             to { transform: rotate(360deg); }
         }
         
-        /* Responsive */
+        /* Responsive Improvements */
         @media (max-width: 1200px) {
             .schools-grid {
                 grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 1.5rem;
+            }
+            
+            .stats-overview {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
         
@@ -759,8 +1012,13 @@
                 font-size: 2.5rem;
             }
             
+            .page-subtitle {
+                font-size: 1.1rem;
+            }
+            
             .stats-overview {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
             }
             
             .schools-grid {
@@ -769,11 +1027,13 @@
             
             .advanced-filters {
                 grid-template-columns: 1fr;
+                gap: 1rem;
             }
             
             .search-header {
                 flex-direction: column;
                 align-items: stretch;
+                gap: 1rem;
             }
             
             .sort-controls {
@@ -784,15 +1044,25 @@
             .school-logo-container {
                 width: 70px;
                 height: 70px;
+                left: 1rem;
             }
             
             .school-card-body {
                 margin-top: 35px;
+                padding: 1.5rem 1rem 1rem;
             }
             
             .main-logo {
-                width: 80px;
-                height: 80px;
+                width: 70px;
+                height: 70px;
+            }
+            
+            .page-header {
+                padding: 2rem 0;
+            }
+            
+            .enhanced-search {
+                padding: 1.75rem;
             }
         }
         
@@ -810,7 +1080,7 @@
             }
             
             .page-header {
-                padding: 3rem 0 2rem;
+                padding: 1.5rem 0;
             }
             
             .enhanced-search {
@@ -829,12 +1099,35 @@
             }
             
             .main-logo {
-                width: 70px;
-                height: 70px;
+                width: 60px;
+                height: 60px;
             }
             
             .manufacturer-logo img {
                 height: 40px;
+            }
+            
+            .stat-card {
+                padding: 1.5rem;
+            }
+            
+            .school-name {
+                font-size: 1.1rem;
+            }
+            
+            .school-details {
+                grid-template-columns: 1fr;
+                gap: 0.75rem;
+            }
+            
+            .pagination {
+                gap: 0.25rem;
+            }
+            
+            .page-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 0.9rem;
             }
         }
         
@@ -844,14 +1137,74 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
         .fade-in-up {
             animation: fadeInUp 0.6s ease-out forwards;
+        }
+        
+        .float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        /* Print Styles */
+        @media print {
+            .enhanced-search, .pagination, .back-btn, .scroll-top {
+                display: none !important;
+            }
+            
+            .school-card {
+                break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+            
+            .page-header {
+                box-shadow: none;
+                border-bottom: 2px solid #ddd;
+            }
         }
     </style>
 </head>
 <body itemscope itemtype="https://schema.org/WebPage">
-    <!-- Force light theme -->
-    <script>document.documentElement.setAttribute('data-theme', 'light');</script>
+    <!-- Force light theme permanently -->
+    <script>
+        (function forceLightTheme() {
+            document.documentElement.setAttribute('data-theme', 'light');
+            document.documentElement.style.colorScheme = 'light';
+            document.body.style.colorScheme = 'light';
+            document.documentElement.style.backgroundColor = '#ffffff';
+            document.body.style.backgroundColor = '#f8f9fa';
+            document.body.style.color = '#212529';
+            
+            const observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    if (mutation.attributeName === 'data-theme' || 
+                        mutation.attributeName === 'style' || 
+                        mutation.attributeName === 'class') {
+                        document.documentElement.setAttribute('data-theme', 'light');
+                        document.documentElement.style.colorScheme = 'light';
+                        document.body.style.colorScheme = 'light';
+                        document.documentElement.style.backgroundColor = '#ffffff';
+                        document.body.style.backgroundColor = '#f8f9fa';
+                        document.body.style.color = '#212529';
+                    }
+                });
+            });
+            
+            observer.observe(document.documentElement, { 
+                attributes: true, 
+                attributeFilter: ['data-theme', 'class', 'style'] 
+            });
+            observer.observe(document.body, { 
+                attributes: true, 
+                attributeFilter: ['class', 'style'] 
+            });
+        })();
+    </script>
     
     <!-- Header -->
     <header class="header">
@@ -890,28 +1243,28 @@
     <!-- Stats Overview -->
     <section class="container">
         <div class="stats-overview">
-            <div class="stat-card fade-in-up">
+            <div class="stat-card fade-in-up" onclick="document.getElementById('allSearchInput').focus()">
                 <div class="stat-icon">
                     <i class="fas fa-school"></i>
                 </div>
                 <div class="stat-number">2</div>
                 <div class="stat-label">Total Institutions</div>
             </div>
-            <div class="stat-card fade-in-up" style="animation-delay: 0.1s;">
+            <div class="stat-card fade-in-up" style="animation-delay: 0.1s;" onclick="filterByRating(4)">
                 <div class="stat-icon">
                     <i class="fas fa-graduation-cap"></i>
                 </div>
                 <div class="stat-number">0</div>
                 <div class="stat-label">Total Students</div>
             </div>
-            <div class="stat-card fade-in-up" style="animation-delay: 0.2s;">
+            <div class="stat-card fade-in-up" style="animation-delay: 0.2s;" onclick="filterByType('Boarding')">
                 <div class="stat-icon">
                     <i class="fas fa-chalkboard-teacher"></i>
                 </div>
                 <div class="stat-number">0</div>
                 <div class="stat-label">Teaching Staff</div>
             </div>
-            <div class="stat-card fade-in-up" style="animation-delay: 0.3s;">
+            <div class="stat-card fade-in-up" style="animation-delay: 0.3s;" onclick="filterByGallery()">
                 <div class="stat-icon">
                     <i class="fas fa-images"></i>
                 </div>
@@ -941,7 +1294,7 @@
             
             <div class="advanced-filters">
                 <div class="filter-group">
-                    <label class="filter-label">Location</label>
+                    <label class="filter-label"><i class="fas fa-map-marker-alt"></i> Location</label>
                     <select class="filter-select" id="locationFilter">
                         <option value="all">All Locations</option>
                         <option value="hwange">Hwange</option>
@@ -950,7 +1303,7 @@
                 </div>
                 
                 <div class="filter-group">
-                    <label class="filter-label">Education Level</label>
+                    <label class="filter-label"><i class="fas fa-graduation-cap"></i> Education Level</label>
                     <select class="filter-select" id="levelFilter">
                         <option value="all">All Levels</option>
                         <option value="Pre-School">Pre-School</option>
@@ -964,7 +1317,7 @@
                 </div>
                 
                 <div class="filter-group">
-                    <label class="filter-label">School Type</label>
+                    <label class="filter-label"><i class="fas fa-building"></i> School Type</label>
                     <select class="filter-select" id="typeFilter">
                         <option value="all">All Types</option>
                         <option value="Day">Day School</option>
@@ -974,7 +1327,7 @@
                 </div>
                 
                 <div class="filter-group">
-                    <label class="filter-label">Minimum Rating</label>
+                    <label class="filter-label"><i class="fas fa-star"></i> Minimum Rating</label>
                     <select class="filter-select" id="ratingFilter">
                         <option value="0">Any Rating</option>
                         <option value="3">3.0+ Stars</option>
@@ -1154,16 +1507,46 @@
             
             <div class="footer-bottom">
                 <p>&copy; 2026 Scholastic Forum | Complete School Directory | 2 Institutions Listed</p>
-                <p style="margin-top: 0.5rem; font-size: 0.8rem;">Data Updated: 2026-01-17 16:07</p>
+                <p style="margin-top: 0.5rem; font-size: 0.8rem;">Data Updated: 2026-01-23 01:07</p>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
+    <!-- Enhanced JavaScript -->
     <script>
-        // Force light theme
-        document.documentElement.setAttribute('data-theme', 'light');
-        document.body.style.colorScheme = 'light';
+        // Force light theme permanently
+        (function forceLightTheme() {
+            document.documentElement.setAttribute('data-theme', 'light');
+            document.documentElement.style.colorScheme = 'light';
+            document.body.style.colorScheme = 'light';
+            document.documentElement.style.backgroundColor = '#ffffff';
+            document.body.style.backgroundColor = '#f8f9fa';
+            document.body.style.color = '#212529';
+            
+            const observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    if (mutation.attributeName === 'data-theme' || 
+                        mutation.attributeName === 'style' || 
+                        mutation.attributeName === 'class') {
+                        document.documentElement.setAttribute('data-theme', 'light');
+                        document.documentElement.style.colorScheme = 'light';
+                        document.body.style.colorScheme = 'light';
+                        document.documentElement.style.backgroundColor = '#ffffff';
+                        document.body.style.backgroundColor = '#f8f9fa';
+                        document.body.style.color = '#212529';
+                    }
+                });
+            });
+            
+            observer.observe(document.documentElement, { 
+                attributes: true, 
+                attributeFilter: ['data-theme', 'class', 'style'] 
+            });
+            observer.observe(document.body, { 
+                attributes: true, 
+                attributeFilter: ['class', 'style'] 
+            });
+        })();
         
         // School data and pagination
         const allSchoolCards = document.querySelectorAll('#allSchoolsGrid .school-card');
@@ -1205,7 +1588,7 @@
                 return matchesSearch && matchesLocation && matchesLevel && matchesType && matchesRating;
             });
             
-            // Sort schools
+            // Sort schools with enhanced animations
             filteredSchools.sort((a, b) => {
                 switch(sortBy) {
                     case 'name':
@@ -1234,24 +1617,27 @@
             const endIndex = startIndex + schoolsPerPage;
             const schoolsToShow = filteredSchools.slice(startIndex, endIndex);
             
-            // Hide all schools
+            // Hide all schools with fade out
             allSchoolCards.forEach(card => {
                 card.style.display = 'none';
                 card.classList.remove('fade-in-up');
             });
             
-            // Show filtered schools with animation
+            // Show filtered schools with enhanced animations
             schoolsToShow.forEach((card, index) => {
-                card.style.display = 'block';
-                card.style.animationDelay = `${index * 0.05}s`;
-                card.classList.add('fade-in-up');
+                setTimeout(() => {
+                    card.style.display = 'block';
+                    card.style.animationDelay = `${index * 0.05}s`;
+                    card.classList.add('fade-in-up');
+                }, index * 50);
             });
             
-            // Update count
+            // Update count with enhanced styling
             const gridTitle = document.querySelector('.grid-title');
             gridTitle.textContent = `Educational Institutions (${filteredSchools.length} Found)`;
+            gridTitle.style.color = filteredSchools.length === 0 ? 'var(--gray-dark)' : 'var(--dark)';
             
-            // Show no results message
+            // Show no results message with enhanced interaction
             const noResults = document.getElementById('noResults');
             if (filteredSchools.length === 0) {
                 if (!noResults) {
@@ -1262,8 +1648,8 @@
                         <div class="no-results-icon">
                             <i class="fas fa-search"></i>
                         </div>
-                        <h3 style="margin-bottom: 1rem; color: var(--dark);">No Schools Found</h3>
-                        <p style="color: var(--gray-dark); margin-bottom: 1.5rem;">
+                        <h3 style="margin-bottom: 1rem; color: var(--dark); font-weight: 700;">No Schools Found</h3>
+                        <p style="color: var(--gray-dark); margin-bottom: 1.5rem; line-height: 1.6;">
                             Try adjusting your search or filter criteria to find what you're looking for.
                         </p>
                         <button class="reset-btn" onclick="resetAllFilters()" style="margin-top: 1rem;">
@@ -1329,7 +1715,10 @@
             currentPage = page;
             updateDisplay();
             updatePagination();
-            window.scrollTo({ top: document.querySelector('.schools-grid').offsetTop - 100, behavior: 'smooth' });
+            window.scrollTo({
+                top: document.querySelector('.schools-grid').offsetTop - 100,
+                behavior: 'smooth'
+            });
         }
         
         function resetAllFilters() {
@@ -1340,14 +1729,70 @@
             ratingFilter.value = '0';
             sortSelect.value = 'name';
             currentPage = 1;
+            
+            // Add visual feedback
+            resetFilters.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                resetFilters.style.transform = '';
+            }, 150);
+            
             filterAndSortSchools();
         }
         
-        // Event listeners with debouncing
+        // Helper functions for stat card clicks
+        function filterByRating(minRating) {
+            ratingFilter.value = minRating;
+            filterAndSortSchools();
+            
+            // Add visual feedback
+            ratingFilter.style.borderColor = 'var(--gold)';
+            ratingFilter.style.boxShadow = '0 0 0 3px rgba(255, 193, 7, 0.1)';
+            setTimeout(() => {
+                ratingFilter.style.borderColor = '';
+                ratingFilter.style.boxShadow = '';
+            }, 300);
+        }
+        
+        function filterByType(type) {
+            typeFilter.value = type;
+            filterAndSortSchools();
+            
+            // Add visual feedback
+            typeFilter.style.borderColor = 'var(--gold)';
+            typeFilter.style.boxShadow = '0 0 0 3px rgba(255, 193, 7, 0.1)';
+            setTimeout(() => {
+                typeFilter.style.borderColor = '';
+                typeFilter.style.boxShadow = '';
+            }, 300);
+        }
+        
+        function filterByGallery() {
+            allSearchInput.value = 'photos gallery images';
+            filterAndSortSchools();
+            
+            // Add visual feedback
+            allSearchInput.style.borderColor = 'var(--gold)';
+            allSearchInput.style.boxShadow = '0 0 0 3px rgba(255, 193, 7, 0.1)';
+            setTimeout(() => {
+                allSearchInput.style.borderColor = '';
+                allSearchInput.style.boxShadow = '';
+            }, 300);
+        }
+        
+        // Event listeners with enhanced debouncing and visual feedback
         let filterTimeout;
         function scheduleFilter() {
             clearTimeout(filterTimeout);
-            filterTimeout = setTimeout(filterAndSortSchools, 300);
+            
+            // Add typing animation
+            allSearchInput.style.transform = 'scale(0.995)';
+            setTimeout(() => {
+                allSearchInput.style.transform = '';
+            }, 150);
+            
+            filterTimeout = setTimeout(() => {
+                filterAndSortSchools();
+            }, 300);
         }
         
         allSearchInput.addEventListener('input', scheduleFilter);
@@ -1358,7 +1803,7 @@
         sortSelect.addEventListener('change', scheduleFilter);
         resetFilters.addEventListener('click', resetAllFilters);
         
-        // Initialize
+        // Enhanced initialization
         document.addEventListener('DOMContentLoaded', function() {
             filterAndSortSchools();
             
@@ -1374,39 +1819,106 @@
                 });
             });
             
-            // Add keyboard shortcuts
+            // Add hover effects to stat cards
+            document.querySelectorAll('.stat-card').forEach(stat => {
+                stat.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) scale(1.05)';
+                });
+                
+                stat.addEventListener('mouseleave', function() {
+                    this.style.transform = '';
+                });
+            });
+            
+            // Enhanced keyboard shortcuts
             document.addEventListener('keydown', function(e) {
                 // Focus search on /
                 if (e.key === '/' && e.target !== allSearchInput) {
                     e.preventDefault();
                     allSearchInput.focus();
+                    allSearchInput.select();
                 }
                 
                 // Escape to clear search
                 if (e.key === 'Escape' && document.activeElement === allSearchInput) {
                     allSearchInput.value = '';
-                    filterAndSortSchools();
+                    allSearchInput.style.borderColor = 'var(--gold)';
+                    allSearchInput.style.boxShadow = '0 0 0 3px rgba(255, 193, 7, 0.2)';
+                    setTimeout(() => {
+                        allSearchInput.style.borderColor = '';
+                        allSearchInput.style.boxShadow = '';
+                        filterAndSortSchools();
+                    }, 300);
                 }
                 
                 // Ctrl+F to focus search
                 if ((e.ctrlKey || e.metaKey) && e.key === 'f') {
                     e.preventDefault();
                     allSearchInput.focus();
+                    allSearchInput.select();
+                }
+                
+                // Navigation shortcuts
+                if (e.key === 'ArrowDown' && document.activeElement === allSearchInput) {
+                    e.preventDefault();
+                    locationFilter.focus();
+                }
+                
+                if (e.key === 'ArrowUp' && document.activeElement === locationFilter) {
+                    e.preventDefault();
+                    allSearchInput.focus();
                 }
             });
             
-            // Prevent form submission on Enter in search
+            // Enhanced form submission
             allSearchInput.addEventListener('keydown', function(e) {
                 if (e.key === 'Enter') {
                     e.preventDefault();
+                    this.style.borderColor = 'var(--gold)';
+                    this.style.boxShadow = '0 0 0 3px rgba(255, 193, 7, 0.2)';
+                    setTimeout(() => {
+                        this.style.borderColor = '';
+                        this.style.boxShadow = '';
+                    }, 300);
                     filterAndSortSchools();
+                }
+            });
+            
+            // Add scroll to top button
+            const scrollTop = document.createElement('button');
+            scrollTop.className = 'scroll-top';
+            scrollTop.innerHTML = '<i class="fas fa-chevron-up"></i>';
+            scrollTop.setAttribute('aria-label', 'Scroll to top');
+            document.body.appendChild(scrollTop);
+            
+            scrollTop.addEventListener('click', function(e) {
+                e.preventDefault();
+                this.style.transform = 'scale(0.9)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
+                
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollTop.classList.add('visible');
+                } else {
+                    scrollTop.classList.remove('visible');
                 }
             });
         });
         
-        // Expose functions to global scope for onclick handlers
+        // Expose functions to global scope
         window.changePage = changePage;
         window.resetAllFilters = resetAllFilters;
+        window.filterByRating = filterByRating;
+        window.filterByType = filterByType;
+        window.filterByGallery = filterByGallery;
     </script>
 </body>
 </html>
