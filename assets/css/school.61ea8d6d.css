@@ -1,0 +1,20 @@
+/* School Page CSS */
+.school-header{background:linear-gradient(135deg,rgba(255,255,255,.95)0%,rgba(240,240,240,.95)100%);padding:3rem 0;margin-bottom:3rem;border-radius:var(--radius);box-shadow:var(--shadow);position:relative}
+.school-basic-info{display:flex;align-items:center;gap:3rem;margin-bottom:3rem;flex-wrap:wrap}
+.school-logo{width:150px;height:150px;background:var(--white);border-radius:20px;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-lg);border:3px solid var(--white);overflow:hidden}
+.school-logo img{width:100%;height:100%;object-fit:contain;padding:15px}
+.school-title-section{flex:1;min-width:300px}
+.school-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2rem;background:rgba(255,255,255,.8);padding:2rem;border-radius:var(--radius);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2)}
+.main-content{display:grid;grid-template-columns:1fr;gap:3rem;margin-bottom:5rem}
+@media (min-width:1200px){.main-content{grid-template-columns:2fr 1fr}}
+.section{background:var(--white);border-radius:var(--radius);padding:2.5rem;box-shadow:var(--shadow);border:1px solid var(--gray-light)}
+.info-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:2rem}
+.amenities-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1.5rem}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.5rem;margin-top:1.5rem}
+.gallery-item{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);height:200px;cursor:pointer}
+.gallery-image{width:100%;height:100%;object-fit:cover}
+.contact-methods{display:flex;flex-direction:column;gap:1.25rem}
+.lightbox{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.95);z-index:10000;align-items:center;justify-content:center;flex-direction:column}
+.lightbox.active{display:flex}
+.lightbox-image{max-width:90%;max-height:80%;object-fit:contain;border-radius:var(--radius)}
+@media (max-width:768px){.school-basic-info{flex-direction:column;text-align:center;gap:2rem}.main-content{grid-template-columns:1fr}.gallery-grid{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}}
