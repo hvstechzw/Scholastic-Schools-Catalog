@@ -30,3 +30,99 @@
 2026-01-30 23:51:14,449 - __main__ - INFO - Generated: assets/schools.json
 2026-01-30 23:51:14,455 - __main__ - INFO - Generated: sitemap.xml for SEO
 2026-01-30 23:51:14,459 - __main__ - INFO - Generated: robots.txt
+2026-01-31 00:05:23,568 - __main__ - INFO - Found 2 school JSON files
+2026-01-31 00:05:24,708 - __main__ - INFO - Successfully loaded 2 schools from JSON files
+2026-01-31 00:05:25,060 - __main__ - INFO - Generated: schools/learner-first-primary-school.html
+2026-01-31 00:05:25,849 - __main__ - INFO - Generated: schools/marist-brothers-high-school.html
+2026-01-31 00:05:25,880 - __main__ - INFO - Generated: assets/style.css
+2026-01-31 00:05:25,942 - __main__ - INFO - Generated: assets/schools.json
+2026-01-31 00:05:25,966 - __main__ - INFO - Generated: sitemap.xml for SEO
+2026-01-31 00:05:25,971 - __main__ - INFO - Generated: robots.txt
+2026-01-31 00:12:54,881 - __main__ - INFO - Found 2 school JSON files
+2026-01-31 00:12:55,356 - __main__ - INFO - Successfully loaded 2 schools from JSON files
+2026-01-31 00:12:55,734 - __main__ - INFO - Generated: schools/learner-first-primary-school.html
+2026-01-31 00:12:56,653 - __main__ - INFO - Generated: schools/marist-brothers-high-school.html
+2026-01-31 00:12:56,694 - __main__ - INFO - Generated: assets/style.css
+2026-01-31 00:12:56,715 - __main__ - INFO - Generated: assets/schools.json
+2026-01-31 00:12:56,771 - __main__ - INFO - Generated: sitemap.xml for SEO
+2026-01-31 00:12:56,800 - __main__ - INFO - Generated: robots.txt
+2026-01-31 00:41:25,907 - __main__ - INFO - Found 2 school JSON files
+2026-01-31 00:41:26,217 - __main__ - INFO - Successfully loaded 2 schools from JSON files
+2026-01-31 00:41:26,568 - __main__ - INFO - Generated: schools/learner-first-primary-school.html
+2026-01-31 00:41:27,390 - __main__ - INFO - Generated: schools/marist-brothers-high-school.html
+2026-01-31 00:41:27,414 - __main__ - INFO - Generated: assets/style.css
+2026-01-31 00:41:27,417 - __main__ - INFO - Generated: assets/schools.json
+2026-01-31 00:41:27,425 - __main__ - INFO - Generated: sitemap.xml for SEO
+2026-01-31 00:41:27,428 - __main__ - INFO - Generated: robots.txt
+2026-01-31 00:48:35,210 - __main__ - INFO - Found 2 school JSON files
+2026-01-31 00:48:35,558 - __main__ - INFO - Successfully loaded 2 schools from JSON files
+2026-01-31 00:48:35,878 - __main__ - INFO - Generated: schools/learner-first-primary-school.html
+2026-01-31 00:48:37,889 - __main__ - INFO - Generated: schools/marist-brothers-high-school.html
+2026-01-31 00:48:37,930 - __main__ - INFO - Generated: assets/style.css
+2026-01-31 00:48:38,601 - __main__ - INFO - Generated: assets/schools.json
+2026-01-31 00:48:38,604 - __main__ - INFO - Generated: sitemap.xml for SEO
+2026-01-31 00:48:38,608 - __main__ - INFO - Generated: robots.txt
+2026-01-31 00:48:57,536 - __main__ - INFO - Found 2 school JSON files
+2026-01-31 00:48:57,853 - __main__ - INFO - Successfully loaded 2 schools from JSON files
+2026-01-31 00:50:55,667 - __main__ - INFO - Generated: schools/learner-first-primary-school.html
+2026-01-31 00:50:59,806 - __main__ - INFO - Generated: schools/marist-brothers-high-school.html
+2026-01-31 00:50:59,820 - __main__ - INFO - Generated: assets/style.css
+2026-01-31 00:50:59,823 - __main__ - INFO - Generated: assets/schools.json
+2026-01-31 00:50:59,826 - __main__ - INFO - Generated: sitemap.xml for SEO
+2026-01-31 00:50:59,828 - __main__ - INFO - Generated: robots.txt
+2026-01-31 00:58:14,823 - __main__ - INFO - Found 2 school JSON files
+2026-01-31 00:58:16,779 - __main__ - INFO - Successfully loaded 2 schools from JSON files
+2026-01-31 00:58:17,106 - __main__ - INFO - Generated: schools/learner-first-primary-school.html
+2026-01-31 00:58:17,779 - __main__ - INFO - Generated: schools/marist-brothers-high-school.html
+2026-01-31 00:58:17,793 - __main__ - INFO - Generated: assets/style.css
+2026-01-31 00:58:17,799 - __main__ - INFO - Generated: assets/schools.json
+2026-01-31 00:58:17,805 - __main__ - INFO - Generated: sitemap.xml for SEO
+2026-01-31 00:58:17,815 - __main__ - INFO - Generated: robots.txt
+2026-01-31 01:12:53,718 - __main__ - INFO - Found 2 school JSON files
+2026-01-31 01:12:54,591 - __main__ - INFO - Successfully loaded 2 schools from JSON files
+2026-01-31 01:12:54,809 - __main__ - INFO - Generated: schools/learner-first-primary-school.html
+2026-01-31 01:13:08,975 - __main__ - INFO - Generated: schools/marist-brothers-high-school.html
+2026-01-31 01:13:08,987 - __main__ - INFO - Generated: assets/style.css
+2026-01-31 01:13:08,990 - __main__ - INFO - Generated: assets/schools.json
+2026-01-31 01:13:08,993 - __main__ - INFO - Generated: sitemap.xml for SEO
+2026-01-31 01:13:08,995 - __main__ - INFO - Generated: robots.txt
+2026-01-31 01:24:49,841 - __main__ - INFO - Found 2 school JSON files
+2026-01-31 01:24:50,146 - __main__ - INFO - Successfully loaded 2 schools from JSON files
+2026-01-31 01:24:50,325 - __main__ - INFO - Generated: schools/learner-first-primary-school.html
+2026-01-31 01:24:50,862 - __main__ - INFO - Generated: schools/marist-brothers-high-school.html
+2026-01-31 01:24:50,874 - __main__ - INFO - Generated: assets/style.css
+2026-01-31 01:24:50,877 - __main__ - INFO - Generated: assets/schools.json
+2026-01-31 01:24:50,879 - __main__ - INFO - Generated: sitemap.xml for SEO
+2026-01-31 01:24:50,882 - __main__ - INFO - Generated: robots.txt
+2026-01-31 01:44:20,428 - __main__ - INFO - Found 2 school JSON files
+2026-01-31 01:44:20,739 - __main__ - INFO - Successfully loaded 2 schools from JSON files
+2026-01-31 01:44:20,888 - __main__ - INFO - Generated: schools/learner-first-primary-school.html
+2026-01-31 01:44:21,703 - __main__ - INFO - Generated: schools/marist-brothers-high-school.html
+2026-01-31 01:44:21,720 - __main__ - INFO - Generated: assets/style.css
+2026-01-31 01:44:21,723 - __main__ - INFO - Generated: assets/schools.json
+2026-01-31 01:44:21,725 - __main__ - INFO - Generated: sitemap.xml for SEO
+2026-01-31 01:44:21,728 - __main__ - INFO - Generated: robots.txt
+2026-01-31 01:45:07,215 - __main__ - INFO - Found 2 school JSON files
+2026-01-31 01:45:07,621 - __main__ - INFO - Successfully loaded 2 schools from JSON files
+2026-01-31 01:45:07,806 - __main__ - INFO - Generated: schools/learner-first-primary-school.html
+2026-01-31 01:45:08,318 - __main__ - INFO - Generated: schools/marist-brothers-high-school.html
+2026-01-31 01:45:08,334 - __main__ - INFO - Generated: assets/style.css
+2026-01-31 01:45:08,338 - __main__ - INFO - Generated: assets/schools.json
+2026-01-31 01:45:08,340 - __main__ - INFO - Generated: sitemap.xml for SEO
+2026-01-31 01:45:08,342 - __main__ - INFO - Generated: robots.txt
+2026-01-31 01:54:06,035 - __main__ - INFO - Found 2 school JSON files
+2026-01-31 01:54:06,344 - __main__ - INFO - Successfully loaded 2 schools from JSON files
+2026-01-31 01:54:06,533 - __main__ - INFO - Generated: schools/learner-first-primary-school.html
+2026-01-31 01:54:07,128 - __main__ - INFO - Generated: schools/marist-brothers-high-school.html
+2026-01-31 01:54:08,296 - __main__ - INFO - Generated: assets/style.css
+2026-01-31 01:54:08,302 - __main__ - INFO - Generated: assets/schools.json
+2026-01-31 01:54:08,343 - __main__ - INFO - Generated: sitemap.xml for SEO
+2026-01-31 01:54:08,360 - __main__ - INFO - Generated: robots.txt
+2026-01-31 02:03:05,426 - __main__ - INFO - Found 2 school JSON files
+2026-01-31 02:03:05,800 - __main__ - INFO - Successfully loaded 2 schools from JSON files
+2026-01-31 02:03:05,981 - __main__ - INFO - Generated: schools/learner-first-primary-school.html
+2026-01-31 02:03:06,539 - __main__ - INFO - Generated: schools/marist-brothers-high-school.html
+2026-01-31 02:03:06,553 - __main__ - INFO - Generated: assets/style.css
+2026-01-31 02:03:06,558 - __main__ - INFO - Generated: assets/schools.json
+2026-01-31 02:03:06,569 - __main__ - INFO - Generated: sitemap.xml for SEO
+2026-01-31 02:03:06,571 - __main__ - INFO - Generated: robots.txt
